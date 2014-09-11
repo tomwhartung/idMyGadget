@@ -1,0 +1,47 @@
+/*
+ * iPhone.css and androidPhone.css: styles for iPhones and androidPhones
+ * It's OK and even desireable for these files to be very similar or even identical
+ * (DRY is extremely important in principle but maybe not necessarily always essential, as in this case.)
+ */
+body {
+	background-color: #ddd;
+	border: 1px solid black;
+	color: #222;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+div#container {
+	padding: 10px;
+}
+
+ul {
+	margin: 0px;
+}
+a {
+    font-weight: bold;   /* make links easier to see and tap */
+}
+dd {
+	margin-left: 10px;
+}
+/*
+ * Make font sizes, line heights and links a little smaller.
+ * Note that a long line with no punctuation or whitespace
+ * causes the browser to ignore these styles.
+ */
+h1, h2, h3, p, a, ul, li, dl, dt, dd {
+	line-height: 150%;    /* makes all of these easier to read */
+}
+h1 {
+	font-size: 24px;
+}
+h2 {
+	font-size: 20px;
+}
+h3 {
+	font-size: 16px;
+}
+p, a, ul, li, dl, dt, dd {
+	font-size: 14px;
+}
+

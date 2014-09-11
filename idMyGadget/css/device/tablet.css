@@ -1,0 +1,32 @@
+/*
+ * tablet.css: styles for tablets
+ */
+div#container {
+	margin-top:    0.25in;
+	margin-left:   0.50in;
+	margin-right:  1.25in;
+}
+/*
+ * Make font sizes, line heights and links a little bit bigger
+ * Note that a long line with no punctuation or whitespace
+ * causes the browser to ignore these styles
+ */
+h1, h2, h3, p, a, ul, li, dl, dt, dd {
+	line-height: 150%;    /* makes all of these easier to read */
+}
+h1 {
+	font-size: 48px;
+}
+h2 {
+	font-size: 40px;
+}
+h3 {
+	font-size: 36px;
+}
+p, a, ul, li, dl, dt, dd {
+	font-size: 24px;
+}
+a {
+	font-weight: bold;   /* make links easier to see and tap */
+}
+

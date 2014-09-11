@@ -1,0 +1,38 @@
+#
+# From: http://stackoverflow.com/questions/170961/whats-the-best-crlf-handling-strategy-with-git
+#
+# Auto detect text files and perform LF normalization
+*        text=auto
+
+*.cs     text diff=csharp
+*.java   text diff=java
+*.html   text diff=html
+*.css    text
+*.js     text
+*.sql    text
+
+*.csproj text merge=union
+*.sln    text merge=union eol=crlf
+
+*.docx   diff=astextplain
+*.DOCX   diff=astextplain
+
+# absolute paths are ok, as are globs
+/**/postinst* text eol-lf
+
+# paths that don't start with / are treated relative to the .gitattributes folder
+relative/path/*.txt text eol-lf
+#
+# More, from: http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
+# Images should be treated as binary
+# (binary is a macro for -text -diff)
+#
+*.png     binary
+*.jepg    binary
+#
+# CusTOMizations:
+#
+*.php    text diff=php
+*.jpg    binary
+*.gif   binary
+*.tiff  binary

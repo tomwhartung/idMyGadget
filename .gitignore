@@ -1,0 +1,6 @@
+#
+# Documentation is here: http://git-scm.com/docs/gitignore
+#
+unpack/
+Tera-Wurfl/
+tmp/
