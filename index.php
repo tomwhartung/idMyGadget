@@ -7,7 +7,7 @@
  * These "various forms" include raw WURFL information, key capabilities, and
  * summary device data based on key WURFL device capabilities.
  */
-require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
+include_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once 'idMyGadget/deviceData.php';
 require_once 'idMyGadget/DemoIdMyGadget.php';
 require_once 'idMyGadget/IdMyGadget.php';
@@ -173,10 +173,12 @@ if ( strlen($output) > 0 )
 
 <?php if ( $gadgetType == GADGET_TYPE_DESKTOP_BROWSER ) : ?>
  <div id="wurfl">
-  <h3>Wurfl Installation</h3>
+  <h3>Wurfl Installation and Administration</h3>
   <dl>
    <dt><a href="Tera-Wurfl/wurfl-dbapi/admin/install.php">Tera-Wurfl/wurfl-dbapi/admin/install.php</a></dt>
    <dd>Use to install and initialize the database; for more information, see the README file</dd>
+   <dt><a href="Tera-Wurfl/wurfl-dbapi/admin/index.php" target="_blank">Tera-Wurfl/wurfl-dbapi/admin/index.php</a></dt>
+   <dd>WURFL-DB API (Tera-Wurfl) Administration script</dd>
    <dt><a href="verySimpleExample.php" target="_blank">verySimpleExample.php</a></dt>
    <dd>Copied from Tera-Wurfl README file.  Use to verify that Tera-Wurfl is properly installed and initialized.</dd>
    <dt><a href="Tera-Wurfl/wurfl-dbapi/README.txt">Tera-Wurfl/wurfl-dbapi/README.txt</a></dt>
