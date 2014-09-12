@@ -1,72 +1,108 @@
 
- References:
-=============
-o	http://sourceforge.net/projects/wurfl/files/WURFL%20PHP/
-o	http://wurfl.sourceforge.net/wurfl.php
-o	http://dbapi.scientiamobile.com/wiki/index.php/Installation
-o	Tera-Wurfl/wurfl-dbapi/README.txt
+Date: 2014-09-11
+Author: Tom W. Hartung
+
+ Introduction:
+---------------
+The following instructions show how I installed idMyGadget and
+the wurfl-dbapi (Tera-Wurfl) code in the /var/www directory on
+a PC running Ubuntu 14.04 .  My server is running Apache and
+DocumentRoot is set to /var/www .
+
+If you are using a different operating system or installing
+into a different directory, you may need to adjust these
+instructions accordingly.
 
  Setup:
-========
-Create project directory and subdirectories for idGadget and Tera-Wurfl:
-o	Create directory for idMyGadget code (e.g., in /var/www):
+--------
+Install (git clone) idMyGadget source:
 	cd /var/www
-	mkdir idMyGadget
+	git clone git://github.com:tomwhartung/idMyGadget.git
 	cd idMyGadget
-o	Create subdirectory for Tera-Wurfl code
+
+Visit http://sourceforge.net/projects/wurfl/files/WURFL%20Database/ and 
+download the latest version of the Wurfl Database source tar file,
+wurfl-dbapi-a.b.c.d.tar.gz (e.g., wurfl-dbapi-1.5.1.1.tar.gz)
+
+Create subdirectory for Tera-Wurfl code and install it, by
+unzipping and unpacking wurfl-dbapi-a.b.c.d.tar.gz file in
+/var/www/idMyGadget/Tera-Wurfl :
+	cd /var/www/idMyGadget
 	mkdir Tera-Wurfl
-o	Visit http://sourceforge.net/projects/wurfl/files/WURFL%20PHP/ and 
-	download the latest version of this file ....
-	-	wurfl-dbapi-a.b.c.d.tar.gz (e.g., wurfl-dbapi-1.5.1.1.tar.gz)
-Install idMyGadget source:
-o	TBD (use github)
-Install Tera-Wurfl source:
-o	Unzip and unpack wurfl-dbapi-a.b.c.d.tar.gz file in /var/www/idMyGadget/Tera-Wurfl
-	cd /var/www/Tera-Wurfl
+	cd Tera-Wurfl
 	cp ~/Downloads/wurfl-php-a.b.c.d.tar.gz .
 	gunzip wurfl-php-a.b.c.d.tar.gz
 	tar -xvf wurfl-php-a.b.c.d.tar
-o	Link wurfl-dbapi-a.b.c.d directory to wurfl-dbapi
+	rm wurfl-php-a.b.c.d.tar
+
+Link wurfl-dbapi-a.b.c.d directory to wurfl-dbapi and copy the
+example configuration file:
 	ln -s wurfl-dbapi-a.b.c.d wurfl-dbapi
 	cp TeraWurflConfig.php.example TeraWurflConfig.php
 
 For full information about all options for installing and initializing the
 Tera-Wurfl database, refer to the Tera-Wurfl/wurfl-dbapi/README.txt file.
-The following db setup instructions use MySql and the other default values
-in TeraWurflConfig.php, so you do not need to edit that file.
-NOTE: Using these values is NOT recommended for production!
-o	Using MySql5 console interface, enter the following commands:
+
+*******************************************************************
+The following db setup instructions use MySql and the other default
+values in TeraWurflConfig.php, so you do not need to edit that file.
+*******************************************************************
+*** NOTE: Using these values is NOT recommended for production! ***
+*******************************************************************
+
+Using MySql5 console interface, enter the following commands:
 	create database tera_wurfl_demo;
 	create user 'terawurfluser'@'localhost' identified by 'wurfl';
 	grant all on tera_wurfl_demo.* to 'terawurfluser'@'localhost';
-o	To populate the database access the following file in your web browser:
-	http://yourserver.com/idMyGadget/Tera-Wurfl/admin/install.php
-	For example, if you are setting this up on your localhost, go to
+
+Create a data directory and 
+	cd /var/www/idMyGadget/Tera-Wurfl/wurfl-dbapi
+	mkdir data
+	sudo chgrp -R www-data data/
+	sudo chmod -R g+rw data/
+
+To populate the database access the following file in your web browser:
+	http://localhost/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php
+For example, if you are setting this up on your localhost, go to
 	http://localhost/idMyGadget/Tera-Wurfl/admin/install.php
-	There is also a link to this file in the idMyGadget/index.html file
 
-o	To run demos:
+There is also a link to this file in the idMyGadget/index.html and
+idMyGadget/index.php files.
 
-o	To run idGadget:
-	cd /var/www/wurfl/idGadget
-	mkdir -p resources/storage/cache
-	mkdir -p resources/storage/persistence
-	cp ../downloads/wurfl-2.3.5.zip resources
-	cd resources
-	ln -s wurfl-2.3.5.zip wurfl.zip
-	cd ..
-	chmod 755 resources resources/storage resources/storage/* 
-	chmod 644 resources/wurfl-2.3.5.zip 
-	sudo chown -R www-data:www-data resources
+Run the demos to see:
 
- Customizations:
-=================
-idGadget - combines elements of wurfl demo example and info from book.
+o	All of the capabilities that Tera-Wurfl can identify in the device
+o	The short list of key capabilities that idGadget uses to find
+	the essential device data
+o	The essential device data
 
-Identifies the following based on the criteria listed:
-o	iPhone: 
-o	Android Phone:
-o	Android tablet:
-o	Kindle (Fire/HD?):
-o	Desktop Browser:
+ Conclusion:
+-------------
+IdMyGadget currently identifies the following devices:
+
+o	iPhone
+o	Android Phone
+o	Android tablet
+o	Kindle (Fire/HD?)
+o	Desktop Browser
+
+I picked these because they are the gadgets I own.  :-)  It should be
+possible to test it for many other devices (e.g., using emulators)
+but for now anyway, I am trying to keep it as simple as possible.
+
+If you find it necessary or desireable, it is my hope that it will
+be easy to extend idGadget to use some of the additional capabilities
+identified by Wurfl to set additional device data, for finer-grained
+control of what content to serve.
+
+ References:
+-------------
+If you have any questions about idMyGadget, please contact me
+at https://github.com/tomwhartung or tomwhartung.com .
+
+If you have any questions about Wurfl, refer to the following:
+http://sourceforge.net/projects/wurfl/files/WURFL%20Database/
+http://wurfl.sourceforge.net/wurfl.php
+http://dbapi.scientiamobile.com/wiki/index.php/Installation
+Tera-Wurfl/wurfl-dbapi/README.txt
 
