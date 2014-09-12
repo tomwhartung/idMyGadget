@@ -35,13 +35,18 @@ unzipping and unpacking wurfl-dbapi-a.b.c.d.tar.gz file in
 	tar -xvf wurfl-php-a.b.c.d.tar
 	rm wurfl-php-a.b.c.d.tar
 
-Link wurfl-dbapi-a.b.c.d directory to wurfl-dbapi and copy the
-example configuration file:
+Link wurfl-dbapi-a.b.c.d directory to the generic directory name
+wurfl-dbapi.  This allows for easily upgrading to a new version,
+then possibly backing out of the upgrade, by simply changing the
+link:
 	ln -s wurfl-dbapi-a.b.c.d wurfl-dbapi
+
+Copy the example configuration file:
 	cp TeraWurflConfig.php.example TeraWurflConfig.php
 
-For full information about all options for installing and initializing the
-Tera-Wurfl database, refer to the Tera-Wurfl/wurfl-dbapi/README.txt file.
+For complete information about all options for installing and
+initializing the Tera-Wurfl database, refer to the
+Tera-Wurfl/wurfl-dbapi/README.txt file.
 
 *******************************************************************
 The following db setup instructions use MySql and the other default
@@ -55,30 +60,42 @@ Using MySql5 console interface, enter the following commands:
 	create user 'terawurfluser'@'localhost' identified by 'wurfl';
 	grant all on tera_wurfl_demo.* to 'terawurfluser'@'localhost';
 
+*********************************************************
+*** Again, for best results you should modify one or  ***
+*** more of the values in the preceding commands, and ***
+*** update the TeraWurflConfig.php file accordingly.  ***
+*********************************************************
+
 Create a data directory and 
 	cd /var/www/idMyGadget/Tera-Wurfl/wurfl-dbapi
 	mkdir data
 	sudo chgrp -R www-data data/
 	sudo chmod -R g+rw data/
 
-To populate the database access the following file in your web browser:
-	http://localhost/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php
+To verify that you have the database and data directory set up properly,
+access the following file in your web browser:
+	http://example.com/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php
 For example, if you are setting this up on your localhost, go to
-	http://localhost/idMyGadget/Tera-Wurfl/admin/install.php
-
-There is also a link to this file in the idMyGadget/index.html and
+	http://localhost/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php
+Note that there is a link to this file in the idMyGadget/index.html and
 idMyGadget/index.php files.
+
+If everything looks OK on the install page, populate the database by
+clicking on one of the links (I use the "Your local WURFL file" link)
+at the bottom of that page.
+
+You should see a new page saying the database was updated OK.
 
 Run the demos to see:
 
 o	All of the capabilities that Tera-Wurfl can identify in the device
-o	The short list of key capabilities that idGadget uses to find
+o	The short list of key capabilities that idMyGadget uses to find
 	the essential device data
 o	The essential device data
 
  Conclusion:
 -------------
-IdMyGadget currently identifies the following devices:
+IdMyGadget currently identifies only the following devices:
 
 o	iPhone
 o	Android Phone
@@ -91,9 +108,9 @@ possible to test it for many other devices (e.g., using emulators)
 but for now anyway, I am trying to keep it as simple as possible.
 
 If you find it necessary or desireable, it is my hope that it will
-be easy to extend idGadget to use some of the additional capabilities
-identified by Wurfl to set additional device data, for finer-grained
-control of what content to serve.
+be easy to extend idMyGadget to use some of the additional capabilities
+identified by Wurfl to set additional device data parameters, for
+finer-grained control of what content to serve.
 
  References:
 -------------
