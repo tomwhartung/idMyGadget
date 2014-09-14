@@ -13,8 +13,17 @@ If you are using a different operating system or installing
 into a different directory, you may need to adjust these
 instructions accordingly.
 
- Setup:
---------
+ Requirements:
+---------------
+Installing and using this code requires a computer running a
+LAMP (Linux, Apache, MySql, and PHP) server.  It will probably work
+on a MAMP, WAMP, or XAMP server, but I have not tried it.
+
+If you are using Windows, you will need a terminal application,
+such as Cygwin, to run these commands.
+
+ Installation and Setup:
+-------------------------
 Install (git clone) idMyGadget source:
 	cd /var/www
 	git clone git://github.com:tomwhartung/idMyGadget.git
@@ -39,6 +48,7 @@ Link wurfl-dbapi-a.b.c.d directory to the generic directory name
 wurfl-dbapi.  This allows for easily upgrading to a new version,
 then possibly backing out of the upgrade, by simply changing the
 link:
+	cd /var/www/idMyGadget/Tera-Wurfl
 	ln -s wurfl-dbapi-a.b.c.d wurfl-dbapi
 
 Copy the example configuration file:
@@ -68,7 +78,7 @@ Using MySql5 console interface, enter the following commands:
 
 Create a data directory and 
 	cd /var/www/idMyGadget/Tera-Wurfl/wurfl-dbapi
-	mkdir data
+	mkdir data    # may already be present
 	sudo chgrp -R www-data data/
 	sudo chmod -R g+rw data/
 
@@ -84,7 +94,12 @@ If everything looks OK on the install page, populate the database by
 clicking on one of the links (I use the "Your local WURFL file" link)
 at the bottom of that page.
 
-You should see a new page saying the database was updated OK.
+You should see a new page saying the database was updated OK.  You
+should remove the Tera-Wurfl/wurfl-dbapi/admin/install.php file, but I
+recommend renaming it in case you want to reinstall again later (e.g.,
+using a different database name):
+	cd /var/www/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin
+	mv install.php install.php-save_for_possible_reinstall
 
 Run the demos to see:
 
