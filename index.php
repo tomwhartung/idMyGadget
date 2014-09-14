@@ -180,7 +180,8 @@ if ( strlen($output) > 0 )
    <dt><a href="Tera-Wurfl/wurfl-dbapi/admin/index.php" target="_blank">Tera-Wurfl/wurfl-dbapi/admin/index.php</a></dt>
    <dd>WURFL-DB API (Tera-Wurfl) Administration script</dd>
    <dt><a href="verySimpleExample.php" target="_blank">verySimpleExample.php</a></dt>
-   <dd>Copied from Tera-Wurfl README file.  Use to verify that Tera-Wurfl is properly installed and initialized.</dd>
+   <dd>Copied from Tera-Wurfl README file.  Use to verify that Tera-Wurfl is properly installed and initialized.
+     If you run this from a browser, expect to see <strong>"You should not be here"</strong></dd>
    <dt><a href="Tera-Wurfl/wurfl-dbapi/README.txt">Tera-Wurfl/wurfl-dbapi/README.txt</a></dt>
    <dd>Tera-Wurfl README file contains detailed installation instructions</dd>
   </dl>
