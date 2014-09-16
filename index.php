@@ -116,29 +116,39 @@ print "<h1>$pageTitle</h1>";
 print "<div id='content'>";
 print "<h2>$gadgetString</h2>";
 $demoIdMyGadget = new DemoIdMyGadget( $idMyGadget );
+$displayCapabilityArrays = filter_input(
+		INPUT_GET, 'displayCapabilityArrays', FILTER_VALIDATE_BOOLEAN );
+$displayAllCapabilities  = filter_input(
+		INPUT_GET, 'displayAllCapabilities', FILTER_VALIDATE_BOOLEAN );
+$displaySortedCapabilities = filter_input(
+		INPUT_GET, 'displaySortedCapabilities', FILTER_VALIDATE_BOOLEAN );
+$displayKeyCapabilities = filter_input(
+		INPUT_GET, 'displayKeyCapabilities', FILTER_VALIDATE_BOOLEAN );
+$displayDeviceData = filter_input(
+		INPUT_GET, 'displayDeviceData', FILTER_VALIDATE_BOOLEAN );
 $output = "";
 
-if ( isset($_GET['displayCapabilityArrays']) )
+if ( isset($displayCapabilityArrays) )
 {
 	$output .= "<h3>Capability Arrays for This Device</h3>";
 	$output .= $demoIdMyGadget->displayCapabilityArrays();
 }
-if ( isset($_GET['displayAllCapabilities']) )
+if ( isset($displayAllCapabilities) )
 {
 	$output .= "<h3>Flat List of Capabilities</h3>";
 	$output .= "<ul class='no-bullets'>" . $demoIdMyGadget->displayAllCapabilities() . "</ul>";
 }
-if ( isset($_GET['displaySortedCapabilities']) )
+if ( isset($displaySortedCapabilities) )
 {
 	$output .= "<h3>Sorted List of Capabilities</h3>";
 	$output .= "<ul class='no-bullets'>" . $demoIdMyGadget->displaySortedCapabilities() . "</ul>";
 }
-if ( isset($_GET['displayKeyCapabilities']) )
+if ( isset($displayKeyCapabilities) )
 {
 	$output .= "<h3>Key Capabilities</h3>";
 	$output .= "<ul class='no-bullets'>" . $demoIdMyGadget->displayKeyCapabilities() . "</ul>";
 }
-if ( isset($_GET['displayDeviceData']) )
+if ( isset($displayDeviceData) )
 {
 	$output .= "<h3>Device Data</h3>";
 	$output .= "<ul class='no-bullets'>" . $demoIdMyGadget->displayDeviceData() . "</ul>";
