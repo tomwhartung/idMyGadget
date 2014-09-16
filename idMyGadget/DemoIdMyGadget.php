@@ -39,7 +39,8 @@ class DemoIdMyGadget
 		// Get all of the capabilities, and display each
 		// If one of the capabilities is an array, display each of the elements in the array
 		//
-		if ( $this->idMyGadgetObject->teraWurflObject->getDeviceCapabilitiesFromRequest($_SERVER) )
+		$server = filter_input_array( INPUT_SERVER );
+		if ( $this->idMyGadgetObject->teraWurflObject->getDeviceCapabilitiesFromRequest($server) )
 		{
 			foreach ( $this->idMyGadgetObject->teraWurflObject->capabilities as $topLevelKey => $topLevelValue )
 			{
@@ -73,14 +74,17 @@ class DemoIdMyGadget
 		//
 		// Get all of the capability names, sort them, and display each and its value
 		//
-		if ( $this->idMyGadgetObject->teraWurflObject->getDeviceCapabilitiesFromRequest($_SERVER) )
+		$server = filter_input_array( INPUT_SERVER );
+		if ( $this->idMyGadgetObject->teraWurflObject->getDeviceCapabilitiesFromRequest($server) )
 		{
 			$capabilityNames = $this->idMyGadgetObject->teraWurflObject->getLoadedCapabilityNames();
-			$sortedCapabilityNames = sort( $capabilityNames );
+			sort( $capabilityNames );
 			for ( $index = 0; $index < count($capabilityNames); $index++ )
 			{
 				$value = $capabilityNames[$index];
-				$output .= "<li>" . $value . ": '" . $this->idMyGadgetObject->teraWurflObject->getDeviceCapability($value) . "'</li>";
+				$output .= "<li>" . $value . ": '" .
+						$this->idMyGadgetObject->teraWurflObject->getDeviceCapability($value) .
+						"'</li>";
 			}
 			$output .= "</ul><ul><li>Found " . count($capabilityNames) . " capabilities</li>";
 		}
@@ -96,13 +100,17 @@ class DemoIdMyGadget
 		//
 		// Get all of the capability names, and display each
 		//
-		if ( $this->idMyGadgetObject->teraWurflObject->getDeviceCapabilitiesFromRequest($_SERVER) )
+		$server = filter_input_array( INPUT_SERVER );
+		if ( $this->idMyGadgetObject->teraWurflObject->getDeviceCapabilitiesFromRequest($server) )
 		{
-			$loadedCapabilityNames = $this->idMyGadgetObject->teraWurflObject->getLoadedCapabilityNames();
+			$loadedCapabilityNames =
+					$this->idMyGadgetObject->teraWurflObject->getLoadedCapabilityNames();
 
 			foreach ( $loadedCapabilityNames as $key => $value )
 			{
-				$output .= "<li>" . $value . ": '" . $this->idMyGadgetObject->teraWurflObject->getDeviceCapability($value) . "'</li>";
+				$output .= "<li>" . $value . ": '" .
+						$this->idMyGadgetObject->teraWurflObject->getDeviceCapability($value) .
+						"'</li>";
 			}
 		}
 
@@ -141,4 +149,3 @@ class DemoIdMyGadget
 		return $output;
 	}
 }
-?>

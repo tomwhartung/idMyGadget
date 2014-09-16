@@ -99,7 +99,7 @@ class IdMyGadget
 					$this->keyCapabilities[$key] = $this->teraWurflObject->getDeviceCapability($key);
 				}
 			}
-			$keyCapabilitiesAreSet = TRUE;
+			$this->keyCapabilitiesAreSet = TRUE;
 		}
 
 		return $this->keyCapabilities;
@@ -139,9 +139,13 @@ class IdMyGadget
 	 */
 	protected function setGadgetType( $pointing_method, $is_tablet )
 	{
-		if ( $this->allowOverridesInUrl && isset($_GET['gadgetType']) )
+		if ( $this->allowOverridesInUrl )
 		{
-			$this->gadgetType  = $_GET['gadgetType'];
+			$gadgetType = filter_input( INPUT_GET, 'gadgetType', FILTER_SANITIZE_STRING );
+			if ( isset($gadgetType) )
+			{
+				$this->gadgetType  = $gadgetType;
+			}
 		}
 		else
 		{
@@ -175,9 +179,13 @@ class IdMyGadget
 	 */
 	protected function setGadgetModel( $model_name )
 	{
-		if ( $this->allowOverridesInUrl && isset($_GET['gadgetModel']) )
+		if ( $this->allowOverridesInUrl )
 		{
-			$this->gadgetModel  = $_GET['gadgetModel'];
+			$gadgetModel = filter_input( INPUT_GET, 'gadgetModel', FILTER_SANITIZE_STRING );
+			if ( isset($gadgetModel) )
+			{
+				$this->gadgetModel = $gadgetModel;
+			}
 		}
 		else
 		{
@@ -234,9 +242,13 @@ class IdMyGadget
 	 */
 	protected function setGadgetBrand( $brand_name )
 	{
-		if ( $this->allowOverridesInUrl && isset($_GET['gadgetBrand']) )
+		if ( $this->allowOverridesInUrl )
 		{
-			$this->gadgetBrand = $_GET['gadgetBrand'];
+			$gadgetBrand = filter_input( INPUT_GET, 'gadgetBrand', FILTER_SANITIZE_STRING );
+			if ( isset($gadgetBrand) )
+			{
+				$this->gadgetModel = $gadgetBrand;
+			}
 		}
 		else
 		{
@@ -271,7 +283,8 @@ class IdMyGadget
 				}
 				else
 				{
-					$this->gadgetBrand = "Unknown Gadget Type (" . $this->gadgetType . "); brand_name: " . $brand_name;
+					$this->gadgetBrand = "Unknown Gadget Type " .
+							"(" .$this->gadgetType . "); brand_name: " . $brand_name;
 				}
 			}
 			else
@@ -283,4 +296,3 @@ class IdMyGadget
 		return $this->gadgetBrand;
 	}
 }
-?>
