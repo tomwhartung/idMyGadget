@@ -16,7 +16,12 @@ define( "STYLE_SHEET_DESKTOP",       "idMyGadget/css/device/desktop.css" );
 define( "STYLE_SHEET_TABLET",        "idMyGadget/css/device/tablet.css" );
 define( "STYLE_SHEET_ANDROID_PHONE", "idMyGadget/css/device/androidPhone.css" );
 define( "STYLE_SHEET_APPLE_PHONE",   "idMyGadget/css/device/iPhone.css" );
-
+//
+// debugging: displays verbose information; we don't need to use this very often
+// allowOverridesInUrl: Allow testing with overrides as GET variables, TRUE is OK 
+//    for example:
+//       <a href="http://localhost/resume/?gadgetType=phone&gadgetModel=iPhone&gadgetBrand=Apple">
+//
 // $debugging = TRUE;
 // $allowOverridesInUrl = TRUE;
 $debugging = FALSE;
