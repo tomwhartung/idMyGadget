@@ -17,7 +17,7 @@ class IdMyGadget
 	 * Allows testing in browser instead of device
 	 * @var boolean
 	 */
-	public $allowOverridesInUrl = FALSE;
+	public $allowOverridesInUrl = TRUE;
 	/**
 	 * The TeraWURFL object
 	 * @var TeraWurfl
@@ -77,10 +77,10 @@ class IdMyGadget
 	/**
 	 * Constructor: initialize essential data members
 	 */
-	public function __construct( $debugging=FALSE, $overridesInUrl=FALSE )
+	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE )
 	{
 		$this->debugging = $debugging;
-		$this->overridesInUrl = $overridesInUrl;
+		$this->allowOverridesInUrl = $allowOverridesInUrl;
 		$this->teraWurflObject = new TeraWurfl();    // Instantiate the TeraWURFL object
 	}
 
