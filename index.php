@@ -23,9 +23,9 @@ define( "STYLE_SHEET_APPLE_PHONE",   "idMyGadget/css/device/iPhone.css" );
 //       <a href="http://localhost/resume/?gadgetType=phone&gadgetModel=iPhone&gadgetBrand=Apple">
 //
 // $debugging = TRUE;
-// $allowOverridesInUrl = TRUE;
+// $allowOverridesInUrl = FALSE;
 $debugging = FALSE;
-$allowOverridesInUrl = FALSE;
+$allowOverridesInUrl = TRUE;
 $idMyGadget = new IdMyGadget( $debugging, $allowOverridesInUrl );
 
 $deviceData = $idMyGadget->getDeviceData();
@@ -150,13 +150,15 @@ if ( isset($displaySortedCapabilities) )
 }
 if ( isset($displayKeyCapabilities) )
 {
+	$idMyGadget->getKeyCapabilities();
 	$output .= "<h3>Key Capabilities</h3>";
-	$output .= "<ul class='no-bullets'>" . $demoIdMyGadget->displayKeyCapabilities() . "</ul>";
+	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayKeyCapabilities() . "</ul>";
 }
 if ( isset($displayDeviceData) )
 {
+	$idMyGadget->getDeviceData();
 	$output .= "<h3>Device Data</h3>";
-	$output .= "<ul class='no-bullets'>" . $demoIdMyGadget->displayDeviceData() . "</ul>";
+	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
 }
 
 if ( strlen($output) > 0 )
