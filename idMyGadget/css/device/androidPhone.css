@@ -8,21 +8,21 @@ body {
 	border: 1px solid black;
 	color: #222;
 	font-family: Helvetica, Verdana, Arial, sans-serif;
-	margin: 0px;
-	padding: 0px;
+	margin: 0.0em;
+	padding: 0.0em;
 }
 div#container {
-	padding: 10px;
+	padding: 0.75em;
 }
 
 ul {
-	margin: 0px;
+	margin: 0.0em;
 }
 a {
     font-weight: bold;   /* make links easier to see and tap */
 }
 dd {
-	margin-left: 10px;
+	margin-left: 1.0em;
 }
 /*
  * Make font sizes, line heights and links a little smaller.
@@ -33,15 +33,17 @@ h1, h2, h3, p, a, ul, li, dl, dt, dd {
 	line-height: 150%;    /* makes all of these easier to read */
 }
 h1 {
-	font-size: 24px;
+	font-size: 1.75em;
 }
 h2 {
-	font-size: 20px;
+	font-size: 1.5em;
 }
 h3 {
-	font-size: 16px;
+	font-size: 1.25em;
 }
 p, a, ul, li, dl, dt, dd {
-	font-size: 14px;
+	font-size: 1.0em;
 }
-
+ul.debugging {
+	font-size: 0.75em;
+}
