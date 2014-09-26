@@ -116,36 +116,4 @@ class DemoIdMyGadget
 
 		return $output;
 	}
-	/**
-	 * Display the key capabilities
-	 * @return string of <li> tags listing the key capabilities
-	 */
-	public function displayKeyCapabilities()
-	{
-		$keyCapabilities = $this->idMyGadgetObject->getKeyCapabilities();
-		$output = "";
-
-		foreach( $keyCapabilities as $key => $value )
-		{
-			$output .= "<li>" . $key . ":&nbsp;'" . $value . "'</li>";
-		}
-
-		return $output;
-	}
-	/**
-	 * Display the device data
-	 * @return string of <li> tags listing the device data
-	 */
-	public function displayDeviceData()
-	{
-		$deviceData = $this->idMyGadgetObject->getDeviceData();
-		$output = "";
-
-		foreach( $deviceData as $key => $value )
-		{
-			$output .= "<li>" . $key . ":&nbsp;'" . $value . "'</li>";
-		}
-
-		return $output;
-	}
 }

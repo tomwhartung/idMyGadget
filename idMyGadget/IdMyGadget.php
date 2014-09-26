@@ -85,6 +85,39 @@ class IdMyGadget
 	}
 
 	/**
+	 * Get data about the device
+	 * @return associative array of device data
+	 */
+	public function getDeviceData()
+	{
+		if ( ! $this->deviceDataAreSet )
+		{
+			$this->keyCapabilities = $this->getKeyCapabilities();
+			//
+			// We don't *need* to pass in the key capabilities values but doing so makes it clear
+			// which device data items depend on which key capabilities.
+			//
+			$this->setGadgetType( $this->keyCapabilities['pointing_method'],
+					$this->keyCapabilities['is_tablet'] );
+			$this->setGadgetModel( $this->keyCapabilities['model_name'] );
+			$this->setGadgetBrand( $this->keyCapabilities['brand_name'] );
+			$this->deviceData['gadgetType']  = $this->gadgetType;
+			$this->deviceData['gadgetModel'] = $this->gadgetModel;
+			$this->deviceData['gadgetBrand'] = $this->gadgetBrand;
+			$this->deviceDataAreSet =TRUE;
+		}
+
+		if ( $this->debugging )
+		{
+			print "<ul class='debugging'>debugging with keyCapabilities:" .
+					$this->displayKeyCapabilities() . "</ul>";
+			print "<ul class='debugging'>debugging with deviceData:" .
+					$this->displayDeviceData() . "</ul>";
+		}
+
+		return $this->deviceData;
+	}
+	/**
 	 * Get the key capabilities of the device
 	 * @return associative array of the capabilities
 	 */
@@ -104,48 +137,49 @@ class IdMyGadget
 
 		return $this->keyCapabilities;
 	}
+
 	/**
-	 * Get data about the device
-	 * @return associative array of device data
+	 * Display the device data
+	 * @return string of <li> tags listing the device data
 	 */
-	public function getDeviceData()
+	public function displayDeviceData()
 	{
-		if ( ! $this->deviceDataAreSet )
+		$output = "";
+
+		foreach( $this->deviceData as $key => $value )
 		{
-			$this->keyCapabilities = $this->getKeyCapabilities();
-			//
-			// We don't *need* to pass in the key capabilities values but doing so makes it clear
-			// which device data items depend on which key capabilities.
-			//
-			$this->setGadgetType( $this->keyCapabilities['pointing_method'], $this->keyCapabilities['is_tablet'] );
-			$this->setGadgetModel( $this->keyCapabilities['model_name'] );
-			$this->setGadgetBrand( $this->keyCapabilities['brand_name'] );
-			$this->deviceData['gadgetType']  = $this->gadgetType;
-			$this->deviceData['gadgetModel'] = $this->gadgetModel;
-			$this->deviceData['gadgetBrand'] = $this->gadgetBrand;
-	
-			if ( $this->debugging )
-			{
-				$this->displayKeyCapabilities();
-				$this->displayDeviceData();
-			}
+			$output .= "<li>" . $key . ":&nbsp;'" . $value . "'</li>";
 		}
-	
-		return $this->deviceData;
+
+		return $output;
 	}
+	/**
+	 * Display the key capabilities
+	 * @return string of <li> tags listing the key capabilities
+	 */
+	public function displayKeyCapabilities()
+	{
+		$output = "";
+
+		foreach( $this->keyCapabilities as $key => $value )
+		{
+			$output .= "<li>" . $key . ":&nbsp;'" . $value . "'</li>";
+		}
+
+		return $output;
+	}
+
 	/**
 	 * Set the gadget type to one of the GADGET_TYPE_* constants: desktop, phone, etc.
 	 * @return gadgetType
 	 */
 	protected function setGadgetType( $pointing_method, $is_tablet )
 	{
-		if ( $this->allowOverridesInUrl )
+		$gadgetType = filter_input( INPUT_GET, 'gadgetType', FILTER_SANITIZE_STRING );
+
+		if ( $this->allowOverridesInUrl && isset($gadgetType) )
 		{
-			$gadgetType = filter_input( INPUT_GET, 'gadgetType', FILTER_SANITIZE_STRING );
-			if ( isset($gadgetType) )
-			{
 				$this->gadgetType  = $gadgetType;
-			}
 		}
 		else
 		{
@@ -179,13 +213,11 @@ class IdMyGadget
 	 */
 	protected function setGadgetModel( $model_name )
 	{
-		if ( $this->allowOverridesInUrl )
+		$gadgetModel = filter_input( INPUT_GET, 'gadgetModel', FILTER_SANITIZE_STRING );
+
+		if ( $this->allowOverridesInUrl && isset($gadgetModel) )
 		{
-			$gadgetModel = filter_input( INPUT_GET, 'gadgetModel', FILTER_SANITIZE_STRING );
-			if ( isset($gadgetModel) )
-			{
-				$this->gadgetModel = $gadgetModel;
-			}
+			$this->gadgetModel = $gadgetModel;
 		}
 		else
 		{
@@ -242,13 +274,11 @@ class IdMyGadget
 	 */
 	protected function setGadgetBrand( $brand_name )
 	{
-		if ( $this->allowOverridesInUrl )
+		$gadgetBrand = filter_input( INPUT_GET, 'gadgetBrand', FILTER_SANITIZE_STRING );
+
+		if ( $this->allowOverridesInUrl && isset($gadgetBrand) )
 		{
-			$gadgetBrand = filter_input( INPUT_GET, 'gadgetBrand', FILTER_SANITIZE_STRING );
-			if ( isset($gadgetBrand) )
-			{
-				$this->gadgetModel = $gadgetBrand;
-			}
+			$this->gadgetBrand = $gadgetBrand;
 		}
 		else
 		{
