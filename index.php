@@ -12,10 +12,10 @@ require_once 'idMyGadget/deviceData.php';
 require_once 'idMyGadget/DemoIdMyGadget.php';
 require_once 'idMyGadget/IdMyGadget.php';
 
-define( "STYLE_SHEET_DESKTOP",       "idMyGadget/css/device/desktop.css" );
-define( "STYLE_SHEET_TABLET",        "idMyGadget/css/device/tablet.css" );
-define( "STYLE_SHEET_ANDROID_PHONE", "idMyGadget/css/device/androidPhone.css" );
-define( "STYLE_SHEET_APPLE_PHONE",   "idMyGadget/css/device/iPhone.css" );
+define( "STYLE_SHEET_DESKTOP",       "css/device/desktop.css" );
+define( "STYLE_SHEET_TABLET",        "css/device/tablet.css" );
+define( "STYLE_SHEET_ANDROID_PHONE", "css/device/androidPhone.css" );
+define( "STYLE_SHEET_APPLE_PHONE",   "css/device/iPhone.css" );
 //
 // debugging: displays verbose information; we don't need to use this very often
 // allowOverridesInUrl: Allow testing with overrides as GET variables, TRUE is OK 
@@ -73,7 +73,7 @@ else if ( $gadgetType == GADGET_TYPE_PHONE )
 
 <head>
   <title><?php print $pageTitle; ?></title>
-  <link rel="stylesheet" type="text/css" href="idMyGadget/css/allDevices.css" />
+  <link rel="stylesheet" type="text/css" href="css/allDevices.css" />
 <?php
 //
 // Print a link tag to include the desired style sheet.
@@ -102,9 +102,9 @@ elseif ( $styleSheetFile == STYLE_SHEET_ANDROID_PHONE )
 else   // Probably a tablet
 {
 	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" />';
-	print '<link rel="stylesheet" type="text/css" href="idMyGadget/css/reverseColors.css" />';
+	print '<link rel="stylesheet" type="text/css" href="css/reverseColors.css" />';
 }
-// print '<link rel="stylesheet" type="text/css" href="idMyGadget/css/showBorders.css" />';
+// print '<link rel="stylesheet" type="text/css" href="css/showBorders.css" />';
 ?>
   <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="explorer.css" media="all" />
