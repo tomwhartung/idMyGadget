@@ -8,9 +8,9 @@
  * summary device data based on key WURFL device capabilities.
  */
 include_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
-require_once 'idMyGadget/deviceData.php';
-require_once 'idMyGadget/DemoIdMyGadget.php';
-require_once 'idMyGadget/IdMyGadget.php';
+require_once 'php/deviceData.php';
+require_once 'php/DemoIdMyGadget.php';
+require_once 'php/IdMyGadget.php';
 
 define( "STYLE_SHEET_DESKTOP",       "css/device/desktop.css" );
 define( "STYLE_SHEET_TABLET",        "css/device/tablet.css" );
