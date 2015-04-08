@@ -88,9 +88,9 @@ sudo chmod -R g+rw data/
 
 To verify that you have the database and data directory set up properly,
 access the following file in your web browser:
-	http://example.com/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php
+[http://example.com/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php](http://example.com/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php)
 For example, if you are setting this up on your localhost, go to
-	http://localhost/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php
+[http://localhost/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php](http://localhost/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php)
 Note that there is a link to this file in the idMyGadget/index.html and
 idMyGadget/index.php files.
 
