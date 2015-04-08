@@ -172,18 +172,19 @@ if ( strlen($output) > 0 )
 <div id="idMyGadget">
  <h3>IdMyGadget Demos:</h3>
  <dl>
-  <dt><a href="README.txt" target="_blank">README.txt</a></dt>
-  <dd>idMyGadget README file contains instructions on how to set up Tera-Wurfl</dd>
-  <dt><a href="index.php?displayCapabilityArrays=true">index.php?displayCapabilityArrays=true</a></dt>
-  <dd>Use to see the capability arrays that Tera-Wurfl can identify</dd>
-  <dt><a href="index.php?displayAllCapabilities=true">index.php?displayAllCapabilities=true</a></dt>
-  <dd>Use to see all of the capabilities that Tera-Wurfl can identify</dd>
-  <dt><a href="index.php?displaySortedCapabilities=true">index.php?displaySortedCapabilities=true</a></dt>
-  <dd>Use to see a sorted list of the capabilities that Tera-Wurfl can identify</dd>
-  <dt><a href="index.php?displayKeyCapabilities=true">index.php?displayKeyCapabilities=true</a></dt>
-  <dd>Use to see all the key capabilities that idMyGadget uses to determine what type of device the user is using</dd>
+  <dt><a href="README.md" target="_blank">README.md</a></dt>
+  <dd>The idMyGadget README file contains instructions on how to set up Tera-Wurfl.
+    The formatted <a href="https://github.com/tomwhartung/idMyGadget/blob/master/README.md">version on github</a> is preferable.</dd>
   <dt><a href="index.php?displayDeviceData=true">index.php?displayDeviceData=true</a></dt>
-  <dd>Use to see the gadget types that idMyGadget has deduced from the key capabilities obtained from Tera-Wurfl</dd>
+  <dd>Displays the gadget types that idMyGadget has deduced from the key capabilities obtained from Tera-Wurfl</dd>
+  <dt><a href="index.php?displayCapabilityArrays=true">index.php?displayCapabilityArrays=true</a></dt>
+  <dd>Displays the capability arrays that Tera-Wurfl can identify</dd>
+  <dt><a href="index.php?displayAllCapabilities=true">index.php?displayAllCapabilities=true</a></dt>
+  <dd>Displays all of the capabilities that Tera-Wurfl can identify</dd>
+  <dt><a href="index.php?displaySortedCapabilities=true">index.php?displaySortedCapabilities=true</a></dt>
+  <dd>Displays a sorted list of the capabilities that Tera-Wurfl can identify</dd>
+  <dt><a href="index.php?displayKeyCapabilities=true">index.php?displayKeyCapabilities=true</a></dt>
+  <dd>Displays all the key capabilities that idMyGadget uses to determine what type of device the user is using</dd>
   <dt><a href=""></a></dt><dd></dd>
  </dl>
 </div> <!-- idMyGadget-->
