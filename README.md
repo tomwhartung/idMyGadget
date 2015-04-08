@@ -65,9 +65,7 @@ For complete information about all options for installing and
 initializing the Tera-Wurfl database, refer to the
 Tera-Wurfl/wurfl-dbapi/README.txt file.
 
-----------------------------------------------------
 **NOTE: Using these values is NOT recommended for production!**
-----------------------------------------------------
 
 Using MySql5 console interface, enter the following commands:
 ```
@@ -76,11 +74,9 @@ create user 'terawurfluser'@'localhost' identified by 'wurfl';
 grant all on tera_wurfl_demo.* to 'terawurfluser'@'localhost';
 ```
 
-----------------------------------------------------
 **Again, for best results you should modify one or
 more of the values in the preceding commands, and
 update the TeraWurflConfig.php file accordingly.***
-----------------------------------------------------
 
 Create a data directory and 
 ```
