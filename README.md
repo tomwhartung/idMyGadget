@@ -113,6 +113,14 @@ Run the demos to see:
 * The short list of key capabilities that idMyGadget uses to find the essential device data
 * The essential device data
 
+## Troubleshooting:
+
+If you get an error similar to this:
+```
+Fatal error: Maximum execution time of 30 seconds exceeded in /var/www/idMyGadget/Tera-Wurfl/wurfl-dbapi-1.6.0.0/DatabaseConnectors/TeraWurflDatabase.php on line 297
+```
+See this post: http://stackoverflow.com/questions/5164930/fatal-error-maximum-execution-time-of-30-seconds-exceeded
+
 ## Conclusion:
 
 IdMyGadget currently identifies only the following devices:
