@@ -2,7 +2,7 @@
 # Documentation is here: http://git-scm.com/docs/gitignore
 #
 /unpack/
-/deviceDetection/
+### /lib/
 /Tera-Wurfl/
 /tmp/
 *.swp
