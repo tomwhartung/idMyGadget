@@ -2,8 +2,7 @@
 # Documentation is here: http://git-scm.com/docs/gitignore
 #
 /unpack/
-### /lib/
-/Tera-Wurfl/
+/lib/Tera-Wurfl/wurfl-dbapi*
 /tmp/
 *.swp
 /nbproject/
