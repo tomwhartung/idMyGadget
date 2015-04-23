@@ -1,6 +1,6 @@
 <?php
 require_once 'deviceData.php';
-// require_once '../Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
+// require_once '../lib/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 
 /**
  * Gets summary device data based on key WURFL device capabilities
