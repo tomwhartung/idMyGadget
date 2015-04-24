@@ -1,7 +1,4 @@
 <?php
-// require_once 'deviceData.php';
-// require_once '../lib/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
-
 /**
  * Base class for classes that detect device characteristics
  */

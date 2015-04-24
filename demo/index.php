@@ -8,7 +8,6 @@
  * summary device data based on key WURFL device capabilities.
  */
 include_once '../lib/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
-// require_once '../php/deviceData.php';
 require_once '../demo/DemoIdMyGadget.php';
 require_once '../php/IdMyGadget.php';
 

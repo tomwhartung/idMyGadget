@@ -1,5 +1,4 @@
 <?php
-// require_once 'deviceData.php';
 require_once 'IdMyGadget.php';
 // require_once '../lib/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 
