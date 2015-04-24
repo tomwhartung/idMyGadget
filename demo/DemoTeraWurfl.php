@@ -1,11 +1,10 @@
 <?php
-// require_once '../php/deviceData.php';
 require_once '../php/IdMyGadgetTeraWurfl.php';
 
 /**
  * Class defining methods to demonstrate features of Wurfl and the IdMyGadget class
  */
-class DemoIdMyGadget
+class DemoTeraWurfl
 {
 	/**
 	 * This class has-a IdMyGadget object
