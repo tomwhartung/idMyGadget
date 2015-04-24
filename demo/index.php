@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang='en'>
 <?php
-define( "STYLE_SHEET_DESKTOP",       "../css/device/desktop.css" );
-define( "STYLE_SHEET_TABLET",        "../css/device/tablet.css" );
-define( "STYLE_SHEET_ANDROID_PHONE", "../css/device/androidPhone.css" );
-define( "STYLE_SHEET_APPLE_PHONE",   "../css/device/iPhone.css" );
-
 $pageTitle = 'IdMyGadget Demos';
 ?>
 
