@@ -1,6 +1,6 @@
 <?php
-require_once 'deviceData.php';
-require_once 'IdMyGadget.php';
+require_once '../php/deviceData.php';
+require_once '../php/IdMyGadgetTeraWurfl.php';
 
 /**
  * Class defining methods to demonstrate features of Wurfl and the IdMyGadget class
@@ -20,7 +20,7 @@ class DemoIdMyGadget
 	{
 		if ( $idMyGadgetObject == null )
 		{
-			$this->idMyGadgetObject = new IdMyGadget();    // Instantiate the TeraWURFL object
+			$this->idMyGadgetObject = new IdMyGadgetTeraWurfl();    // Instantiate the TeraWURFL object
 		}
 		else
 		{

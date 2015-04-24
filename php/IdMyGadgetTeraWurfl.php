@@ -1,23 +1,13 @@
 <?php
 require_once 'deviceData.php';
+require_once 'IdMyGadget.php';
 // require_once '../lib/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 
 /**
  * Gets summary device data based on key WURFL device capabilities
  */
-class IdMyGadget
+class IdMyGadgetTeraWurfl extends IdMyGadget // implements IdMyGadgetInterface
 {
-	/**
-	 * Displays debugging output
-	 * @var boolean
-	 */
-	public $debugging = FALSE;
-	/**
-	 * Allows overriding of all gadget* values in the URL
-	 * Allows testing in browser instead of device
-	 * @var boolean
-	 */
-	public $allowOverridesInUrl = TRUE;
 	/**
 	 * The TeraWURFL object
 	 * @var TeraWurfl
@@ -25,62 +15,11 @@ class IdMyGadget
 	public $teraWurflObject = null;
 
 	/**
-	 * One of the GADGET_TYPE_* constants: desktop, phone, etc.
-	 * @var string
-	 */
-	protected $gadgetType = '';
-	/**
-	 * One of the GADGET_MODEL_* constants: iPad, androidTablet, iPhone, etc.
-	 * @var string
-	 */
-	protected $gadgetModel = '';
-	/**
-	 * One of the GADGET_BRAND_* constants: apple, etc.
-	 * @var string
-	 */
-	protected $gadgetBrand = '';
-
-	/**
-	 * Whether the key capabilities have been set
-	 * @var boolean
-	 */
-	protected $keyCapabilitiesAreSet = FALSE;
-	/**
-	 * These are the key capabilities we use to set the gadget types
-	 * @var array
-	 */
-	protected $keyCapabilities = array (
-		"pointing_method" => '',
-		"is_tablet" => '',
-		"model_name" => '',
-		"brand_name" => '',
-	//	"device_os" => '',             // currently unused but keep for easy future reference
-	//	"is_wireless_device" => '',    // currently unused but keep for easy future reference
-	//	"dual_orientation" => '',      // currently unused but keep for easy future reference
-	);
-
-	/**
-	 * Whether the device data have been set
-	 * @var boolean
-	 */
-	protected $deviceDataAreSet = FALSE;
-	/**
-	 * The gadget types array is set based on the key capabilities
-	 * @var array
-	 */
-	protected $deviceData = array (
-			"gadgetType" => '',
-			"gadgetModel" => '',
-			"gadgetBrand" => '',
-	);
-
-	/**
 	 * Constructor: initialize essential data members
 	 */
 	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE )
 	{
-		$this->debugging = $debugging;
-		$this->allowOverridesInUrl = $allowOverridesInUrl;
+		parent::__construct( $debugging, $allowOverridesInUrl );
 		$this->teraWurflObject = new TeraWurfl();    // Instantiate the TeraWURFL object
 	}
 
@@ -139,49 +78,14 @@ class IdMyGadget
 	}
 
 	/**
-	 * Display the device data
-	 * @return string of <li> tags listing the device data
-	 */
-	public function displayDeviceData()
-	{
-		$output = "";
-
-		foreach( $this->deviceData as $key => $value )
-		{
-			$output .= "<li>" . $key . ":&nbsp;'" . $value . "'</li>";
-		}
-
-		return $output;
-	}
-	/**
-	 * Display the key capabilities
-	 * @return string of <li> tags listing the key capabilities
-	 */
-	public function displayKeyCapabilities()
-	{
-		$output = "";
-
-		foreach( $this->keyCapabilities as $key => $value )
-		{
-			$output .= "<li>" . $key . ":&nbsp;'" . $value . "'</li>";
-		}
-
-		return $output;
-	}
-
-	/**
 	 * Set the gadget type to one of the GADGET_TYPE_* constants: desktop, phone, etc.
 	 * @return gadgetType
 	 */
 	protected function setGadgetType( $pointing_method, $is_tablet )
 	{
-		$gadgetType = filter_input( INPUT_GET, 'gadgetType', FILTER_SANITIZE_STRING );
+		parent::setGadgetType( $pointing_method, $is_tablet );
 
-		if ( $this->allowOverridesInUrl && isset($gadgetType) )
-		{
-				$this->gadgetType  = $gadgetType;
-		}
-		else
+		if ( $this->gadgetType === null )
 		{
 			$this->gadgetType  = GADGET_TYPE_UNRECOGNIZED;
 			if ( isset($pointing_method) )
@@ -213,13 +117,9 @@ class IdMyGadget
 	 */
 	protected function setGadgetModel( $model_name )
 	{
-		$gadgetModel = filter_input( INPUT_GET, 'gadgetModel', FILTER_SANITIZE_STRING );
+		parent::setGadgetModel( $model_name );
 
-		if ( $this->allowOverridesInUrl && isset($gadgetModel) )
-		{
-			$this->gadgetModel = $gadgetModel;
-		}
-		else
+		if ( $this->gadgetModel === null )
 		{
 			$this->gadgetModel = GADGET_MODEL_UNRECOGNIZED;
 			if ( isset($model_name) )
@@ -274,13 +174,9 @@ class IdMyGadget
 	 */
 	protected function setGadgetBrand( $brand_name )
 	{
-		$gadgetBrand = filter_input( INPUT_GET, 'gadgetBrand', FILTER_SANITIZE_STRING );
+		parent::setGadgetBrand( $brand_name );
 
-		if ( $this->allowOverridesInUrl && isset($gadgetBrand) )
-		{
-			$this->gadgetBrand = $gadgetBrand;
-		}
-		else
+		if ( $this->gadgetBrand === null )
 		{
 			$this->gadgetBrand = GADGET_BRAND_UNRECOGNIZED;
 			if ( isset($brand_name) )

@@ -7,15 +7,15 @@
  * These "various forms" include raw WURFL information, key capabilities, and
  * summary device data based on key WURFL device capabilities.
  */
-include_once 'lib/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
-require_once 'php/deviceData.php';
-require_once 'php/DemoIdMyGadget.php';
-require_once 'php/IdMyGadget.php';
+include_once '../lib/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
+require_once '../php/deviceData.php';
+require_once '../demo/DemoIdMyGadget.php';
+require_once '../php/IdMyGadget.php';
 
-define( "STYLE_SHEET_DESKTOP",       "css/device/desktop.css" );
-define( "STYLE_SHEET_TABLET",        "css/device/tablet.css" );
-define( "STYLE_SHEET_ANDROID_PHONE", "css/device/androidPhone.css" );
-define( "STYLE_SHEET_APPLE_PHONE",   "css/device/iPhone.css" );
+define( "STYLE_SHEET_DESKTOP",       "../css/device/desktop.css" );
+define( "STYLE_SHEET_TABLET",        "../css/device/tablet.css" );
+define( "STYLE_SHEET_ANDROID_PHONE", "../css/device/androidPhone.css" );
+define( "STYLE_SHEET_APPLE_PHONE",   "../css/device/iPhone.css" );
 //
 // debugging: displays verbose information; we don't need to use this very often
 // allowOverridesInUrl: Allow testing with overrides as GET variables, TRUE is OK 
@@ -26,7 +26,7 @@ define( "STYLE_SHEET_APPLE_PHONE",   "css/device/iPhone.css" );
 // $allowOverridesInUrl = FALSE;
 $debugging = FALSE;
 $allowOverridesInUrl = TRUE;
-$idMyGadget = new IdMyGadget( $debugging, $allowOverridesInUrl );
+$idMyGadget = new IdMyGadgetTeraWurfl( $debugging, $allowOverridesInUrl );
 
 $deviceData = $idMyGadget->getDeviceData();
 $gadgetType = $deviceData["gadgetType"];
@@ -73,7 +73,7 @@ else if ( $gadgetType == GADGET_TYPE_PHONE )
 
 <head>
   <title><?php print $pageTitle; ?></title>
-  <link rel="stylesheet" type="text/css" href="css/allDevices.css" />
+  <link rel="stylesheet" type="text/css" href="../css/allDevices.css" />
 <?php
 //
 // Print a link tag to include the desired style sheet.
@@ -102,12 +102,13 @@ elseif ( $styleSheetFile == STYLE_SHEET_ANDROID_PHONE )
 else   // Probably a tablet
 {
 	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" />';
-	print '<link rel="stylesheet" type="text/css" href="css/reverseColors.css" />';
+	print '<link rel="stylesheet" type="text/css" href="../css/reverseColors.css" />';
 }
-// print '<link rel="stylesheet" type="text/css" href="css/showBorders.css" />';
+// Useful for debugging sometimes:
+// print '<link rel="stylesheet" type="text/css" href="../css/showBorders.css" />';
 ?>
   <!--[if IE]>
-    <link rel="stylesheet" type="text/css" href="explorer.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../css/device/explorer.css" media="all" />
   <![endif]-->
 </head>
 

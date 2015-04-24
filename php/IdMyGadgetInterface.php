@@ -5,7 +5,16 @@
 
 interface IdMyGadgetInterface
 {
-	public function displayDeviceData();
+	/**
+	 * Get data about the device
+	 * @return associative array of device data
+	 */
+	public function getDeviceData();
+	/**
+	 * Get the key capabilities of the device
+	 * @return associative array of the capabilities
+	 */
+	public function getKeyCapabilities();
 
 	const GADGET_TYPE_UNRECOGNIZED = "unrecognized";
 	const GADGET_TYPE_DESKTOP_BROWSER = "desktop";
