@@ -8,7 +8,7 @@
  * summary device data based on key WURFL device capabilities.
  */
 include_once '../lib/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
-require_once '../php/deviceData.php';
+// require_once '../php/deviceData.php';
 require_once '../demo/DemoIdMyGadget.php';
 require_once '../php/IdMyGadget.php';
 
@@ -33,22 +33,22 @@ $gadgetType = $deviceData["gadgetType"];
 $gadgetModel = $deviceData["gadgetModel"];
 $gadgetBrand = $deviceData["gadgetBrand"];
 
-if ( $gadgetType == GADGET_TYPE_DESKTOP_BROWSER )
+if ( $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER )
 {
 	$gadgetString = "Desktop";
 	$styleSheetFile = STYLE_SHEET_DESKTOP;
 	$pageTitle = "IdMyGadget: Simple Wrapper for Tera-Wurfl";
 }
-else if ( $gadgetType == GADGET_TYPE_TABLET )
+else if ( $gadgetType == IdMyGadget::GADGET_TYPE_TABLET )
 {
 	$gadgetString = "Tablet";
 	$styleSheetFile = STYLE_SHEET_TABLET;
 	$pageTitle = "IdMyGadget - Wurfl Wrapper";
 }
-else if ( $gadgetType == GADGET_TYPE_PHONE )
+else if ( $gadgetType == IdMyGadget::GADGET_TYPE_PHONE )
 {
 	$pageTitle = "IdMyGadget";
-	if ( $gadgetModel == GADGET_MODEL_APPLE_PHONE )
+	if ( $gadgetModel == IdMyGadget::GADGET_MODEL_APPLE_PHONE )
 	{
 		$gadgetString = "iPhone";
 		$styleSheetFile = STYLE_SHEET_APPLE_PHONE;
@@ -190,7 +190,7 @@ if ( strlen($output) > 0 )
  </dl>
 </div> <!-- idMyGadget-->
 
-<?php if ( $gadgetType == GADGET_TYPE_DESKTOP_BROWSER ) : ?>
+<?php if ( $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER ) : ?>
  <div id="wurfl">
   <h3>Wurfl Installation and Administration</h3>
   <dl>

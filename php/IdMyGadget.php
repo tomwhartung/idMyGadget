@@ -1,5 +1,5 @@
 <?php
-require_once 'deviceData.php';
+// require_once 'deviceData.php';
 // require_once '../lib/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 
 /**
@@ -7,6 +7,24 @@ require_once 'deviceData.php';
  */
 abstract class IdMyGadget
 {
+	const GADGET_TYPE_UNRECOGNIZED = "unrecognized";
+	const GADGET_TYPE_DESKTOP_BROWSER = "desktop";
+	const GADGET_TYPE_TABLET = "tablet";
+	const GADGET_TYPE_PHONE = "phone";
+
+	const GADGET_MODEL_UNRECOGNIZED = "unrecognized";
+	const GADGET_MODEL_NAME_NOT_SET = "model_name_not_set";
+	const GADGET_MODEL_ANDROID_TABLET = "androidTablet";
+	const GADGET_MODEL_APPLE_TABLET = "iPad";
+
+	const GADGET_MODEL_ANDROID_PHONE = "androidPhone";
+	const GADGET_MODEL_APPLE_PHONE = "iPhone";
+
+	const GADGET_BRAND_UNRECOGNIZED = "unrecognized";
+	const GADGET_BRAND_NAME_NOT_SET = "brand_name_not_set";
+	const GADGET_BRAND_ANDROID = "Android";
+	const GADGET_BRAND_APPLE = "Apple";
+
 	/**
 	 * Displays debugging output
 	 * @var boolean

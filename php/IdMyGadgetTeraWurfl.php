@@ -1,12 +1,12 @@
 <?php
-require_once 'deviceData.php';
+// require_once 'deviceData.php';
 require_once 'IdMyGadget.php';
 // require_once '../lib/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 
 /**
  * Gets summary device data based on key WURFL device capabilities
  */
-class IdMyGadgetTeraWurfl extends IdMyGadget // implements IdMyGadgetInterface
+class IdMyGadgetTeraWurfl extends IdMyGadget
 {
 	/**
 	 * The TeraWURFL object
@@ -87,22 +87,22 @@ class IdMyGadgetTeraWurfl extends IdMyGadget // implements IdMyGadgetInterface
 
 		if ( $this->gadgetType === null )
 		{
-			$this->gadgetType  = GADGET_TYPE_UNRECOGNIZED;
+			$this->gadgetType  = parent::GADGET_TYPE_UNRECOGNIZED;
 			if ( isset($pointing_method) )
 			{
 				if ( $pointing_method == "mouse" )
 				{
-					$this->gadgetType = GADGET_TYPE_DESKTOP_BROWSER;
+					$this->gadgetType = parent::GADGET_TYPE_DESKTOP_BROWSER;
 				}
 				else if ( $pointing_method == "touchscreen" )
 				{
 					if ( isset($is_tablet) && $is_tablet == "true" )
 					{
-						$this->gadgetType = GADGET_TYPE_TABLET;
+						$this->gadgetType = parent::GADGET_TYPE_TABLET;
 					}
 					else
 					{
-						$this->gadgetType = GADGET_TYPE_PHONE;
+						$this->gadgetType = parent::GADGET_TYPE_PHONE;
 					}
 				}
 			}
@@ -121,37 +121,37 @@ class IdMyGadgetTeraWurfl extends IdMyGadget // implements IdMyGadgetInterface
 
 		if ( $this->gadgetModel === null )
 		{
-			$this->gadgetModel = GADGET_MODEL_UNRECOGNIZED;
+			$this->gadgetModel = parent::GADGET_MODEL_UNRECOGNIZED;
 			if ( isset($model_name) )
 			{
-				if ( $this->gadgetType == GADGET_TYPE_DESKTOP_BROWSER )
+				if ( $this->gadgetType == parent::GADGET_TYPE_DESKTOP_BROWSER )
 				{
 					$this->gadgetModel = $model_name;
 				}
-				else if ( $this->gadgetType == GADGET_TYPE_TABLET )
+				else if ( $this->gadgetType == parent::GADGET_TYPE_TABLET )
 				{
-					if ( stristr($model_name,GADGET_BRAND_ANDROID) === FALSE )
+					if ( stristr($model_name,parent::GADGET_BRAND_ANDROID) === FALSE )
 					{
 						$this->gadgetModel = $model_name;
 					}
 					else
 					{
-						$this->gadgetModel = GADGET_MODEL_ANDROID_TABLET;
+						$this->gadgetModel = parent::GADGET_MODEL_ANDROID_TABLET;
 					}
 				}
-				else if ( $this->gadgetType == GADGET_TYPE_PHONE )
+				else if ( $this->gadgetType == parent::GADGET_TYPE_PHONE )
 				{
-					if ( $model_name == GADGET_MODEL_APPLE_PHONE )
+					if ( $model_name == parent::GADGET_MODEL_APPLE_PHONE )
 					{
-						$this->gadgetModel = GADGET_MODEL_APPLE_PHONE;
+						$this->gadgetModel = parent::GADGET_MODEL_APPLE_PHONE;
 					}
-					else if ( stristr($model_name,GADGET_BRAND_ANDROID) === FALSE )
+					else if ( stristr($model_name,parent::GADGET_BRAND_ANDROID) === FALSE )
 					{
 						$this->gadgetModel = $model_name;
 					}
 					else
 					{
-						$this->gadgetModel = GADGET_MODEL_ANDROID_PHONE;
+						$this->gadgetModel = parent::GADGET_MODEL_ANDROID_PHONE;
 					}
 				}
 				else
@@ -161,7 +161,7 @@ class IdMyGadgetTeraWurfl extends IdMyGadget // implements IdMyGadgetInterface
 			}
 			else
 			{
-				$this->gadgetModel = GADGET_MODEL_NAME_NOT_SET;
+				$this->gadgetModel = parent::GADGET_MODEL_NAME_NOT_SET;
 			}
 		}
 	
@@ -178,29 +178,29 @@ class IdMyGadgetTeraWurfl extends IdMyGadget // implements IdMyGadgetInterface
 
 		if ( $this->gadgetBrand === null )
 		{
-			$this->gadgetBrand = GADGET_BRAND_UNRECOGNIZED;
+			$this->gadgetBrand = parent::GADGET_BRAND_UNRECOGNIZED;
 			if ( isset($brand_name) )
 			{
-				if ( $this->gadgetType == GADGET_TYPE_DESKTOP_BROWSER )
+				if ( $this->gadgetType == parent::GADGET_TYPE_DESKTOP_BROWSER )
 				{
 					$this->gadgetBrand = $brand_name;
 				}
-				else if ( $this->gadgetType == GADGET_TYPE_TABLET )
+				else if ( $this->gadgetType == parent::GADGET_TYPE_TABLET )
 				{
-					if ( $brand_name == GADGET_BRAND_APPLE )
+					if ( $brand_name == parent::GADGET_BRAND_APPLE )
 					{
-						$this->gadgetBrand = GADGET_BRAND_APPLE;
+						$this->gadgetBrand = parent::GADGET_BRAND_APPLE;
 					}
 					else
 					{
 						$this->gadgetBrand = $brand_name;
 					}
 				}
-				else if ( $this->gadgetType == GADGET_TYPE_PHONE )
+				else if ( $this->gadgetType == parent::GADGET_TYPE_PHONE )
 				{
-					if ( $brand_name == GADGET_BRAND_APPLE )
+					if ( $brand_name == parent::GADGET_BRAND_APPLE )
 					{
-						$this->gadgetBrand = GADGET_BRAND_APPLE;
+						$this->gadgetBrand = parent::GADGET_BRAND_APPLE;
 					}
 					else
 					{
@@ -215,7 +215,7 @@ class IdMyGadgetTeraWurfl extends IdMyGadget // implements IdMyGadgetInterface
 			}
 			else
 			{
-				$this->gadgetBrand = GADGET_BRAND_NAME_NOT_SET;
+				$this->gadgetBrand = parent::GADGET_BRAND_NAME_NOT_SET;
 			}
 		}
 	
