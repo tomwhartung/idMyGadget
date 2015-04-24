@@ -120,7 +120,7 @@ else   // Probably a tablet
 print "<h1>$pageTitle</h1>";
 print "<div id='content'>";
 print "<h2>$gadgetString</h2>";
-$demoIdMyGadget = new DemoTeraWurfl( $idMyGadget );
+$demoTeraWurfl = new DemoTeraWurfl( $idMyGadget );
 $displayCapabilityArrays = filter_input(
 		INPUT_GET, 'displayCapabilityArrays', FILTER_VALIDATE_BOOLEAN );
 $displayAllCapabilities  = filter_input(
@@ -136,17 +136,17 @@ $output = "";
 if ( isset($displayCapabilityArrays) )
 {
 	$output .= "<h3>Capability Arrays for This Device</h3>";
-	$output .= $demoIdMyGadget->displayCapabilityArrays();
+	$output .= $demoTeraWurfl->displayCapabilityArrays();
 }
 if ( isset($displayAllCapabilities) )
 {
 	$output .= "<h3>Flat List of Capabilities</h3>";
-	$output .= "<ul class='no-bullets'>" . $demoIdMyGadget->displayAllCapabilities() . "</ul>";
+	$output .= "<ul class='no-bullets'>" . $demoTeraWurfl->displayAllCapabilities() . "</ul>";
 }
 if ( isset($displaySortedCapabilities) )
 {
 	$output .= "<h3>Sorted List of Capabilities</h3>";
-	$output .= "<ul class='no-bullets'>" . $demoIdMyGadget->displaySortedCapabilities() . "</ul>";
+	$output .= "<ul class='no-bullets'>" . $demoTeraWurfl->displaySortedCapabilities() . "</ul>";
 }
 if ( isset($displayKeyCapabilities) )
 {
