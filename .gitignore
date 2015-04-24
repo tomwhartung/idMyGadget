@@ -3,6 +3,7 @@
 #
 /unpack/
 /lib/Tera-Wurfl/wurfl-dbapi*
+/lib/Mobile-Detect/
 /tmp/
 *.swp
 /nbproject/
