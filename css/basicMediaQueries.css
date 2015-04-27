@@ -48,7 +48,10 @@ p, ul, ol, table, blockquote {
 	h1 {
 		font-size: 2.0em ;
 	}
-	h2, th {
+	h2 {
+		font-size: 1.75em;
+	}
+	h3, th {
 		font-size: 1.5em;
 	}
 	p, dl, a, ul, td {
@@ -62,7 +65,10 @@ p, ul, ol, table, blockquote {
 	h1 {
 		font-size: 3.0em ;
 	}
-	h2, th {
+	h2 {
+		font-size: 2.75em;
+	}
+	h3, th {
 		font-size: 2.5em;
 	}
 	p, dl, ul, td {
@@ -92,10 +98,10 @@ p, ul, ol, table, blockquote {
 	h1 {
 		font-size:   2.0em;
 	}
-	h2, th {
+	h2 {
 		font-size:   1.75em;
 	}
-	h3 {
+	h3, th {
 		font-size:   1.50em;
 	}
 	p, dl, a, ul, td {
