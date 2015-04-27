@@ -33,18 +33,6 @@ p, ul, ol, table, blockquote {
 	th, td {
 		padding: 0.6em;
 	}
-	h1 {
-		font-size: 2.0em ;
-		line-height: 3.0em;
-	}
-	h2, th {
-		font-size: 1.5em;
-		line-height: 2.25em;
-	}
-	p, dl, a, ul, td {
-		font-size: 1.0em;
-		line-height: 2.0em;
-	}
 	a, a:hover {
 		color: lightskyblue;
 		padding: 0.5em;
@@ -53,6 +41,39 @@ p, ul, ol, table, blockquote {
 		border: lightskyblue inset 4px;
 	}
 }
+@media only screen and (max-width: 1000px) and (orientation:landscape) {
+	h1 {
+		font-size: 2.0em ;
+		line-height: 130%;
+	}
+	h2, th {
+		font-size: 1.5em;
+		line-height: 130%;
+	}
+	p, dl, a, ul, td {
+		font-size: 1.0em;
+		line-height: 130%;
+	}
+}
+@media only screen and (max-width: 1000px) and (orientation:portrait) {
+	h1 {
+		font-size: 3.0em ;
+		line-height: 130%;
+	}
+	h2, th {
+		font-size: 2.5em;
+		line-height: 130%;
+	}
+	p, dl, ul, td {
+		font-size: 2.0em;
+		line-height: 130%;
+	}
+	a {
+		font-size: 1.0em;
+		line-height: 130%;
+	}
+}
+
 /*
  * styles for a laptop-sized screen or window
  */
@@ -81,9 +102,5 @@ p, ul, ol, table, blockquote {
 	p, dl, a, ul, td {
 		font-size: 1.0em;
 		line-height: 1.25em;
-	}
-	a, a:hover {
-		color: lightskyblue;
-		padding: 0.2em;
 	}
 }
