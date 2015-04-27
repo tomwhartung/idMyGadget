@@ -1,43 +1,65 @@
 /*
- * having fun with styles in my own personal space
+ * Use media queries to adjust font sizes when we are not using device detection.
+ * This file is meant to be included after allDevices.css .
  */
-h1, h2, th {
-	text-decoration: underline;
-}
 h1, h2, tr, th, td {
-	text-align: center;
 	margin: 0.2em;
 	padding: 0.2em;
 }
-p, blockquote {
-	text-align: left;
-	margin-left: 50px; width: 75%;
+h3 {
+	margin-bottom: 0em;
+	margin-top: 0em;
 }
-a {
-	padding: 2px;
-	text-decoration: none;
+
+p, a, ul, li, td, blockquote {
+	margin-bottom: 0.0em;
 }
-a:hover {
-	font-family: Times, serif;
-	padding: 2px;
+p, ul, ol, table, blockquote {
+	width: 75%;
 }
-table.site_group {
-	margin-bottom: 12px;
-	padding: 6px;
+/*
+ * styles for a phone-sized screen or window
+ */
+@media only screen and (max-width: 1000px) {
+	body {
+		background-color: black;
+		color: white;
+	}
+	div#container {
+		margin-top:    2.0em;
+		margin-left:   2.0em;
+		margin-right:  2.0em;
+	}
+	th, td {
+		padding: 0.6em;
+	}
+	h1 {
+		font-size: 2.0em ;
+		line-height: 3.0em;
+	}
+	h2, th {
+		font-size: 1.5em;
+		line-height: 2.25em;
+	}
+	p, dl, a, ul, td {
+		font-size: 1.0em;
+		line-height: 2.0em;
+	}
+	a, a:hover {
+		color: lightskyblue;
+		padding: 0.5em;
+	}
+	a:hover {
+		border: lightskyblue inset 4px;
+	}
 }
-th, td {
-	padding: 6px;
-	text-align: center;
-	white-space: nowrap;
-}
-.obsolete {
-	text-decoration: line-through;
-}
-/* styles for a laptop-sized screen or window: */
+/*
+ * styles for a laptop-sized screen or window
+ */
 @media only screen and (min-width: 1000px) {
 	body {
-		color: #000000;
 		background-color: white;
+		color: black;
 	}
 	div#container {
 		margin-top:    5.0em;
@@ -45,47 +67,23 @@ th, td {
 		margin-right:  5.0em;
 	}
 	h1 {
-		font: bold 2.0em Verdana, Arial, Helvetica, sans-serif;
+		font-size:   2.0em;
+		line-height: 2.25em;
 	}
 	h2, th {
-		font: bold 1.2em Verdana, Arial, Helvetica, sans-serif;
+		font-size:   1.75em;
+		line-height: 2.0em;
+	}
+	h3 {
+		font-size:   1.50em;
+		line-height: 1.75em;
 	}
 	p, dl, a, ul, td {
-		font: 1.0em Verdana, Arial, Helvetica, sans-serif;
+		font-size: 1.0em;
 		line-height: 1.25em;
 	}
 	a, a:hover {
-		color: darkblue;
-	}
-	a:hover {
-		border: darkblue inset 4px;
-	}
-}
-/* styles for a phone-sized screen or window: */
-@media only screen and (max-width: 1000px) {
-	body {
-		color: #ffffff;
-		background-color: black;
-	}
-	div#container {
-		margin-top:    2.0em;
-		margin-left:   2.0em;
-		margin-right:  2.0em;
-	}
-	h1 {
-		font: bold 2.0em Verdana, Arial, Helvetica, sans-serif;
-	}
-	h2, th {
-		font: bold 1.5em Verdana, Arial, Helvetica, sans-serif;
-	}
-	p, dl, a, ul, td {
-		font: 1.0em Verdana, Arial, Helvetica, sans-serif;
-		line-height: 2.0em;
-	}
-	a, a:hover {
 		color: lightskyblue;
-	}
-	a:hover {
-		border: lightskyblue inset 4px;
+		padding: 0.2em;
 	}
 }
