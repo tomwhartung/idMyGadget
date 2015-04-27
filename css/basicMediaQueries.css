@@ -42,35 +42,34 @@ p, ul, ol, table, blockquote {
 	}
 }
 @media only screen and (max-width: 1000px) and (orientation:landscape) {
+	h1, h2, th, h3,	p, dl, a, ul, td {
+		line-height: 140%;
+	}
 	h1 {
 		font-size: 2.0em ;
-		line-height: 150%;
 	}
 	h2, th {
 		font-size: 1.5em;
-		line-height: 150%;
 	}
 	p, dl, a, ul, td {
 		font-size: 1.0em;
-		line-height: 150%;
 	}
 }
 @media only screen and (max-width: 1000px) and (orientation:portrait) {
+	h1, h2, th, h3,	p, dl, a, ul, td {
+		line-height: 150%;
+	}
 	h1 {
 		font-size: 3.0em ;
-		line-height: 150%;
 	}
 	h2, th {
 		font-size: 2.5em;
-		line-height: 150%;
 	}
 	p, dl, ul, td {
 		font-size: 2.0em;
-		line-height: 150%;
 	}
 	a {
 		font-size: 1.0em;
-		line-height: 150%;
 	}
 }
 
@@ -87,20 +86,19 @@ p, ul, ol, table, blockquote {
 		margin-left:   5.0em;
 		margin-right:  5.0em;
 	}
+	h1, h2, th, h3,	p, dl, a, ul, td {
+		line-height: 130%;
+	}
 	h1 {
 		font-size:   2.0em;
-		line-height: 130%;
 	}
 	h2, th {
 		font-size:   1.75em;
-		line-height: 130%;
 	}
 	h3 {
 		font-size:   1.50em;
-		line-height: 130%;
 	}
 	p, dl, a, ul, td {
 		font-size: 1.0em;
-		line-height: 130%;
 	}
 }
