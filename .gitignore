@@ -2,6 +2,8 @@
 # Documentation is here: http://git-scm.com/docs/gitignore
 #
 /unpack/
+/device_detectors/Tera-Wurfl/wurfl-dbapi*
+/device_detectors/Mobile-Detect/
 /lib/Tera-Wurfl/wurfl-dbapi*
 /lib/Mobile-Detect/
 /tmp/
