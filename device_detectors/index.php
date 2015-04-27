@@ -6,6 +6,7 @@ $pageTitle = 'IdMyGadget Demos';
 
 <head>
   <title><?php print $pageTitle; ?></title>
+  <link rel="stylesheet" type="text/css" href="../css/allDevices.css" />
   <link rel="stylesheet" type="text/css" href="../css/basicMediaQueries.css" />
   <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="../css/device/explorer.css" media="all" />
