@@ -45,24 +45,6 @@ p, ul, ol, li, table, blockquote {
 	h1, h2, h3, h4, h5, h6, th, p, dl, a, ul, td {
 		line-height: 140%;
 	}
-	h1 {
-		font-size: 2.0em ;
-	}
-	h2 {
-		font-size: 1.8em;
-	}
-	h3 {
-		font-size: 1.6em;
-	}
-	h4 {
-		font-size: 1.4em;
-	}
-	h5 {
-		font-size: 1.2em;
-	}
-	h6, th {
-		font-size: 1.0em;
-	}
 	p, dl, a, ul, td {
 		font-size: 1.0em;
 	}
@@ -71,26 +53,8 @@ p, ul, ol, li, table, blockquote {
 	h1, h2, h3, h4, h5, h6, th, p, dl, a, ul, td {
 		line-height: 150%;
 	}
-	h1 {
-		font-size: 3.0em ;
-	}
-	h2 {
-		font-size: 2.8em;
-	}
-	h3 {
-		font-size: 2.6em;
-	}
-	h4 {
-		font-size: 2.4em;
-	}
-	h5 {
-		font-size: 2.2em;
-	}
-	h6, th {
-		font-size: 2.0em;
-	}
 	p, dl, ul, td {
-		font-size: 2.0em;
+		font-size: 1.0em;
 	}
 	a {
 		font-size: 1.0em;
@@ -112,24 +76,6 @@ p, ul, ol, li, table, blockquote {
 	}
 	h1, h2, h3, h4, h5, h6, th, p, dl, a, ul, td {
 		line-height: 130%;
-	}
-	h1 {
-		font-size: 2.0em;
-	}
-	h2 {
-		font-size: 1.8em;
-	}
-	h3 {
-		font-size: 1.6em;
-	}
-	h4 {
-		font-size: 1.4em;
-	}
-	h5 {
-		font-size: 1.2em;
-	}
-	h6, th {
-		font-size: 1.0em;
 	}
 	p, dl, a, ul, td {
 		font-size: 1.0em;
