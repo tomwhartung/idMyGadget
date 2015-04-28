@@ -4,8 +4,8 @@
 /unpack/
 /device_detectors/Tera-Wurfl/wurfl-dbapi*
 /device_detectors/Mobile-Detect/
-/lib/Tera-Wurfl/wurfl-dbapi*
-/lib/Mobile-Detect/
+/device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi*
+/device_detectors/mobile_detect/Mobile-Detect/
 /tmp/
 *.swp
 /nbproject/
