@@ -14,7 +14,7 @@ p, a, ul, li, td, blockquote {
 	margin: 0.1em;
 	padding: 0.1em;
 }
-p, ul, ol, table, blockquote {
+p, ul, ol, li, table, blockquote {
 	width: 90%;
 }
 /*
