@@ -11,10 +11,11 @@ h4, h5, h6 {
 	padding: 0.1em 0.1em 0em 0.1em;
 }
 p, a, ul, li, td, blockquote {
-	margin-bottom: 0em;
+	margin: 0.1em;
+	padding: 0.1em;
 }
 p, ul, ol, table, blockquote {
-	width: 75%;
+	width: 90%;
 }
 /*
  * styles for a phone-sized screen or window
@@ -35,7 +36,6 @@ p, ul, ol, table, blockquote {
 	}
 	a, a:hover {
 		color: lightskyblue;
-		padding: 0.5em;
 	}
 	a:hover {
 		border: lightskyblue inset 4px;
