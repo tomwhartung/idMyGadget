@@ -6,6 +6,10 @@ h1, h2, h3 {
 	margin: 0.2em 0.1em 0em 0.1em;
 	padding: 0.2em 0.1em 0em 0.1em;
 }
+h4, h5, h6 {
+	margin: 0.1em 0.1em 0em 0.1em;
+	padding: 0.1em 0.1em 0em 0.1em;
+}
 p, a, ul, li, td, blockquote {
 	margin-bottom: 0em;
 }
@@ -38,34 +42,52 @@ p, ul, ol, table, blockquote {
 	}
 }
 @media only screen and (max-width: 1000px) and (orientation:landscape) {
-	h1, h2, th, h3,	p, dl, a, ul, td {
+	h1, h2, h3, h4, h5, h6, th, p, dl, a, ul, td {
 		line-height: 140%;
 	}
 	h1 {
 		font-size: 2.0em ;
 	}
 	h2 {
-		font-size: 1.75em;
+		font-size: 1.8em;
 	}
-	h3, th {
-		font-size: 1.5em;
+	h3 {
+		font-size: 1.6em;
+	}
+	h4 {
+		font-size: 1.4em;
+	}
+	h5 {
+		font-size: 1.2em;
+	}
+	h6, th {
+		font-size: 1.0em;
 	}
 	p, dl, a, ul, td {
 		font-size: 1.0em;
 	}
 }
 @media only screen and (max-width: 1000px) and (orientation:portrait) {
-	h1, h2, th, h3,	p, dl, a, ul, td {
+	h1, h2, h3, h4, h5, h6, th, p, dl, a, ul, td {
 		line-height: 150%;
 	}
 	h1 {
 		font-size: 3.0em ;
 	}
 	h2 {
-		font-size: 2.75em;
+		font-size: 2.8em;
 	}
-	h3, th {
-		font-size: 2.5em;
+	h3 {
+		font-size: 2.6em;
+	}
+	h4 {
+		font-size: 2.4em;
+	}
+	h5 {
+		font-size: 2.2em;
+	}
+	h6, th {
+		font-size: 2.0em;
 	}
 	p, dl, ul, td {
 		font-size: 2.0em;
@@ -84,21 +106,30 @@ p, ul, ol, table, blockquote {
 		color: black;
 	}
 	div#container {
-		margin-top:    5.0em;
-		margin-left:   5.0em;
-		margin-right:  5.0em;
+		margin-top:   5.0em;
+		margin-left:  5.0em;
+		margin-right: 5.0em;
 	}
-	h1, h2, th, h3,	p, dl, a, ul, td {
+	h1, h2, h3, h4, h5, h6, th, p, dl, a, ul, td {
 		line-height: 130%;
 	}
 	h1 {
-		font-size:   2.0em;
+		font-size: 2.0em;
 	}
 	h2 {
-		font-size:   1.75em;
+		font-size: 1.8em;
 	}
-	h3, th {
-		font-size:   1.50em;
+	h3 {
+		font-size: 1.6em;
+	}
+	h4 {
+		font-size: 1.4em;
+	}
+	h5 {
+		font-size: 1.2em;
+	}
+	h6, th {
+		font-size: 1.0em;
 	}
 	p, dl, a, ul, td {
 		font-size: 1.0em;
