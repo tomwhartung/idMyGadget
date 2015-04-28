@@ -4,15 +4,15 @@
  * mobile devices to ignore font sizes etc.
  */
 body {
-	border: 1px solid black;
+	border: 3px solid red;
 	width: 100%;
 }
 div#container {
-	border: 1px solid green;
+	border: 3px solid green;
 	margin: 1.0em;
 	width: 100%;
 }
 p, ul {
-	border: 1px solid blue;
+	border: 3px solid blue;
 	width: 100%;
 }
