@@ -29,8 +29,6 @@ IdMyGadget includes this file, so no installation or setup is required.
   $usingAPhone = TRUE;
   ```
 
-1. next step
-
 ## Running the Demos
 
 Verify that you have set this up properly, access the following file in your web browser:
