@@ -36,6 +36,9 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+.centered {
+	text-align: center;
+}
 .obsolete {
 	text-decoration: line-through;
 }
