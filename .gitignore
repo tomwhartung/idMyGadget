@@ -2,7 +2,6 @@
 # Documentation is here: http://git-scm.com/docs/gitignore
 #
 /unpack/
-/device_detectors/detect_mobile_browsers/php/detectmobilebrowser.php
 /device_detectors/detect_mobile_browsers/php/detectmobilebrowser.php.txt
 /device_detectors/Tera-Wurfl/wurfl-dbapi*
 /device_detectors/Mobile-Detect/
