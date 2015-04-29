@@ -26,13 +26,16 @@ require_once( 'php/detectmobilebrowser.php' );
 <div id="idMyGadget">
  <h3>Raw Demo Results:</h3>
  <p>
-<?php
-print "usingAPhone = '$usingAPhone'";
-?>
+ <?php
+  print "usingAPhone = '$usingAPhone'";
+ ?>
  </p>
+ <hr />
+ <p class="centered"><a href="index.php">Back</a></dt>
+ <hr />
 </div> <!-- idMyGadget-->
 
- </div> <!-- content -->
+</div> <!-- content -->
 </div> <!-- container -->
 </body>
 </html>

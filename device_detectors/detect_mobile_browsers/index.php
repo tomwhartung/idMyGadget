@@ -38,7 +38,7 @@ print "<h2></h2>";
   <dd></dd>
  </dl>
  <hr />
- <p class="centered"><a href="..">Back to device_detectors</a></dt>
+ <p class="centered"><a href="..">Back</a></dt>
  <hr />
 </div> <!-- idMyGadget-->
 
