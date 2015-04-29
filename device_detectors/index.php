@@ -25,9 +25,9 @@ print "<h2></h2>";
 <div id="idMyGadget">
  <h3>IdMyGadget Demos:</h3>
  <dl>
-  <dt><a href="detectmobilebrowsers">detectmobilebrowsers</a></dt>
+  <dt><a href="detect_mobile_browsers">detect_mobile_browsers</a></dt>
   <dd>A script available from the site <a href="http://detectmobilebrowsers.com" target="_blank">detectmobilebrowsers.com</a>
-   It is simple to install and test but can tell only whether the visitor is using a browser on a phone.</dd>
+   is simple to install but can tell only whether the visitor is using a browser on a phone.</dd>
   <dt><a href="mobile_detect" target="_blank">mobile_detect</a></dt>
   <dd>The Mobile Detect device detection package is lightweight, fully open source, and returns several parameters for each device.
   <dt><a href="tera_wurfl">tera_wurfl</a></dt>
