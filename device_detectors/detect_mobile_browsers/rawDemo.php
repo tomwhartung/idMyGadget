@@ -30,6 +30,36 @@ require_once( 'php/detectmobilebrowser.php' );
   print "usingMoblePhone = '$usingMoblePhone'";
  ?>
  </p>
+
+ <?php
+  print "<h3>Using the Results</h3>";
+  if ( $usingMoblePhone )
+  {
+    print '<p>';
+    print 'This is content for phones only.  ';
+    print '</p>';
+    print '<p>';
+    print 'You might want this content to link to ';
+    print '<a href="https://en.wikipedia.org/wiki/Mobile_security">a page about mobile security</a>, ';
+    print 'for example.';
+    print '</p>';
+  }
+  else
+  {
+    print '<p>';
+    print 'This is content for browsers that are not on a phone.  ';
+    print '</p>';
+    print '<p>';
+    print 'You might want this content to link to ';
+    print '<a href="https://en.wikipedia.org/wiki/Computer_virus">a page about computer viruses</a>, ';
+    print 'for example.';   
+    print '</p>';
+  }
+  print '<p>';
+  print "And this is content delivered to all browsers, regardless of the device.";
+  print '</p>';
+ ?>
+
  <hr />
  <p class="centered"><a href="index.php">Back</a></dt>
  <hr />
