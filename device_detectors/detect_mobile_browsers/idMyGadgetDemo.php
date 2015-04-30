@@ -6,6 +6,7 @@ $pageTitle = 'idMyGadget detect_mobile_browsers demo';
 $usingMoblePhone = FALSE;
 require_once( 'php/detectmobilebrowser.php' );
 require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
+require_once( '../contingentContent.php' );
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
 $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl, $usingMoblePhone );
@@ -40,35 +41,9 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
 	print "</div> <!-- output -->";
  ?>
 
- <?php
-  print "<h3>Using the Results</h3>";
-  if ( $deviceData['gadgetType'] === IdMyGadget::GADGET_TYPE_PHONE )
-  {
-    print '<p>';
-    print 'This is content for phones only.  ';
-    print '</p>';
-    print '<p>';
-    print 'You might want this content to link to ';
-    print '<a href="https://en.wikipedia.org/wiki/Mobile_security">a page about mobile security</a>, ';
-    print 'for example.';
-    print '</p>';
-  }
-  else
-  {
-    print '<p>';
-    print 'This is content for browsers that are not on a phone.  ';
-    print '</p>';
-    print '<p>';
-    print 'You might want this content to link to ';
-    print '<a href="https://en.wikipedia.org/wiki/Computer_virus">a page about computer viruses</a>, ';
-    print 'for example.';   
-    print '</p>';
-  }
-  print '<hr />';
-  print '<p>';
-  print "This is content delivered to all browsers, regardless of the device.";
-  print '</p>';
- ?>
+<?php
+  contingentContent( $deviceData );
+?>
 
  <hr />
  <p class="centered"><a href="index.php">Back</a></dt>
