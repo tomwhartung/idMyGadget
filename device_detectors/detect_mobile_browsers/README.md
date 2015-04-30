@@ -14,7 +14,7 @@ IdMyGadget includes this file, so no installation or setup is required.
 ## Updating the Installation 
 
 1. Visit http://detectmobilebrowsers.com and click on the PHP button to download the latest version of the detectmobilebrowsers script.
-  * This file is named `php/detectmobilebrowser.php.txt`.
+  * This file is named `detectmobilebrowser.php.txt`.
 
 1. Copy this file into the `idMyGadget/device_detectors/detect_mobile_browsers/php` directory.
 
