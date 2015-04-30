@@ -33,7 +33,7 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
   print '<p class="centered">';
   print "usingMoblePhone = '$usingMoblePhone'";
   print '</p>';
-	$idMyGadget->getDeviceData();
+	$deviceData = $idMyGadget->getDeviceData();
   print "<div id='output'>";
 	print "<h3>Device Data</h3>";
 	print "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
@@ -42,7 +42,7 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
 
  <?php
   print "<h3>Using the Results</h3>";
-  if ( $usingMoblePhone )
+  if ( $deviceData['gadgetType'] === IdMyGadget::GADGET_TYPE_PHONE )
   {
     print '<p>';
     print 'This is content for phones only.  ';
@@ -64,8 +64,9 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
     print 'for example.';   
     print '</p>';
   }
+  print '<hr />';
   print '<p>';
-  print "And this is content delivered to all browsers, regardless of the device.";
+  print "This is content delivered to all browsers, regardless of the device.";
   print '</p>';
  ?>
 
