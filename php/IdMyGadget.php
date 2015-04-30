@@ -4,24 +4,24 @@
  */
 abstract class IdMyGadget
 {
-	const GADGET_TYPE_UNKNOWN = "type_unknown";
-	const GADGET_TYPE_UNRECOGNIZED = "unrecognized";
-	const GADGET_TYPE_DESKTOP_BROWSER = "desktop";
-	const GADGET_TYPE_TABLET = "tablet";
-	const GADGET_TYPE_PHONE = "phone";
+	const GADGET_TYPE_UNKNOWN = 'type_unknown';
+	const GADGET_TYPE_UNRECOGNIZED = 'unrecognized';
+	const GADGET_TYPE_DESKTOP_BROWSER = 'desktop';
+	const GADGET_TYPE_TABLET = 'tablet';
+	const GADGET_TYPE_PHONE = 'phone';
 
-	const GADGET_MODEL_UNKNOWN = "model_unknown";
-	const GADGET_MODEL_UNRECOGNIZED = "unrecognized";
-	const GADGET_MODEL_ANDROID_TABLET = "androidTablet";
-	const GADGET_MODEL_APPLE_TABLET = "iPad";
+	const GADGET_MODEL_UNKNOWN = 'model_unknown';
+	const GADGET_MODEL_UNRECOGNIZED = 'unrecognized';
+	const GADGET_MODEL_ANDROID_TABLET = 'androidTablet';
+	const GADGET_MODEL_APPLE_TABLET = 'iPad';
 
-	const GADGET_MODEL_ANDROID_PHONE = "androidPhone";
-	const GADGET_MODEL_APPLE_PHONE = "iPhone";
+	const GADGET_MODEL_ANDROID_PHONE = 'androidPhone';
+	const GADGET_MODEL_APPLE_PHONE = 'iPhone';
 
-	const GADGET_BRAND_UNKNOWN = "brand_unknown";
-	const GADGET_BRAND_UNRECOGNIZED = "unrecognized";
-	const GADGET_BRAND_ANDROID = "Android";
-	const GADGET_BRAND_APPLE = "Apple";
+	const GADGET_BRAND_UNKNOWN = 'brand_unknown';
+	const GADGET_BRAND_UNRECOGNIZED = 'unrecognized';
+	const GADGET_BRAND_ANDROID = 'Android';
+	const GADGET_BRAND_APPLE = 'Apple';
 
 	/**
 	 * Displays debugging output
@@ -56,17 +56,17 @@ abstract class IdMyGadget
 	 * One of the GADGET_TYPE_* constants: desktop, phone, etc.
 	 * @var string
 	 */
-	protected $gadgetType = GADGET_TYPE_UNKNOWN;
+	protected $gadgetType = self::GADGET_TYPE_UNKNOWN;
 	/**
 	 * One of the GADGET_MODEL_* constants: iPad, androidTablet, iPhone, etc.
 	 * @var string
 	 */
-	protected $gadgetModel = GADGET_MODEL_UNKNOWN;
+	protected $gadgetModel = self::GADGET_MODEL_UNKNOWN;
 	/**
 	 * One of the GADGET_BRAND_* constants: apple, etc.
 	 * @var string
 	 */
-	protected $gadgetBrand = GADGET_BRAND_UNKNOWN;
+	protected $gadgetBrand = self::GADGET_BRAND_UNKNOWN;
 
 	/**
 	 * Whether the key capabilities have been set

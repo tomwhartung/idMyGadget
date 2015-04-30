@@ -6,6 +6,9 @@ $pageTitle = 'idMyGadget detect_mobile_browsers demo';
 $usingAPhone = FALSE;
 require_once( 'php/detectmobilebrowser.php' );
 require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
+$debugging = FALSE;
+$allowOverridesInUrl = FALSE;
+$idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl, $usingAPhone );
 ?>
 
 <head>
@@ -31,6 +34,17 @@ require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
   print "usingAPhone = '$usingAPhone'";
  ?>
  </p>
+ <ul>
+ <?php
+	$output = '';
+	$idMyGadget->getDeviceData();
+	$output .= "<h3>Device Data</h3>";
+	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
+
+	print "<div id='output'>";
+	print $output;
+	print "</div> <!-- output -->";
+ ?>
  <hr />
  <p class="centered"><a href="index.php">Back</a></dt>
  <hr />
