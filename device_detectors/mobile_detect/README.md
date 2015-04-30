@@ -2,14 +2,19 @@
 ## Introduction:
 
 Once you have installed idMyGadget, as described in the
-[device_detectors README.md file](https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/README.md),
-file, follow these steps to install the PHP device detection script from [detectmobilebrowsers.com].
+[device_detectors README.md file](https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/README.md)
+file, follow these steps to install the Mobile-Detect PHP device detection script.
 
 ## Installation and Setup:
 
-This option requires only one small php file named  `detectmobilebrowser.php` .
+This option requires downloading (cloning) the Mobile-Detect code from github.
 
-IdMyGadget includes this file, so no installation or setup is required.
+1. Access this URL: https://github.com/serbanghita/Mobile-Detect
+
+1. If you are accustomed to using github, you probably want to clone the code, otherwise it may be easier to download the zip file.  Either way, clone or unzip the code into the `idMyGadget/device_detectors/mobile_detect` directory.
+* This should result in the `idMyGadget/device_detectors/mobile_detect/Mobile-Detect' directory containing all of the Mobile-Detect code.
+
+1. 
 
 ## Updating the Installation 
 
