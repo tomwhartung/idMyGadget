@@ -160,7 +160,7 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 			}
 			else
 			{
-				$this->gadgetModel = parent::GADGET_MODEL_NAME_NOT_SET;
+				$this->gadgetModel = parent::GADGET_MODEL_UNKNOWN;
 			}
 		}
 	
@@ -214,7 +214,7 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 			}
 			else
 			{
-				$this->gadgetBrand = parent::GADGET_BRAND_NAME_NOT_SET;
+				$this->gadgetBrand = parent::GADGET_BRAND_UNKNOWN;
 			}
 		}
 	

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang='en'>
 <?php
-$pageTitle = 'detect_mobile_browsers raw demo';
+$pageTitle = 'idMyGadget detect_mobile_browsers demo';
 
 $usingAPhone = FALSE;
 require_once( 'php/detectmobilebrowser.php' );
+require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
 ?>
 
 <head>
@@ -24,7 +25,7 @@ require_once( 'php/detectmobilebrowser.php' );
 <div id="content">
 
 <div id="idMyGadget">
- <h3>Raw Demo Results:</h3>
+ <h3>IdMyGadget Demo Results:</h3>
  <p class="centered">
  <?php
   print "usingAPhone = '$usingAPhone'";

@@ -4,21 +4,22 @@
  */
 abstract class IdMyGadget
 {
+	const GADGET_TYPE_UNKNOWN = "type_unknown";
 	const GADGET_TYPE_UNRECOGNIZED = "unrecognized";
 	const GADGET_TYPE_DESKTOP_BROWSER = "desktop";
 	const GADGET_TYPE_TABLET = "tablet";
 	const GADGET_TYPE_PHONE = "phone";
 
+	const GADGET_MODEL_UNKNOWN = "model_unknown";
 	const GADGET_MODEL_UNRECOGNIZED = "unrecognized";
-	const GADGET_MODEL_NAME_NOT_SET = "model_name_not_set";
 	const GADGET_MODEL_ANDROID_TABLET = "androidTablet";
 	const GADGET_MODEL_APPLE_TABLET = "iPad";
 
 	const GADGET_MODEL_ANDROID_PHONE = "androidPhone";
 	const GADGET_MODEL_APPLE_PHONE = "iPhone";
 
+	const GADGET_BRAND_UNKNOWN = "brand_unknown";
 	const GADGET_BRAND_UNRECOGNIZED = "unrecognized";
-	const GADGET_BRAND_NAME_NOT_SET = "brand_name_not_set";
 	const GADGET_BRAND_ANDROID = "Android";
 	const GADGET_BRAND_APPLE = "Apple";
 
@@ -55,21 +56,18 @@ abstract class IdMyGadget
 	 * One of the GADGET_TYPE_* constants: desktop, phone, etc.
 	 * @var string
 	 */
-	protected $gadgetType = '';
+	protected $gadgetType = GADGET_TYPE_UNKNOWN;
 	/**
 	 * One of the GADGET_MODEL_* constants: iPad, androidTablet, iPhone, etc.
 	 * @var string
 	 */
-	protected $gadgetModel = '';
+	protected $gadgetModel = GADGET_MODEL_UNKNOWN;
 	/**
 	 * One of the GADGET_BRAND_* constants: apple, etc.
 	 * @var string
 	 */
-	protected $gadgetBrand = '';
+	protected $gadgetBrand = GADGET_BRAND_UNKNOWN;
 
-	//
-	// The Key Capabilities are: gadgetType, gadgetModel, and gadgetBrand
-	//
 	/**
 	 * Whether the key capabilities have been set
 	 * @var boolean
@@ -77,6 +75,7 @@ abstract class IdMyGadget
 	protected $keyCapabilitiesAreSet = FALSE;
 	/**
 	 * These are the key capabilities we use to set the gadget types
+	 * At this time, the Key Capabilities are specific to Tera Wurfl
 	 * @var array
 	 */
 	protected $keyCapabilities = array (
@@ -97,6 +96,14 @@ abstract class IdMyGadget
 		$this->debugging = $debugging;
 		$this->allowOverridesInUrl = $allowOverridesInUrl;
 	}
+
+	/**
+	 * For each device detection mechanisim, we must implement this function
+	 * to get the data that is available about the device.
+	 * This may be a single value, as is the case with the Detect Mobile Browser option, or
+	 * hundreds of values, as is the case with the Tera Wurfl option.
+	 */
+	abstract public function getDeviceData();
 
 	/**
 	 * Display the device data
@@ -131,50 +138,57 @@ abstract class IdMyGadget
 
 	/**
 	 * Supports setting the gadget type as a get variable in the request
+	 * This can help with testing
+	 * Note that in this case it may not equal one of the constants defined above
 	 * @return gadgetType
 	 */
-	protected function setGadgetType( $pointing_method, $is_tablet )
+	protected function setGadgetType()
 	{
-		$this->gadgetType = null;
-		$gadgetType = filter_input( INPUT_GET, 'gadgetType', FILTER_SANITIZE_STRING );
-
-		if ( $this->allowOverridesInUrl && isset($gadgetType) )
+		if ( $this->allowOverridesInUrl )
 		{
+			$gadgetType = filter_input( INPUT_GET, 'gadgetType', FILTER_SANITIZE_STRING );
+			if ( isset($gadgetType) )
+			{
 				$this->gadgetType  = $gadgetType;
+			}
 		}
 	
 		return $this->gadgetType;
 	}
 	/**
-	 * Supports setting the gadget model as a get variable in the request
-	 * Note that it does not necessarily equal one of the constants defined in deviceData.php
+	 * Supports setting the gadget model as a get variable in the request for all detectors
+	 * This can help with testing
+	 * Note that in this case it may not equal one of the constants defined above
 	 * @return gadgetModel
 	 */
-	protected function setGadgetModel( $model_name )
+	protected function setGadgetModel()
 	{
-		$this->gadgetModel = null;
-		$gadgetModel = filter_input( INPUT_GET, 'gadgetModel', FILTER_SANITIZE_STRING );
-
-		if ( $this->allowOverridesInUrl && isset($gadgetModel) )
+		if ( $this->allowOverridesInUrl )
 		{
-			$this->gadgetModel = $gadgetModel;
+			$gadgetModel = filter_input( INPUT_GET, 'gadgetModel', FILTER_SANITIZE_STRING );
+			if ( isset($gadgetModel) )
+			{
+				$this->gadgetModel = $gadgetModel;
+			}
 		}
 	
 		return $this->gadgetModel;
 	}
 	/**
-	 * Supports setting the gadget brand as a get variable in the request
-	 * Note that it does not necessarily equal one of the constants defined in deviceData.php
+	 * Supports setting the gadget brand as a get variable in the request for all detectors
+	 * This can help with testing
+	 * Note that in this case it may not equal one of the constants defined above
 	 * @return gadgetBrand
 	 */
-	protected function setGadgetBrand( $brand_name )
+	protected function setGadgetBrand()
 	{
-		$this->gadgetBrand = null;
-		$gadgetBrand = filter_input( INPUT_GET, 'gadgetBrand', FILTER_SANITIZE_STRING );
-
-		if ( $this->allowOverridesInUrl && isset($gadgetBrand) )
+		if ( $this->allowOverridesInUrl )
 		{
-			$this->gadgetBrand = $gadgetBrand;
+			$gadgetBrand = filter_input( INPUT_GET, 'gadgetBrand', FILTER_SANITIZE_STRING );
+			if ( isset($gadgetBrand) )
+			{
+				$this->gadgetBrand = $gadgetBrand;
+			}
 		}
 	
 		return $this->gadgetBrand;
