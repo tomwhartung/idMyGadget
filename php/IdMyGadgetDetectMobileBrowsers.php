@@ -9,15 +9,15 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 	/**
 	 * boolean indicating whether user is using a phone
 	 */
-	protected $usingAPhone = null;
+	protected $usingMoblePhone = null;
 
 	/**
 	 * Constructor: initialize essential data members
 	 */
-	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE, $usingAPhone=null )
+	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE, $usingMoblePhone=null )
 	{
 		parent::__construct( $debugging, $allowOverridesInUrl );
-		$this->usingAPhone = $usingAPhone;
+		$this->usingMoblePhone = $usingMoblePhone;
 	}
 
 	/**
@@ -50,7 +50,7 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 	 */
 	protected function setGadgetType()
 	{
-		global $usingAPhone;
+		global $usingMoblePhone;
 
 		parent::setGadgetType();
 
@@ -61,11 +61,11 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 
 		if ( $this->gadgetType == parent::GADGET_TYPE_UNKNOWN )
 		{
-			if ( $this->usingAPhone === null )
+			if ( $this->usingMoblePhone === null )
 			{
-				$this->usingAPhone = $usingAPhone;   // use global value
+				$this->usingMoblePhone = $usingMoblePhone;   // use global value
 			}
-			if ( isset($this->usingAPhone) && $this->usingAPhone )
+			if ( isset($this->usingMoblePhone) && $this->usingMoblePhone )
 			{
 				$this->gadgetType = parent::GADGET_TYPE_PHONE;
 			}

@@ -26,7 +26,7 @@ IdMyGadget includes this file, so no installation or setup is required.
   ```
   with this one:
   ```php
-  $usingAPhone = TRUE;
+  $usingMoblePhone = TRUE;
   ```
 
 ## Running the Demos

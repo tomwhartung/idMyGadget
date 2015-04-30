@@ -3,7 +3,7 @@
 <?php
 $pageTitle = 'detect_mobile_browsers raw demo';
 
-$usingAPhone = FALSE;
+$usingMoblePhone = FALSE;
 require_once( 'php/detectmobilebrowser.php' );
 ?>
 
@@ -27,7 +27,7 @@ require_once( 'php/detectmobilebrowser.php' );
  <h3>Raw Demo Results:</h3>
  <p class="centered">
  <?php
-  print "usingAPhone = '$usingAPhone'";
+  print "usingMoblePhone = '$usingMoblePhone'";
  ?>
  </p>
  <hr />
