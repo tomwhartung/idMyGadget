@@ -27,9 +27,11 @@ print "<h2></h2>";
  <dl>
   <dt><a href="README.md" target="_blank">README.md</a></dt>
   <dd>The idMyGadget Mobile-Detect README file contains instructions on how to set up Mobile-Detect.
-    The formatted <a href="https://github.com/tomwhartung/idMyGadget/blob/master/README.md">version on github</a> is more readable.</dd>
-  <dt><a href="index.php?displayDeviceData=true">index.php?displayDeviceData=true</a></dt>
-  <dd>Displays the gadget types that idMyGadget has deduced from the key capabilities obtained from Tera-Wurfl</dd>
+    <a href="https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/mobile_detect/README.md"
+       target="_blank">The formatted version on github</a>
+    is more readable.</dd>
+  <dt><a href="Mobile-Detect/examples/demo.php" target="_blank">Mobile-Detect/examples/demo.php</a></dt>
+  <dd>The Mobile-Detect example demo program</dd>
   <dt><a href=""></a></dt>
   <dd></dd>
  </dl>
