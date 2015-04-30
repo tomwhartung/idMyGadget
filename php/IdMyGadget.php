@@ -69,26 +69,6 @@ abstract class IdMyGadget
 	protected $gadgetBrand = self::GADGET_BRAND_UNKNOWN;
 
 	/**
-	 * Whether the key capabilities have been set
-	 * @var boolean
-	 */
-	protected $keyCapabilitiesAreSet = FALSE;
-	/**
-	 * These are the key capabilities we use to set the gadget types
-	 * At this time, the Key Capabilities are specific to Tera Wurfl
-	 * @var array
-	 */
-	protected $keyCapabilities = array (
-		"pointing_method" => '',
-		"is_tablet" => '',
-		"model_name" => '',
-		"brand_name" => '',
-	//	"device_os" => '',             // currently unused but keep for easy future reference
-	//	"is_wireless_device" => '',    // currently unused but keep for easy future reference
-	//	"dual_orientation" => '',      // currently unused but keep for easy future reference
-	);
-
-	/**
 	 * Constructor: initialize essential data members
 	 */
 	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE )
@@ -114,21 +94,6 @@ abstract class IdMyGadget
 		$output = "";
 
 		foreach( $this->deviceData as $key => $value )
-		{
-			$output .= "<li>" . $key . ":&nbsp;'" . $value . "'</li>";
-		}
-
-		return $output;
-	}
-	/**
-	 * Display the key capabilities
-	 * @return string of <li> tags listing the key capabilities
-	 */
-	public function displayKeyCapabilities()
-	{
-		$output = "";
-
-		foreach( $this->keyCapabilities as $key => $value )
 		{
 			$output .= "<li>" . $key . ":&nbsp;'" . $value . "'</li>";
 		}
