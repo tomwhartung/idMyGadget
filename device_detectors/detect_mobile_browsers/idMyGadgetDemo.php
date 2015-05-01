@@ -34,11 +34,11 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
   print '<p class="centered">';
   print "usingMoblePhone = '$usingMoblePhone'";
   print '</p>';
-	$deviceData = $idMyGadget->getDeviceData();
+  $deviceData = $idMyGadget->getDeviceData();
   print "<div id='output'>";
-	print "<h3>Device Data</h3>";
-	print "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
-	print "</div> <!-- output -->";
+  print "<h3>Device Data</h3>";
+  print "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
+  print "</div> <!-- output -->";
  ?>
 
 <?php
