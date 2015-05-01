@@ -57,11 +57,11 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 
 		if ( $this->gadgetType == parent::GADGET_TYPE_UNKNOWN )
 		{
-			if ( $this->mobileDetectObject->isMobile() )
+			if ( $this->mobileDetectObject->isTablet() )
 			{
-				$this->gadgetType = parent::GADGET_TYPE_PHONE;
+				$this->gadgetType = parent::GADGET_TYPE_TABLET;
 			}
-			else if ( $this->mobileDetectObject->isTablet() )
+			else if ( $this->mobileDetectObject->isMobile() )
 			{
 				$this->gadgetType = parent::GADGET_TYPE_PHONE;
 			}
@@ -74,13 +74,77 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 		return $this->gadgetType;
 	}
 	/**
-	 * Set the gadget brand (in this case it is unknown)
+	 * Set the gadget brand
 	 * @return gadgetBrand
 	 */
 	protected function setGadgetBrand()
 	{
 		parent::setGadgetBrand();
-	
+
+		if ( $this->gadgetBrand == parent::GADGET_BRAND_UNKNOWN )
+		{
+			if ( $this->mobileDetectObject->isiPhone() ||
+			     $this->mobileDetectObject->isiPad() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_APPLE;
+			}
+			else if ( $this->mobileDetectObject->isAsus() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_ASUS;
+			}
+			else if ( $this->mobileDetectObject->isBlackBerry() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_BLACKBERRY;
+			}
+			else if ( $this->mobileDetectObject->isDell() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_DELL;
+			}
+			else if ( $this->mobileDetectObject->isGenericPhone() ||
+			          $this->mobileDetectObject->isGenericTablet() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_GENERIC;
+			}
+			else if ( $this->mobileDetectObject->isHTC() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_HTC;
+			}
+			else if ( $this->mobileDetectObject->isLG() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_LG;
+			}
+			else if ( $this->mobileDetectObject->isNexus() ||
+			          $this->mobileDetectObject->isNexusTablet() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_NEXUS;
+			}
+			else if ( $this->mobileDetectObject->isMotorola() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_MOTOROLA;
+			}
+			else if ( $this->mobileDetectObject->isSamsung() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_SAMSUNG;
+			}
+			else if ( $this->mobileDetectObject->isSony() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_SONY;
+			}
+			else if ( $this->mobileDetectObject->isWindowsMobileOS() ||
+			          $this->mobileDetectObject->isWindowsPhoneOS() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_WINDOWS;
+			}
+			else if ( $this->mobileDetectObject->isAndroidOS() )
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_ANDROID;
+			}
+			else
+			{
+				$this->gadgetBrand = parent::GADGET_BRAND_UNRECOGNIZED;
+			}
+		}
+
 		return $this->gadgetBrand;
 	}
 	/**
@@ -91,6 +155,45 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 	{
 		parent::setGadgetModel();
 	
+		if ( $this->gadgetModel == parent::GADGET_MODEL_UNKNOWN )
+		{
+			if ( $this->mobileDetectObject->isiPhone() )
+			{
+				$this->gadgetModel = parent::GADGET_MODEL_APPLE_PHONE;
+			}
+			else if ( $this->mobileDetectObject->isiPad() )
+			{
+				$this->gadgetModel = parent::GADGET_MODEL_APPLE_TABLET;
+			}
+			else if ( $this->mobileDetectObject->isKindle() )
+			{
+				$this->gadgetModel = parent::GADGET_MODEL_KINDLE;
+			}
+			else if ( $this->mobileDetectObject->isNookTablet() )
+			{
+				$this->gadgetModel = parent::GADGET_MODEL_NOOK;
+			}
+			else if ( $this->mobileDetectObject->isAndroidOS() )
+			{
+				if( $this->mobileDetectObject->isTablet() )
+				{
+					$this->gadgetModel = parent::GADGET_MODEL_ANDROID_TABLET;
+				}
+				else if ( $this->mobileDetectObject->isMobile() )
+				{
+					$this->gadgetModel = parent::GADGET_MODEL_ANDROID_PHONE;
+				}
+				else
+				{
+					$this->gadgetModel = parent::GADGET_MODEL_ANDROID_OTHER;
+				}
+			}
+			else
+			{
+				$this->gadgetModel = parent::GADGET_MODEL_UNRECOGNIZED;
+			}
+		}
+
 		return $this->gadgetModel;
 	}
 }

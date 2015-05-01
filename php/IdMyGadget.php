@@ -14,14 +14,26 @@ abstract class IdMyGadget
 	const GADGET_BRAND_UNRECOGNIZED = 'unrecognized';
 	const GADGET_BRAND_ANDROID = 'Android';
 	const GADGET_BRAND_APPLE = 'Apple';
+	const GADGET_BRAND_ASUS = 'Asus';
+	const GADGET_BRAND_BLACKBERRY = 'BlackBerry';
+	const GADGET_BRAND_DELL = 'Dell';
+	const GADGET_BRAND_GENERIC = 'Generic';
+	const GADGET_BRAND_HTC = 'HTC';
+	const GADGET_BRAND_LG = 'LG';
+	const GADGET_BRAND_NEXUS = 'Nexus';
+	const GADGET_BRAND_MOTOROLA = 'Motorola';
+	const GADGET_BRAND_SAMSUNG = 'Samsung';
+	const GADGET_BRAND_SONY = 'Sony';
+	const GADGET_BRAND_WINDOWS = 'Windows';
 
 	const GADGET_MODEL_UNKNOWN = 'model_unknown';
 	const GADGET_MODEL_UNRECOGNIZED = 'unrecognized';
-	const GADGET_MODEL_ANDROID_TABLET = 'androidTablet';
-	const GADGET_MODEL_APPLE_TABLET = 'iPad';
-
 	const GADGET_MODEL_ANDROID_PHONE = 'androidPhone';
+	const GADGET_MODEL_ANDROID_TABLET = 'androidTablet';
 	const GADGET_MODEL_APPLE_PHONE = 'iPhone';
+	const GADGET_MODEL_APPLE_TABLET = 'iPad';
+	const GADGET_MODEL_KINDLE = 'Kindle';
+	const GADGET_MODEL_NOOK = 'Nook';
 
 	/**
 	 * Displays debugging output
