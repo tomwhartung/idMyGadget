@@ -55,8 +55,9 @@ require_once( 'php/detectmobilebrowser.php' );
     print 'for example.';   
     print '</p>';
   }
+  print '<hr />';
   print '<p>';
-  print "And this is content delivered to all browsers, regardless of the device.";
+  print 'This is content delivered to all browsers, regardless of the device.';
   print '</p>';
  ?>
 

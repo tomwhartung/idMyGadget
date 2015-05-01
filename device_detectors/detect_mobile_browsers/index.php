@@ -31,11 +31,9 @@ print "<h2></h2>";
        target="_blank">The formatted version on github</a>
     is more readable.</dd>
   <dt><a href="rawDemo.php">rawDemo.php</a></dt>
-  <dd>Demos detect_mobile_browsers device detection, <strong>without</strong> using the IdMyGadget API.</dd>
+  <dd>Demonstrates detect_mobile_browsers device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
   <dt><a href="idMyGadgetDemo.php">idMyGadgetDemo.php</a></dt>
-  <dd>Demos detect_mobile_browsers device detection, using the IdMyGadget API.</dd>
-  <dt><a href=""></a></dt>
-  <dd></dd>
+  <dd>Demonstrates detect_mobile_browsers device detection, using the IdMyGadget Adapter API.</dd>
  </dl>
  <hr />
  <p class="centered"><a href="..">Back</a></dt>
