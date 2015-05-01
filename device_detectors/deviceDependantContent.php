@@ -1,5 +1,5 @@
  <?php
-function contingentContent( $deviceData )
+function deviceDependantContent( $deviceData )
 {
   print "<h3>Using the Results</h3>";
   if ( $deviceData['gadgetType'] === IdMyGadget::GADGET_TYPE_PHONE )

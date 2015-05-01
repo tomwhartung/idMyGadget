@@ -6,7 +6,7 @@ $pageTitle = 'idMyGadget detect_mobile_browsers demo';
 $usingMoblePhone = FALSE;
 require_once( 'php/detectmobilebrowser.php' );
 require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
-require_once( '../contingentContent.php' );
+require_once( '../deviceDependantContent.php' );
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
 $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl, $usingMoblePhone );
@@ -39,7 +39,7 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
  ?>
 
 <?php
-  contingentContent( $deviceData );
+  deviceDependantContent( $deviceData );
 ?>
 
  <hr />
