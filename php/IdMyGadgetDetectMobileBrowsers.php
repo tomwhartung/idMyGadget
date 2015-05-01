@@ -2,7 +2,7 @@
 require_once 'IdMyGadget.php';
 
 /**
- * Gets summary device data based on key WURFL device capabilities
+ * Determines whether device is a mobile phone
  */
 class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 {
