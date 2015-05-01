@@ -32,6 +32,10 @@ print "<h2></h2>";
     is more readable.</dd>
   <dt><a href="Mobile-Detect/examples/demo.php" target="_blank">Mobile-Detect/examples/demo.php</a></dt>
   <dd>The Mobile-Detect example demo program</dd>
+  <dt><a href="rawDemo.php">rawDemo.php</a></dt>
+  <dd>Demonstrates mobile_detect device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
+  <dt><a href="idMyGadgetDemo.php">idMyGadgetDemo.php</a></dt>
+  <dd>Demonstrates mobile_detect device detection, using the IdMyGadget Adapter API.</dd>
   <dt><a href=""></a></dt>
   <dd></dd>
  </dl>
