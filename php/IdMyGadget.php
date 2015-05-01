@@ -117,6 +117,11 @@ abstract class IdMyGadget
 				$this->gadgetType  = $gadgetType;
 			}
 		}
+
+		if ( $this->gadgetType === null || $this->gadgetType === '' )
+		{
+			$this->gadgetType = parent::GADGET_TYPE_UNKNOWN;
+		}
 	
 		return $this->gadgetType;
 	}
