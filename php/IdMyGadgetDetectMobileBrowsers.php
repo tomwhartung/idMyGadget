@@ -26,14 +26,16 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 	 */
 	public function getDeviceData()
 	{
-		$this->setGadgetType();
-		$this->setGadgetModel();
-		$this->setGadgetBrand();
-
-		$this->deviceData['gadgetType']  = $this->gadgetType;
-		$this->deviceData['gadgetModel'] = $this->gadgetModel;
-		$this->deviceData['gadgetBrand'] = $this->gadgetBrand;
-		$this->deviceDataAreSet = TRUE;
+		if ( $this->deviceDataAreSet !== TRUE )
+		{
+			$this->setGadgetType();
+			$this->setGadgetBrand();
+			$this->setGadgetModel();
+			$this->deviceData['gadgetType']  = $this->gadgetType;
+			$this->deviceData['gadgetBrand'] = $this->gadgetBrand;
+			$this->deviceData['gadgetModel'] = $this->gadgetModel;
+			$this->deviceDataAreSet = TRUE;
+		}
 
 		if ( $this->debugging )
 		{
@@ -54,11 +56,6 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 
 		parent::setGadgetType();
 
-		if ( $this->gadgetType === null || $this->gadgetType === '' )
-		{
-			$this->gadgetType = parent::GADGET_TYPE_UNKNOWN;
-		}
-
 		if ( $this->gadgetType == parent::GADGET_TYPE_UNKNOWN )
 		{
 			if ( $this->usingMoblePhone === null )
@@ -78,33 +75,23 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 		return $this->gadgetType;
 	}
 	/**
-	 * Set the gadget model (in this case it is unknown)
-	 * @return gadgetModel
-	 */
-	protected function setGadgetModel()
-	{
-		parent::setGadgetModel();
-
-		if ( $this->gadgetModel === null )
-		{
-			$this->gadgetModel = parent::GADGET_MODEL_UNKNOWN;
-		}
-	
-		return $this->gadgetModel;
-	}
-	/**
 	 * Set the gadget brand (in this case it is unknown)
 	 * @return gadgetBrand
 	 */
 	protected function setGadgetBrand()
 	{
 		parent::setGadgetBrand();
-
-		if ( $this->gadgetBrand === null )
-		{
-			$this->gadgetBrand = parent::GADGET_BRAND_UNKNOWN;
-		}
 	
 		return $this->gadgetBrand;
+	}
+	/**
+	 * Set the gadget model (in this case it is unknown)
+	 * @return gadgetModel
+	 */
+	protected function setGadgetModel()
+	{
+		parent::setGadgetModel();
+	
+		return $this->gadgetModel;
 	}
 }

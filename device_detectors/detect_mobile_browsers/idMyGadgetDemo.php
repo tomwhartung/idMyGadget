@@ -31,9 +31,6 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
 <div id="idMyGadget">
  <h3>IdMyGadget Demo Results:</h3>
  <?php
-  print '<p class="centered">';
-  print "usingMoblePhone = '$usingMoblePhone'";
-  print '</p>';
   $deviceData = $idMyGadget->getDeviceData();
   print "<div id='output'>";
   print "<h3>Device Data</h3>";

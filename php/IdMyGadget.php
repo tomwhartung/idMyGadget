@@ -10,6 +10,11 @@ abstract class IdMyGadget
 	const GADGET_TYPE_TABLET = 'tablet';
 	const GADGET_TYPE_PHONE = 'phone';
 
+	const GADGET_BRAND_UNKNOWN = 'brand_unknown';
+	const GADGET_BRAND_UNRECOGNIZED = 'unrecognized';
+	const GADGET_BRAND_ANDROID = 'Android';
+	const GADGET_BRAND_APPLE = 'Apple';
+
 	const GADGET_MODEL_UNKNOWN = 'model_unknown';
 	const GADGET_MODEL_UNRECOGNIZED = 'unrecognized';
 	const GADGET_MODEL_ANDROID_TABLET = 'androidTablet';
@@ -17,11 +22,6 @@ abstract class IdMyGadget
 
 	const GADGET_MODEL_ANDROID_PHONE = 'androidPhone';
 	const GADGET_MODEL_APPLE_PHONE = 'iPhone';
-
-	const GADGET_BRAND_UNKNOWN = 'brand_unknown';
-	const GADGET_BRAND_UNRECOGNIZED = 'unrecognized';
-	const GADGET_BRAND_ANDROID = 'Android';
-	const GADGET_BRAND_APPLE = 'Apple';
 
 	/**
 	 * Displays debugging output
@@ -49,8 +49,8 @@ abstract class IdMyGadget
 	 */
 	protected $deviceData = array (
 			"gadgetType" => '',
-			"gadgetModel" => '',
 			"gadgetBrand" => '',
+			"gadgetModel" => '',
 	);
 	/**
 	 * One of the GADGET_TYPE_* constants: desktop, phone, etc.
@@ -58,15 +58,15 @@ abstract class IdMyGadget
 	 */
 	protected $gadgetType = self::GADGET_TYPE_UNKNOWN;
 	/**
-	 * One of the GADGET_MODEL_* constants: iPad, androidTablet, iPhone, etc.
-	 * @var string
-	 */
-	protected $gadgetModel = self::GADGET_MODEL_UNKNOWN;
-	/**
 	 * One of the GADGET_BRAND_* constants: apple, etc.
 	 * @var string
 	 */
 	protected $gadgetBrand = self::GADGET_BRAND_UNKNOWN;
+	/**
+	 * One of the GADGET_MODEL_* constants: iPad, androidTablet, iPhone, etc.
+	 * @var string
+	 */
+	protected $gadgetModel = self::GADGET_MODEL_UNKNOWN;
 
 	/**
 	 * Constructor: initialize essential data members
@@ -118,31 +118,12 @@ abstract class IdMyGadget
 			}
 		}
 
-		if ( $this->gadgetType === null || $this->gadgetType === '' )
+		if ( $this->gadgetType == null || $this->gadgetType == '' )
 		{
-			$this->gadgetType = parent::GADGET_TYPE_UNKNOWN;
+			$this->gadgetType = parent::GADGET_TYPE_UNKNOWN;   // make sure it has a value
 		}
 	
 		return $this->gadgetType;
-	}
-	/**
-	 * Supports setting the gadget model as a get variable in the request for all detectors
-	 * This can help with testing
-	 * Note that in this case it may not equal one of the constants defined above
-	 * @return gadgetModel
-	 */
-	protected function setGadgetModel()
-	{
-		if ( $this->allowOverridesInUrl )
-		{
-			$gadgetModel = filter_input( INPUT_GET, 'gadgetModel', FILTER_SANITIZE_STRING );
-			if ( isset($gadgetModel) )
-			{
-				$this->gadgetModel = $gadgetModel;
-			}
-		}
-	
-		return $this->gadgetModel;
 	}
 	/**
 	 * Supports setting the gadget brand as a get variable in the request for all detectors
@@ -160,7 +141,36 @@ abstract class IdMyGadget
 				$this->gadgetBrand = $gadgetBrand;
 			}
 		}
-	
+
+		if ( $this->gadgetBrand == null || $this->gadgetBrand == '' )
+		{
+			$this->gadgetBrand = parent::GADGET_BRAND_UNKNOWN;   // make sure it has a value
+		}
+
 		return $this->gadgetBrand;
+	}
+	/**
+	 * Supports setting the gadget model as a get variable in the request for all detectors
+	 * This can help with testing
+	 * Note that in this case it may not equal one of the constants defined above
+	 * @return gadgetModel
+	 */
+	protected function setGadgetModel()
+	{
+		if ( $this->allowOverridesInUrl )
+		{
+			$gadgetModel = filter_input( INPUT_GET, 'gadgetModel', FILTER_SANITIZE_STRING );
+			if ( isset($gadgetModel) )
+			{
+				$this->gadgetModel = $gadgetModel;
+			}
+		}
+
+		if ( $this->gadgetModel == null || $this->gadgetModel == '' )
+		{
+			$this->gadgetModel = parent::GADGET_MODEL_UNKNOWN;   // make sure it has a value
+		}
+
+		return $this->gadgetModel;
 	}
 }
