@@ -48,7 +48,7 @@ print "<h2></h2>";
       print '</dl>';
       print '<dl class="warning">';
       print '<dt>Warning:</dt>';
-      print '<dd>The ' . $detectorName . ' device detector software is not installed, so demos will not work.';
+      print '<dd>The ' . $detectorName . ' software is not installed, so demos will not work. ';
       print 'To install ' . $detectorName . ', follow the instructions in the ';
       print '<a href="https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/detect_mobile_browsers/README.md" ';
       print   'target="_blank">README.md file</a> ';
