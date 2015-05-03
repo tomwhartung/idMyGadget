@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <?php
-$pageTitle = 'detect_mobile_browsers';
+$detectorName = 'detect_mobile_browsers';
+
+if ( file_exists('php/detectmobilebrowser.php') )
+{
+	$detectorInstalled = TRUE;
+	$demoDisabledClass = '';
+}
+else
+{
+	$detectorInstalled = FALSE;
+	$demoDisabledClass = 'class="disabled"';
+}
 ?>
 
 <head>
-  <title><?php print $pageTitle; ?></title>
+  <title><?php print $detectorName; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../css/allDevices.css" />
   <link rel="stylesheet" type="text/css" href="../../css/basicMediaQueries.css" />
@@ -17,7 +29,7 @@ $pageTitle = 'detect_mobile_browsers';
 <body>
   <div id="container">
 <?php
-print "<h1>$pageTitle</h1>";
+print "<h1>$detectorName</h1>";
 print "<div id='content'>";
 print "<h2></h2>";
 ?>
@@ -30,9 +42,25 @@ print "<h2></h2>";
     <a href="https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/detect_mobile_browsers/README.md"
        target="_blank">The formatted version on github</a>
     is more readable.</dd>
-  <dt><a href="rawDemo.php">rawDemo.php</a></dt>
+  <?php
+    if ( ! $detectorInstalled )
+    {
+      print '</dl>';
+      print '<dl class="warning">';
+      print '<dt>Warning:</dt>';
+      print '<dd>The ' . $detectorName . ' device detector software is not installed, so demos will not work.';
+      print 'To install ' . $detectorName . ', follow the instructions in the ';
+      print '<a href="https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/detect_mobile_browsers/README.md" ';
+      print   'target="_blank">README.md file</a> ';
+      print 'and try again.</dd>';
+      print '</div><!-- .warning -->';
+      print '</dl>';
+      print '<dl>';
+    }
+   ?>
+  <dt><a href="rawDemo.php" <?php print $demoDisabledClass; ?> >rawDemo.php</a></dt>
   <dd>Demonstrates detect_mobile_browsers device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
-  <dt><a href="idMyGadgetDemo.php">idMyGadgetDemo.php</a></dt>
+  <dt><a href="idMyGadgetDemo.php" <?php print $demoDisabledClass; ?> >idMyGadgetDemo.php</a></dt>
   <dd>Demonstrates detect_mobile_browsers device detection, using the IdMyGadget Adapter API.</dd>
  </dl>
  <hr />
