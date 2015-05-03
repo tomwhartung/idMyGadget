@@ -30,26 +30,33 @@ p, a, ul, li, td, blockquote {
 a, a:hover {
 	color: darkblue;
 }
+a.disabled, a.disabled:hover {
+	pointer-events: none;
+	cursor: default;
+}
 a {
 	text-decoration: none;
 }
 a:hover {
 	text-decoration: underline;
 }
+dt {
+	font-weight: bold;
+}
 .centered {
 	text-align: center;
 }
-.obsolete {
+.disabled, .obsolete {
 	text-decoration: line-through;
 }
 
 div.output {
 	border-color: grey;
 }
-div.warning {
+.warning {
 	border-color: orange;
 }
-div.output, div.warning {
+div.output, .warning {
 	border-style: solid;
 	border-width: 0.5em;
 	margin: 0.5em;
