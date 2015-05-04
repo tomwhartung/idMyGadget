@@ -7,11 +7,14 @@
  * These "various forms" include raw WURFL information, key capabilities, and
  * summary device data based on key WURFL device capabilities.
  */
+$pageTitle = 'idMyGadget tera_wurfl demo';
+
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
 require_once 'DemoTeraWurfl.php';
 
 define( "STYLE_SHEET_DESKTOP",       "../../css/device/desktop.css" );
+define( "STYLE_SHEET_MEDIA_QUERIES", "../../css/basicMediaQueries.css" );
 define( "STYLE_SHEET_TABLET",        "../../css/device/tablet.css" );
 define( "STYLE_SHEET_ANDROID_PHONE", "../../css/device/androidPhone.css" );
 define( "STYLE_SHEET_APPLE_PHONE",   "../../css/device/iPhone.css" );
@@ -58,6 +61,11 @@ else if ( $gadgetType == IdMyGadget::GADGET_TYPE_PHONE )
 		$styleSheetFile = STYLE_SHEET_ANDROID_PHONE;
 	}
 }
+else
+{
+	$gadgetString = "Unknown";
+	$styleSheetFile = STYLE_SHEET_MEDIA_QUERIES;
+}
 //
 // CSS link tags to consider thinking about - specifically the media attributes:
 // Android version:
@@ -72,7 +80,11 @@ else if ( $gadgetType == IdMyGadget::GADGET_TYPE_PHONE )
 
 <head>
   <title><?php print $pageTitle; ?></title>
-  <link rel="stylesheet" type="text/css" href="../css/allDevices.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../css/allDevices.css" />
+  <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="../../css/device/explorer.css" media="all" />
+  <![endif]-->
 <?php
 //
 // Print a link tag to include the desired style sheet.
@@ -101,14 +113,11 @@ elseif ( $styleSheetFile == STYLE_SHEET_ANDROID_PHONE )
 else   // Probably a tablet
 {
 	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" />';
-	print '<link rel="stylesheet" type="text/css" href="../css/reverseColors.css" />';
+	print '<link rel="stylesheet" type="text/css" href="../../css/reverseColors.css" />';
 }
 // Useful for debugging sometimes:
 // print '<link rel="stylesheet" type="text/css" href="../css/showBorders.css" />';
 ?>
-  <!--[if IE]>
-    <link rel="stylesheet" type="text/css" href="../css/device/explorer.css" media="all" />
-  <![endif]-->
 </head>
 
 <body>
