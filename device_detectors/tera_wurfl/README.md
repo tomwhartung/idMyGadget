@@ -92,8 +92,7 @@ access the following file in your web browser:
 [http://example.com/idMyGadget/device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi/admin/install.php]
 For example, if you are setting this up on your localhost, go to
 [http://localhost/idMyGadget/device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi/admin/install.php]
-Note that there is a link to this file in the idMyGadget/index.html and
-idMyGadget/index.php files.
+Note that there is a link to this file in the install.php file.
 
 If everything looks OK on the install page, populate the database by
 clicking on one of the links (I use the "Your local WURFL file" link)
