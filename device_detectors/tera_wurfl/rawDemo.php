@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang='en'>
 <?php
-$pageTitle = 'mobile_detect raw demo';
+$pageTitle = 'tera_wurfl raw demo';
 
-require_once 'Mobile-Detect/Mobile_Detect.php';
-$detect = new Mobile_Detect;
+require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
+$wurflObj = new TeraWurfl();
 
-$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+$wurflObj->getDeviceCapabilitiesFromAgent();
 
 ?>
 
@@ -30,7 +30,7 @@ $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') 
  <h3>Raw Demo Results:</h3>
  <p class="centered">
  <?php
-  print "deviceType = '$deviceType'";
+  print 'wurflObj->getDeviceCapability("is_wireless_device") = ' . $wurflObj->getDeviceCapability("is_wireless_device");
  ?>
  </p>
  <h3>Using the Results</h3>
