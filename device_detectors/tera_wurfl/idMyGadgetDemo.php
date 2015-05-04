@@ -125,25 +125,6 @@ else   // Probably a tablet
 <h1><?php print $pageTitle; ?></h1>
 <div id='content'>
 <div id="idMyGadget">
- <h3>IdMyGadget Demos:</h3>
- <dl>
-  <dt><a href="idMyGadgetDemo.php?displayDeviceData=true">idMyGadgetDemo.php?displayDeviceData=true</a></dt>
-  <dd>Displays the gadget types that idMyGadget has deduced from the key capabilities obtained from Tera-Wurfl</dd>
-  <dt><a href="idMyGadgetDemo.php?displayKeyCapabilities=true">idMyGadgetDemo.php?displayKeyCapabilities=true</a></dt>
-  <dd>Displays all the key capabilities that idMyGadget uses to determine what type of device the user is using</dd>
-  <dt><a href="idMyGadgetDemo.php?displayCapabilityArrays=true">idMyGadgetDemo.php?displayCapabilityArrays=true</a></dt>
-  <dd>Displays the capability arrays that Tera-Wurfl can identify</dd>
-  <dt><a href="idMyGadgetDemo.php?displayAllCapabilities=true">idMyGadgetDemo.php?displayAllCapabilities=true</a></dt>
-  <dd>Displays all of the capabilities that Tera-Wurfl can identify</dd>
-  <dt><a href="idMyGadgetDemo.php?displaySortedCapabilities=true">idMyGadgetDemo.php?displaySortedCapabilities=true</a></dt>
-  <dd>Displays a sorted list of the capabilities that Tera-Wurfl can identify</dd>
-  <dt><a href=""></a></dt><dd></dd>
- </dl>
-
-  <hr />
-  <p class="centered"><a href="index.php">Back</a></p>
-  <hr />
-</div> <!-- idMyGadget-->
 
 <?php
 //
@@ -158,21 +139,34 @@ $displaySortedCapabilities = filter_input( INPUT_GET, 'displaySortedCapabilities
 $displayKeyCapabilities = filter_input( INPUT_GET, 'displayKeyCapabilities', FILTER_VALIDATE_BOOLEAN );
 $displayDeviceData = filter_input( INPUT_GET, 'displayDeviceData', FILTER_VALIDATE_BOOLEAN );
 $output = "";
-
-if ( isset($displayCapabilityArrays) )
+//
+// Print a "Back" link at the top of pages with a lot of content,
+// so the user doesn't need to scroll all the way down to go Back.
+//
+if ( isset($displayAllCapabilities) ||
+     isset($displayCapabilityArrays) ||
+     isset($displaySortedCapabilities) )
 {
-	$output .= "<h3>Capability Arrays for This Device</h3>";
-	$output .= $demoTeraWurfl->displayCapabilityArrays();
+    $output .= '<hr />';
+    $output .= '<p class="centered"><a href="index.php">Back</a></p>';
+    $output .= '<hr />';
 }
+
 if ( isset($displayAllCapabilities) )
 {
 	$output .= "<h3>Flat List of Capabilities</h3>";
 	$output .= "<ul class='no-bullets'>" . $demoTeraWurfl->displayAllCapabilities() . "</ul>";
 }
-if ( isset($displaySortedCapabilities) )
+if ( isset($displayCapabilityArrays) )
 {
-	$output .= "<h3>Sorted List of Capabilities</h3>";
-	$output .= "<ul class='no-bullets'>" . $demoTeraWurfl->displaySortedCapabilities() . "</ul>";
+	$output .= "<h3>Capability Arrays for This Device</h3>";
+	$output .= $demoTeraWurfl->displayCapabilityArrays();
+}
+if ( isset($displayDeviceData) )
+{
+	$idMyGadget->getDeviceData();
+	$output .= "<h3>Device Data</h3>";
+	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
 }
 if ( isset($displayKeyCapabilities) )
 {
@@ -180,11 +174,10 @@ if ( isset($displayKeyCapabilities) )
 	$output .= "<h3>Key Capabilities</h3>";
 	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayKeyCapabilities() . "</ul>";
 }
-if ( isset($displayDeviceData) )
+if ( isset($displaySortedCapabilities) )
 {
-	$idMyGadget->getDeviceData();
-	$output .= "<h3>Device Data</h3>";
-	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
+	$output .= "<h3>Sorted List of Capabilities</h3>";
+	$output .= "<ul class='no-bullets'>" . $demoTeraWurfl->displaySortedCapabilities() . "</ul>";
 }
 
 if ( strlen($output) > 0 )
@@ -202,6 +195,7 @@ if ( strlen($output) > 0 )
   	<a href="index.php">Back</a>&nbsp;|</p>
   <hr />
 
+</div> <!-- idMyGadget-->
 </div> <!-- content -->
 </div> <!-- container -->
 </body>

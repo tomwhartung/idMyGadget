@@ -75,8 +75,21 @@ print "<h2></h2>";
     </dd>
     <dt><a href="rawDemo.php" <?php print $demoDisabledClass; ?> >rawDemo.php</a></dt>
     <dd>Demonstrates <?php print  $detectorName; ?> device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
-    <dt><a href="idMyGadgetDemo.php" <?php print $demoDisabledClass; ?> >idMyGadgetDemo.php</a></dt>
-    <dd>Demonstrates mobile_detect device detection, using the IdMyGadget Adapter API.</dd>
+    <dt><a href="idMyGadgetDemo.php?displayDeviceData=true" <?php print $demoDisabledClass; ?> >
+      idMyGadgetDemo.php?displayDeviceData=true</a></dt>
+    <dd>Displays the gadget types that idMyGadget has deduced from the key capabilities obtained from Tera-Wurfl</dd>
+    <dt><a href="idMyGadgetDemo.php?displayKeyCapabilities=true" <?php print $demoDisabledClass; ?> >
+      idMyGadgetDemo.php?displayKeyCapabilities=true</a></dt>
+    <dd>Displays all the key capabilities that idMyGadget uses to determine what type of device the user is using</dd>
+    <dt><a href="idMyGadgetDemo.php?displayCapabilityArrays=true" <?php print $demoDisabledClass; ?> >
+      idMyGadgetDemo.php?displayCapabilityArrays=true</a></dt>
+    <dd>Displays the capability arrays that Tera-Wurfl can identify</dd>
+    <dt><a href="idMyGadgetDemo.php?displayAllCapabilities=true" <?php print $demoDisabledClass; ?> >
+      idMyGadgetDemo.php?displayAllCapabilities=true</a></dt>
+    <dd>Displays all of the capabilities that Tera-Wurfl can identify</dd>
+    <dt><a href="idMyGadgetDemo.php?displaySortedCapabilities=true" <?php print $demoDisabledClass; ?> >
+      idMyGadgetDemo.php?displaySortedCapabilities=true</a></dt>
+    <dd>Displays a sorted list of the capabilities that Tera-Wurfl can identify</dd>
     <dt><a href=""></a></dt>
     <dd></dd>
   </dl>
