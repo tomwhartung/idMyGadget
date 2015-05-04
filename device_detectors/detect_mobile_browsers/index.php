@@ -59,9 +59,9 @@ print "<h2></h2>";
     }
    ?>
   <dt><a href="rawDemo.php" <?php print $demoDisabledClass; ?> >rawDemo.php</a></dt>
-  <dd>Demonstrates detect_mobile_browsers device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
+  <dd>Demonstrates <?php print $detectorName; ?> device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
   <dt><a href="idMyGadgetDemo.php" <?php print $demoDisabledClass; ?> >idMyGadgetDemo.php</a></dt>
-  <dd>Demonstrates detect_mobile_browsers device detection, using the IdMyGadget Adapter API.</dd>
+  <dd>Demonstrates <?php print $detectorName; ?> device detection, using the IdMyGadget Adapter API.</dd>
  </dl>
  <hr />
  <p class="centered"><a href="..">Back</a></dt>

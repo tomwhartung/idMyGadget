@@ -62,9 +62,9 @@ print "<h2></h2>";
     Mobile-Detect/examples/demo.php</a></dt>
   <dd>The Mobile-Detect example demo program</dd>
   <dt><a href="rawDemo.php" <?php print $demoDisabledClass; ?> >rawDemo.php</a></dt>
-  <dd>Demonstrates mobile_detect device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
+  <dd>Demonstrates <?php print $detectorName; ?> device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
   <dt><a href="idMyGadgetDemo.php" <?php print $demoDisabledClass; ?> >idMyGadgetDemo.php</a></dt>
-  <dd>Demonstrates mobile_detect device detection, using the IdMyGadget Adapter API.</dd>
+  <dd>Demonstrates <?php print $detectorName; ?> device detection, using the IdMyGadget Adapter API.</dd>
   <dt><a href=""></a></dt>
   <dd></dd>
  </dl>
