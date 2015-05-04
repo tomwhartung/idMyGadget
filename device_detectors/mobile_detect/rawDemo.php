@@ -50,7 +50,7 @@ $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') 
  <hr />
  <p>This is content delivered to all browsers, regardless of the device.</p>
  <hr />
- <p class="centered"><a href="index.php">Back</a></dt>
+ <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</dt>
  <hr />
 </div> <!-- idMyGadget-->
 

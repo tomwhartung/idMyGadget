@@ -43,7 +43,7 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
 ?>
 
  <hr />
- <p class="centered"><a href="index.php">Back</a></dt>
+ <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
  <hr />
 </div> <!-- idMyGadget-->
 
