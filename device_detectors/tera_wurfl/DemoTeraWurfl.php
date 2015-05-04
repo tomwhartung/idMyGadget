@@ -1,5 +1,5 @@
 <?php
-require_once '../php/IdMyGadgetTeraWurfl.php';
+require_once '../../php/IdMyGadgetTeraWurfl.php';
 
 /**
  * Class defining methods to demonstrate features of Wurfl and the IdMyGadget class

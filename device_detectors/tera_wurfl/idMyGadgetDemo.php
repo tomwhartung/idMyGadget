@@ -7,6 +7,8 @@
  * These "various forms" include raw WURFL information, key capabilities, and
  * summary device data based on key WURFL device capabilities.
  */
+require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
+require_once '../../php/IdMyGadgetTeraWurfl.php';
 require_once 'DemoTeraWurfl.php';
 
 define( "STYLE_SHEET_DESKTOP",       "../../css/device/desktop.css" );
