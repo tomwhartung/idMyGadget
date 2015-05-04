@@ -3,10 +3,8 @@
 #
 /unpack/
 /device_detectors/detect_mobile_browsers/php/detectmobilebrowser.php.txt
-/device_detectors/Tera-Wurfl/wurfl-dbapi*
-/device_detectors/Mobile-Detect/
-/device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi*
 /device_detectors/mobile_detect/Mobile-Detect/
+/device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi*
 /tmp/
 *.swp
 /nbproject/
