@@ -107,7 +107,7 @@ print "<h2></h2>";
     <dt><a href=""></a></dt><dd></dd>
   </dl>
   <hr />
-  <p class="centered"><a href="..">Back</a></dt>
+  <p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</dt>
   <hr />
 </div> <!-- idMyGadget-->
 

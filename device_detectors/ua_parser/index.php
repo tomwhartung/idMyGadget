@@ -28,7 +28,7 @@ print "<div id='content'>";
   <dd></dd>
  </dl>
  <hr />
- <p class="centered"><a href="..">Back</a></dt>
+ <p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</p>
  <hr />
 </div> <!-- idMyGadget-->
 

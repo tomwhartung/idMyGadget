@@ -203,11 +203,13 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	 */
 	protected function setGadgetModel( $model_name )
 	{
-		parent::setGadgetModel( $model_name );
+		parent::setGadgetModel();
 
-		if ( $this->gadgetModel === null )
+		// $this->gadgetModel = $model_name;
+		// return;
+
+		if ( $this->gadgetModel === parent::GADGET_MODEL_UNKNOWN )
 		{
-			$this->gadgetModel = parent::GADGET_MODEL_UNRECOGNIZED;
 			if ( isset($model_name) )
 			{
 				if ( $this->gadgetType == parent::GADGET_TYPE_DESKTOP_BROWSER )

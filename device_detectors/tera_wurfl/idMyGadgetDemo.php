@@ -39,17 +39,14 @@ if ( $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER )
 {
 	$gadgetString = "Desktop";
 	$styleSheetFile = STYLE_SHEET_DESKTOP;
-	$pageTitle = "IdMyGadget: Simple Wrapper for Tera-Wurfl";
 }
 else if ( $gadgetType == IdMyGadget::GADGET_TYPE_TABLET )
 {
 	$gadgetString = "Tablet";
 	$styleSheetFile = STYLE_SHEET_TABLET;
-	$pageTitle = "IdMyGadget - Wurfl Wrapper";
 }
 else if ( $gadgetType == IdMyGadget::GADGET_TYPE_PHONE )
 {
-	$pageTitle = "IdMyGadget";
 	if ( $gadgetModel == IdMyGadget::GADGET_MODEL_APPLE_PHONE )
 	{
 		$gadgetString = "iPhone";
@@ -143,9 +140,14 @@ $output = "";
 // Print a "Back" link at the top of pages with a lot of content,
 // so the user doesn't need to scroll all the way down to go Back.
 //
+$longOutput = FALSE;
 if ( isset($displayAllCapabilities) ||
      isset($displayCapabilityArrays) ||
      isset($displaySortedCapabilities) )
+{
+	$longOutput = TRUE;
+}
+if ( $longOutput === TRUE )
 {
     $output .= '<hr />';
     $output .= '<p class="centered"><a href="index.php">Back</a></p>';
@@ -190,9 +192,13 @@ if ( strlen($output) > 0 )
 
   <hr />
   <p class="centered">
-  	|&nbsp;<a href="#container">Top</a>
-  	&nbsp;|&nbsp;
-  	<a href="index.php">Back</a>&nbsp;|</p>
+    <?php
+      if ( $longOutput === TRUE )
+      {
+          print '|&nbsp;<a href="#container">Top</a>&nbsp;';
+      }
+    ?>
+    |&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
   <hr />
 
 </div> <!-- idMyGadget-->

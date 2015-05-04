@@ -30,6 +30,7 @@ abstract class IdMyGadget
 	const GADGET_MODEL_UNRECOGNIZED = 'unrecognized';
 	const GADGET_MODEL_ANDROID_PHONE = 'androidPhone';
 	const GADGET_MODEL_ANDROID_TABLET = 'androidTablet';
+	const GADGET_MODEL_ANDROID_OTHER = 'androidOther';
 	const GADGET_MODEL_APPLE_PHONE = 'iPhone';
 	const GADGET_MODEL_APPLE_TABLET = 'iPad';
 	const GADGET_MODEL_KINDLE = 'Kindle';
