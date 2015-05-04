@@ -7,7 +7,7 @@
  */
 // Include the Tera-WURFL file
 // require_once('./TeraWurfl.php');
-require_once('wurfl-dbapi/TeraWurfl.php');
+require_once('Tera-Wurfl/wurfl-dbapi/TeraWurfl.php');
 
 // instantiate the Tera-WURFL object
 $wurflObj = new TeraWurfl();
