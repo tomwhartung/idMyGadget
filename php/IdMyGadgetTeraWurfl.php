@@ -137,22 +137,64 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 						$this->gadgetType = parent::GADGET_TYPE_PHONE;
 					}
 				}
+			}
+		}
+
+		return $this->gadgetType;
+	}
+	/**
+	 * Set the gadget brand based on the gadget type and brand name
+	 * Note that it does not necessarily equal one of the constants defined in deviceData.php
+	 * @return gadgetBrand
+	 */
+	protected function setGadgetBrand( $brand_name )
+	{
+		parent::setGadgetBrand();
+
+		if ( $this->gadgetBrand === parent::GADGET_BRAND_UNKNOWN )
+		{
+			$this->gadgetBrand = parent::GADGET_BRAND_UNRECOGNIZED;
+			if ( isset($brand_name) )
+			{
+				if ( $this->gadgetType == parent::GADGET_TYPE_DESKTOP_BROWSER )
+				{
+					$this->gadgetBrand = $brand_name;
+				}
+				else if ( $this->gadgetType == parent::GADGET_TYPE_TABLET )
+				{
+					if ( $brand_name == parent::GADGET_BRAND_APPLE )
+					{
+						$this->gadgetBrand = parent::GADGET_BRAND_APPLE;
+					}
+					else
+					{
+						$this->gadgetBrand = $brand_name;
+					}
+				}
+				else if ( $this->gadgetType == parent::GADGET_TYPE_PHONE )
+				{
+					if ( $brand_name == parent::GADGET_BRAND_APPLE )
+					{
+						$this->gadgetBrand = parent::GADGET_BRAND_APPLE;
+					}
+					else
+					{
+						$this->gadgetBrand = $brand_name;
+					}
+				}
 				else
 				{
-					$this->gadgetType = 'new else 1';
+					$this->gadgetBrand = "Unknown Gadget Type " .
+							"(" .$this->gadgetType . "); brand_name: " . $brand_name;
 				}
 			}
 			else
 			{
-				$this->gadgetType = 'new else 2';
+				$this->gadgetBrand = parent::GADGET_BRAND_UNKNOWN;
 			}
 		}
-		else
-		{
-			$this->gadgetType = 'new else 3';
-		}
-
-		return $this->gadgetType;
+	
+		return $this->gadgetBrand;
 	}
 	/**
 	 * Set the gadget model based on the gadget type and model name
@@ -210,59 +252,5 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 		}
 	
 		return $this->gadgetModel;
-	}
-	/**
-	 * Set the gadget brand based on the gadget type and brand name
-	 * Note that it does not necessarily equal one of the constants defined in deviceData.php
-	 * @return gadgetBrand
-	 */
-	protected function setGadgetBrand( $brand_name )
-	{
-		parent::setGadgetBrand( $brand_name );
-
-		if ( $this->gadgetBrand === null )
-		{
-			$this->gadgetBrand = parent::GADGET_BRAND_UNRECOGNIZED;
-			if ( isset($brand_name) )
-			{
-				if ( $this->gadgetType == parent::GADGET_TYPE_DESKTOP_BROWSER )
-				{
-					$this->gadgetBrand = $brand_name;
-				}
-				else if ( $this->gadgetType == parent::GADGET_TYPE_TABLET )
-				{
-					if ( $brand_name == parent::GADGET_BRAND_APPLE )
-					{
-						$this->gadgetBrand = parent::GADGET_BRAND_APPLE;
-					}
-					else
-					{
-						$this->gadgetBrand = $brand_name;
-					}
-				}
-				else if ( $this->gadgetType == parent::GADGET_TYPE_PHONE )
-				{
-					if ( $brand_name == parent::GADGET_BRAND_APPLE )
-					{
-						$this->gadgetBrand = parent::GADGET_BRAND_APPLE;
-					}
-					else
-					{
-						$this->gadgetBrand = $brand_name;
-					}
-				}
-				else
-				{
-					$this->gadgetBrand = "Unknown Gadget Type " .
-							"(" .$this->gadgetType . "); brand_name: " . $brand_name;
-				}
-			}
-			else
-			{
-				$this->gadgetBrand = parent::GADGET_BRAND_UNKNOWN;
-			}
-		}
-	
-		return $this->gadgetBrand;
 	}
 }
