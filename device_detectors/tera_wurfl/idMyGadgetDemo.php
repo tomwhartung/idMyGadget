@@ -121,25 +121,42 @@ else   // Probably a tablet
 </head>
 
 <body>
-  <div id="container">
+<div id="container">
+<h1><?php print $pageTitle; ?></h1>
+<div id='content'>
+<div id="idMyGadget">
+ <h3>IdMyGadget Demos:</h3>
+ <dl>
+  <dt><a href="idMyGadgetDemo.php?displayDeviceData=true">idMyGadgetDemo.php?displayDeviceData=true</a></dt>
+  <dd>Displays the gadget types that idMyGadget has deduced from the key capabilities obtained from Tera-Wurfl</dd>
+  <dt><a href="idMyGadgetDemo.php?displayKeyCapabilities=true">idMyGadgetDemo.php?displayKeyCapabilities=true</a></dt>
+  <dd>Displays all the key capabilities that idMyGadget uses to determine what type of device the user is using</dd>
+  <dt><a href="idMyGadgetDemo.php?displayCapabilityArrays=true">idMyGadgetDemo.php?displayCapabilityArrays=true</a></dt>
+  <dd>Displays the capability arrays that Tera-Wurfl can identify</dd>
+  <dt><a href="idMyGadgetDemo.php?displayAllCapabilities=true">idMyGadgetDemo.php?displayAllCapabilities=true</a></dt>
+  <dd>Displays all of the capabilities that Tera-Wurfl can identify</dd>
+  <dt><a href="idMyGadgetDemo.php?displaySortedCapabilities=true">idMyGadgetDemo.php?displaySortedCapabilities=true</a></dt>
+  <dd>Displays a sorted list of the capabilities that Tera-Wurfl can identify</dd>
+  <dt><a href=""></a></dt><dd></dd>
+ </dl>
+
+  <hr />
+  <p class="centered"><a href="index.php">Back</a></p>
+  <hr />
+</div> <!-- idMyGadget-->
+
 <?php
 //
 // Produce and display any demo output that may be desired
 //
-print "<h1>$pageTitle</h1>";
-print "<div id='content'>";
 print "<h2>$gadgetString</h2>";
+
 $demoTeraWurfl = new DemoTeraWurfl( $idMyGadget );
-$displayCapabilityArrays = filter_input(
-		INPUT_GET, 'displayCapabilityArrays', FILTER_VALIDATE_BOOLEAN );
-$displayAllCapabilities  = filter_input(
-		INPUT_GET, 'displayAllCapabilities', FILTER_VALIDATE_BOOLEAN );
-$displaySortedCapabilities = filter_input(
-		INPUT_GET, 'displaySortedCapabilities', FILTER_VALIDATE_BOOLEAN );
-$displayKeyCapabilities = filter_input(
-		INPUT_GET, 'displayKeyCapabilities', FILTER_VALIDATE_BOOLEAN );
-$displayDeviceData = filter_input(
-		INPUT_GET, 'displayDeviceData', FILTER_VALIDATE_BOOLEAN );
+$displayCapabilityArrays = filter_input( INPUT_GET, 'displayCapabilityArrays', FILTER_VALIDATE_BOOLEAN );
+$displayAllCapabilities  = filter_input( INPUT_GET, 'displayAllCapabilities', FILTER_VALIDATE_BOOLEAN );
+$displaySortedCapabilities = filter_input( INPUT_GET, 'displaySortedCapabilities', FILTER_VALIDATE_BOOLEAN );
+$displayKeyCapabilities = filter_input( INPUT_GET, 'displayKeyCapabilities', FILTER_VALIDATE_BOOLEAN );
+$displayDeviceData = filter_input( INPUT_GET, 'displayDeviceData', FILTER_VALIDATE_BOOLEAN );
 $output = "";
 
 if ( isset($displayCapabilityArrays) )
@@ -178,54 +195,14 @@ if ( strlen($output) > 0 )
 }
 ?>
 
-<div id="idMyGadget">
- <h3>IdMyGadget Demos:</h3>
- <dl>
-  <dt><a href="README.md" target="_blank">README.md</a></dt>
-  <dd>The idMyGadget README file contains instructions on how to set up Tera-Wurfl.
-    The formatted <a href="https://github.com/tomwhartung/idMyGadget/blob/master/README.md">version on github</a> is preferable.</dd>
-  <dt><a href="demoTeraWurfl.php?displayDeviceData=true">demoTeraWurfl.php?displayDeviceData=true</a></dt>
-  <dd>Displays the gadget types that idMyGadget has deduced from the key capabilities obtained from Tera-Wurfl</dd>
-  <dt><a href="demoTeraWurfl.php?displayKeyCapabilities=true">demoTeraWurfl.php?displayKeyCapabilities=true</a></dt>
-  <dd>Displays all the key capabilities that idMyGadget uses to determine what type of device the user is using</dd>
-  <dt><a href="demoTeraWurfl.php?displayCapabilityArrays=true">demoTeraWurfl.php?displayCapabilityArrays=true</a></dt>
-  <dd>Displays the capability arrays that Tera-Wurfl can identify</dd>
-  <dt><a href="demoTeraWurfl.php?displayAllCapabilities=true">demoTeraWurfl.php?displayAllCapabilities=true</a></dt>
-  <dd>Displays all of the capabilities that Tera-Wurfl can identify</dd>
-  <dt><a href="demoTeraWurfl.php?displaySortedCapabilities=true">demoTeraWurfl.php?displaySortedCapabilities=true</a></dt>
-  <dd>Displays a sorted list of the capabilities that Tera-Wurfl can identify</dd>
-  <dt><a href=""></a></dt><dd></dd>
- </dl>
-</div> <!-- idMyGadget-->
+  <hr />
+  <p class="centered">
+  	|&nbsp;<a href="#container">Top</a>
+  	&nbsp;|&nbsp;
+  	<a href="index.php">Back</a>&nbsp;|</p>
+  <hr />
 
-<?php if ( $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER ) : ?>
- <div id="wurfl">
-  <h3>Wurfl Installation and Administration</h3>
-  <dl>
-   <dt><a href="lib/Tera-Wurfl/wurfl-dbapi/admin/install.php">lib/Tera-Wurfl/wurfl-dbapi/admin/install.php</a></dt>
-   <dd>Use to install and initialize the database; for more information, see the README file</dd>
-   <dt><a href="lib/Tera-Wurfl/wurfl-dbapi/admin/demoTeraWurfl.php" target="_blank">lib/Tera-Wurfl/wurfl-dbapi/admin/demoTeraWurfl.php</a></dt>
-   <dd>WURFL-DB API (Tera-Wurfl) Administration script</dd>
-   <dt><a href="verySimpleExample.php" target="_blank">verySimpleExample.php</a></dt>
-   <dd>Copied from Tera-Wurfl README file.  Use to verify that Tera-Wurfl is properly installed and initialized.
-     If you run this from a browser, expect to see <strong>"You should not be here"</strong></dd>
-   <dt><a href="lib/Tera-Wurfl/wurfl-dbapi/README.txt">lib/Tera-Wurfl/wurfl-dbapi/README.txt</a></dt>
-   <dd>Tera-Wurfl README file contains detailed installation instructions</dd>
-  </dl>
-  <h3>Wurfl Reference</h3>
-  <dl> 
-   <dt><a href="http://sourceforge.net/projects/wurfl/" target="_blank">http://sourceforge.net/projects/wurfl/</a></dt>
-   <dd>WURFL Home Page at sourceforge.net</dd>
-   <dt><a href="http://sourceforge.net/projects/wurfl/files/WURFL%20Database/" target="_blank">http://sourceforge.net/projects/wurfl/files/WURFL Database/</a></dt>
-   <dd>WURFL Database Download Page at sourceforge.net</dd>
-   <dt><a href="http://dbapi.scientiamobile.com/wiki/demoTeraWurfl.php/Installation" target="_blank">http://dbapi.scientiamobile.com/wiki/demoTeraWurfl.php/Installation</a></dt>
-   <dd>Tera Wurfl Installation</dd>
-   <dt><a href=""></a></dt><dd></dd>
-  </dl>
- </div> <!-- wurfl-->
-<?php endif; ?>
-
- </div> <!-- content -->
+</div> <!-- content -->
 </div> <!-- container -->
 </body>
 </html>

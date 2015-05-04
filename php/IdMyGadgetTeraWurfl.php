@@ -27,9 +27,9 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 		"is_tablet" => '',
 		"model_name" => '',
 		"brand_name" => '',
-	//	"device_os" => '',             // currently unused but keep for easy future reference
-	//	"is_wireless_device" => '',    // currently unused but keep for easy future reference
-	//	"dual_orientation" => '',      // currently unused but keep for easy future reference
+		"device_os" => '',             // currently unused but keep for easy future reference
+		"is_wireless_device" => '',    // currently unused but keep for easy future reference
+		"dual_orientation" => '',      // currently unused but keep for easy future reference
 	);
 
 	/**
@@ -116,11 +116,10 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	 */
 	protected function setGadgetType( $pointing_method, $is_tablet )
 	{
-		parent::setGadgetType( $pointing_method, $is_tablet );
+		parent::setGadgetType();
 
-		if ( $this->gadgetType === null )
+		if ( $this->gadgetType === parent::GADGET_TYPE_UNKNOWN )
 		{
-			$this->gadgetType  = parent::GADGET_TYPE_UNRECOGNIZED;
 			if ( isset($pointing_method) )
 			{
 				if ( $pointing_method == "mouse" )
@@ -138,9 +137,21 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 						$this->gadgetType = parent::GADGET_TYPE_PHONE;
 					}
 				}
+				else
+				{
+					$this->gadgetType = 'new else 1';
+				}
+			}
+			else
+			{
+				$this->gadgetType = 'new else 2';
 			}
 		}
-	
+		else
+		{
+			$this->gadgetType = 'new else 3';
+		}
+
 		return $this->gadgetType;
 	}
 	/**

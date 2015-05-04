@@ -42,9 +42,9 @@ print "<h2></h2>";
          target="_blank">The formatted version on github</a>
       is more readable.</dd>
     <dt><a href="Tera-Wurfl/wurfl-dbapi/README.txt">Tera-Wurfl/wurfl-dbapi/README.txt</a></dt>
-    <dd>Tera-Wurfl README file contains detailed installation instructions</dd>
+    <dd>The Tera-Wurfl README file contains detailed installation instructions.</dd>
     <dt><a href="Tera-Wurfl/wurfl-dbapi/admin/install.php">Tera-Wurfl/wurfl-dbapi/admin/install.php</a></dt>
-    <dd>Use to install and initialize the database; for more information, see the README file</dd>
+    <dd>The Tera-Wurfl install script that initializes the database; for more information, see the README files.</dd>
   </dl>
   <?php
     if ( ! $detectorInstalled )
@@ -63,7 +63,7 @@ print "<h2></h2>";
   <h3>Tera-Wurfl Demos</h3>
   <dl>
     <dt><a href="verySimpleExample.php" <?php print $demoDisabledClass; ?> target="_blank">verySimpleExample.php</a></dt>
-    <dd>A Tera-Wurfl "EXAMPLE" demo program from the
+    <dd>A Tera-Wurfl "EXAMPLE" demo program copied from the
       <a href="Tera-Wurfl/wurfl-dbapi/README.txt" target="_blank">Tera-Wurfl/wurfl-dbapi/README.txt</a> file.
       <br />
       Expected results:
@@ -84,13 +84,13 @@ print "<h2></h2>";
   <dl>
     <dt><a href="http://sourceforge.net/projects/wurfl/" target="_blank">
      sourceforge.net/projects/wurfl/</a></dt>
-    <dd>WURFL Home Page at sourceforge.net</dd>
+    <dd>WURFL Home Page at sourceforge.net .</dd>
     <dt><a href="http://sourceforge.net/projects/wurfl/files/WURFL%20Database/" target="_blank">
      sourceforge.net/projects/wurfl/files/WURFL Database/</a></dt>
-    <dd>WURFL Database Download Page at sourceforge.net</dd>
-    <dt><a href="http://dbapi.scientiamobile.com/wiki/demoTeraWurfl.php/Installation" target="_blank">
-     dbapi.scientiamobile.com/wiki/demoTeraWurfl.php/Installation</a></dt>
-    <dd>Tera Wurfl Installation</dd>
+    <dd>WURFL Database Download Page at sourceforge.net .</dd>
+    <dt><a href="http://www.tera-wurfl.com/wiki/index.php/Main_Page" target="_blank">
+     www.tera-wurfl.com/wiki/index.php/Main_Page</a></dt>
+    <dd>Tera Wurfl Wiki main page.</dd>
     <dt><a href=""></a></dt><dd></dd>
   </dl>
   <hr />
