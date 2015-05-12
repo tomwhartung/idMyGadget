@@ -184,7 +184,7 @@ if ( isset($displaySortedCapabilities) )
 
 if ( strlen($output) > 0 )
 {
-	print "<div id='output'>";
+	print "<div class='output'>";
 	print $output;
 	print "</div> <!-- output -->";
 }
