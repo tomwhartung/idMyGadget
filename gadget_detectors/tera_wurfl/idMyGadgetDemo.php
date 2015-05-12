@@ -7,7 +7,7 @@
  * These "various forms" include raw WURFL information, key capabilities, and
  * summary device data based on key WURFL device capabilities.
  */
-$pageTitle = 'idMyGadget tera_wurfl demo';
+$pageTitle = 'idMyGadgetDemo';
 
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
@@ -198,8 +198,8 @@ if ( strlen($output) > 0 )
     |&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
   <hr />
 
-</div> <!-- idMyGadget-->
-</div> <!-- content -->
-</div> <!-- container -->
+</div> <!-- #idMyGadget-->
+</div> <!-- #content -->
+</div> <!-- #container -->
 </body>
 </html>
