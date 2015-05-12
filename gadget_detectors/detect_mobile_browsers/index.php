@@ -27,7 +27,7 @@ else
 </head>
 
 <body>
-  <div id="container">
+<div id="container">
 <?php
 print "<h1>$detectorName</h1>";
 print "<div id='content'>";
@@ -72,8 +72,6 @@ print "<h2></h2>";
  <hr />
  <p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</p>
  <hr />
-</div> <!-- idMyGadget-->
-
 </div> <!-- content -->
 </div> <!-- container -->
 </body>

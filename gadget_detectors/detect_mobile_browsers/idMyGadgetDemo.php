@@ -25,6 +25,7 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
 <div id="container">
 <h2><?php print $pageTitle; ?></h2>
 <div id="content">
+<h3><?php print get_class($idMyGadget); ?></h3>
 <div id="idMyGadget">
  <?php
   $deviceData = $idMyGadget->getDeviceData();
