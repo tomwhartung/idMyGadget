@@ -14,7 +14,6 @@ require_once '../../php/IdMyGadgetTeraWurfl.php';
 require_once 'DemoTeraWurfl.php';
 
 define( "STYLE_SHEET_DESKTOP",       "../../css/device/desktop.css" );
-define( "STYLE_SHEET_MEDIA_QUERIES", "../../css/basicMediaQueries.css" );
 define( "STYLE_SHEET_TABLET",        "../../css/device/tablet.css" );
 define( "STYLE_SHEET_ANDROID_PHONE", "../../css/device/androidPhone.css" );
 define( "STYLE_SHEET_APPLE_PHONE",   "../../css/device/iPhone.css" );
@@ -58,11 +57,6 @@ else if ( $gadgetType == IdMyGadget::GADGET_TYPE_PHONE )
 		$styleSheetFile = STYLE_SHEET_ANDROID_PHONE;
 	}
 }
-else
-{
-	$gadgetString = "Unknown";
-	$styleSheetFile = STYLE_SHEET_MEDIA_QUERIES;
-}
 //
 // CSS link tags to consider thinking about - specifically the media attributes:
 // Android version:
@@ -79,6 +73,7 @@ else
   <title><?php print $pageTitle; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../css/allDevices.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/basicMediaQueries.css" />
   <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="../../css/device/explorer.css" media="all" />
   <![endif]-->
