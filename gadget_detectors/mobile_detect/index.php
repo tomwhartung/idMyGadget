@@ -39,7 +39,7 @@ print "<h2></h2>";
  <dl>
   <dt><a href="README.md" target="_blank">README.md</a></dt>
   <dd>The idMyGadget Mobile-Detect README file contains instructions on how to set up Mobile-Detect.
-    <a href="https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/mobile_detect/README.md"
+    <a href="https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/mobile_detect/README.md"
        target="_blank">The formatted version on github</a>
     is more readable.</dd>
   <?php
@@ -50,7 +50,7 @@ print "<h2></h2>";
       print '<dt>Warning:</dt>';
       print '<dd>The ' . $detectorName . ' software is not installed, so demos will not work.  ';
       print 'To install ' . $detectorName . ', follow the instructions in the ';
-      print '<a href="https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/mobile_detect/README.md" ';
+      print '<a href="https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/mobile_detect/README.md" ';
       print   'target="_blank">README.md file</a> ';
       print 'and try again.</dd>';
       print '</div><!-- .warning -->';

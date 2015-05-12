@@ -34,9 +34,9 @@ wurfl-dbapi-a.b.c.d.tar.gz (e.g., wurfl-dbapi-1.5.1.1.tar.gz)
 
 Create subdirectory for Tera-Wurfl code and install it, by
 unzipping and unpacking wurfl-dbapi-a.b.c.d.tar.gz file in
-/var/www/idMyGadget/device_detectors/tera_wurfl/Tera-Wurfl :
+/var/www/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl :
 ```
-cd /var/www/idMyGadget/device_detectors/tera_wurfl
+cd /var/www/idMyGadget/gadget_detectors/tera_wurfl
 mkdir Tera-Wurfl
 cd Tera-Wurfl
 cp ~/Downloads/wurfl-php-a.b.c.d.tar.gz .
@@ -50,7 +50,7 @@ wurfl-dbapi.  This allows for easily upgrading to a new version,
 then possibly backing out of the upgrade, by simply changing the
 link:
 ```
-cd /var/www/idMyGadget/device_detectors/tera_wurfl/Tera-Wurfl
+cd /var/www/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl
 ln -s wurfl-dbapi-a.b.c.d wurfl-dbapi
 ```
 
@@ -81,7 +81,7 @@ update the TeraWurflConfig.php file accordingly.***
 
 Create a data directory and 
 ```
-cd /var/www/idMyGadget/device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi
+cd /var/www/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi
 mkdir data    # may already be present
 sudo chgrp -R www-data data/
 sudo chmod -R g+rw data/
@@ -89,9 +89,9 @@ sudo chmod -R g+rw data/
 
 To verify that you have the database and data directory set up properly,
 access the following file in your web browser:
-[http://example.com/idMyGadget/device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi/admin/install.php]
+[http://example.com/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi/admin/install.php]
 For example, if you are setting this up on your localhost, go to
-[http://localhost/idMyGadget/device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi/admin/install.php]
+[http://localhost/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi/admin/install.php]
 Note that there is a link to this file in the install.php file.
 
 If everything looks OK on the install page, populate the database by
@@ -103,7 +103,7 @@ should remove the Tera-Wurfl/wurfl-dbapi/admin/install.php file, but I
 recommend renaming it in case you want to reinstall again later (e.g.,
 using a different database name):
 ```
-cd /var/www/idMyGadget/device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi/admin
+cd /var/www/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi/admin
 mv install.php install.php-save_for_possible_reinstall
 ```
 

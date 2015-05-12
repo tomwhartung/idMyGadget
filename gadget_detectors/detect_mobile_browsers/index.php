@@ -39,7 +39,7 @@ print "<h2></h2>";
  <dl>
   <dt><a href="README.md" target="_blank">README.md</a></dt>
   <dd>Contains instructions on how to enable this option.
-    <a href="https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/detect_mobile_browsers/README.md"
+    <a href="https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/detect_mobile_browsers/README.md"
        target="_blank">The formatted version on github</a>
     is more readable.</dd>
   <?php
@@ -50,7 +50,7 @@ print "<h2></h2>";
       print '<dt>Warning:</dt>';
       print '<dd>The ' . $detectorName . ' software is not installed, so demos will not work. ';
       print 'To install ' . $detectorName . ', follow the instructions in the ';
-      print '<a href="https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/detect_mobile_browsers/README.md" ';
+      print '<a href="https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/detect_mobile_browsers/README.md" ';
       print   'target="_blank">README.md file</a> ';
       print 'and try again.</dd>';
       print '</div><!-- .warning -->';

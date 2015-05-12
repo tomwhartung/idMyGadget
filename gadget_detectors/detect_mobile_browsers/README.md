@@ -2,7 +2,7 @@
 ## Introduction:
 
 Once you have installed idMyGadget, as described in the
-[device_detectors README.md file](https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/README.md),
+[gadget_detectors README.md file](https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/README.md),
 file, follow these steps to install the PHP device detection script from [detectmobilebrowsers.com].
 
 ## Installation and Setup:
@@ -16,7 +16,7 @@ IdMyGadget includes this file, so no installation or setup is required.
 1. Visit http://detectmobilebrowsers.com and click on the PHP button to download the latest version of the detectmobilebrowsers script.
   * This file is named `detectmobilebrowser.php.txt`.
 
-1. Copy this file into the `idMyGadget/device_detectors/detect_mobile_browsers/php` directory.
+1. Copy this file into the `idMyGadget/gadget_detectors/detect_mobile_browsers/php` directory.
 
 1. Rename this file from `detectmobilebrowser.php.txt` to `detectmobilebrowser.php`.
 
@@ -32,10 +32,10 @@ IdMyGadget includes this file, so no installation or setup is required.
 ## Running the Demos
 
 Verify that you have set this up properly, access the following file in your web browser:
-[http://example.com/idMyGadget/device_detectors/detect_mobile_browsers/rawDemo.php](http://example.com/idMyGadget/device_detectors/detect_mobile_browsers/rawDemo.php)
+[http://example.com/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php](http://example.com/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php)
 
 For example, if you are setting this up on your localhost, go to
-[http://localhost/idMyGadget/device_detectors/detect_mobile_browsers/rawDemo.php](http://localhost/idMyGadget/device_detectors/detect_mobile_browsers/rawDemo.php)
+[http://localhost/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php](http://localhost/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php)
 
 There is a link to this file in the index.php file in this directory.
 

@@ -38,7 +38,7 @@ print "<h2></h2>";
   <dl>
     <dt><a href="README.md" target="_blank">README.md</a></dt>
     <dd>The idMyGadget Tera-Wurfl README file contains instructions on how to set up Tera-Wurfl.
-      <a href="https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/tera_wurfl/README.md"
+      <a href="https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/tera_wurfl/README.md"
          target="_blank">The formatted version on github</a>
       is more readable.</dd>
     <dt><a href="Tera-Wurfl/wurfl-dbapi/README.txt">Tera-Wurfl/wurfl-dbapi/README.txt</a></dt>
@@ -53,7 +53,7 @@ print "<h2></h2>";
       print '<dt>Warning:</dt>';
       print '<dd>The ' . $detectorName . ' device detector software is not installed, so demos will not work.  ';
       print 'To install ' . $detectorName . ', follow the instructions in the ';
-      print '<a href="https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/tera_wurfl/README.md" ';
+      print '<a href="https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/tera_wurfl/README.md" ';
       print   'target="_blank">README.md file</a> ';
       print 'and try again.</dd>';
       print '</div><!-- .warning -->';

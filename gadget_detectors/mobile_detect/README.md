@@ -2,7 +2,7 @@
 ## Introduction:
 
 Once you have installed idMyGadget, as described in the
-[device_detectors README.md file](https://github.com/tomwhartung/idMyGadget/blob/master/device_detectors/README.md)
+[gadget_detectors README.md file](https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/README.md)
 file, follow these steps to install the Mobile-Detect PHP device detection script.
 
 ## Installation and Setup:
@@ -11,16 +11,16 @@ This option requires downloading (cloning) the Mobile-Detect code from github.
 
 1. Access this URL: https://github.com/serbanghita/Mobile-Detect
 
-1. If you are accustomed to using github, you probably want to clone the code, otherwise it may be easier to download the zip file.  Either way, clone or unzip the code into the `idMyGadget/device_detectors/mobile_detect` directory.
+1. If you are accustomed to using github, you probably want to clone the code, otherwise it may be easier to download the zip file.  Either way, clone or unzip the code into the `idMyGadget/gadget_detectors/mobile_detect` directory.
 
-1. This should result in the `idMyGadget/device_detectors/mobile_detect/Mobile-Detect' directory containing all of the Mobile-Detect code.
+1. This should result in the `idMyGadget/gadget_detectors/mobile_detect/Mobile-Detect' directory containing all of the Mobile-Detect code.
 
 ## Updating the Installation 
 
 1. Visit http://detectmobilebrowsers.com and click on the PHP button to download the latest version of the detectmobilebrowsers script.
   * This file is named `detectmobilebrowser.php.txt`.
 
-1. Copy this file into the `idMyGadget/device_detectors/detect_mobile_browsers/php` directory.
+1. Copy this file into the `idMyGadget/gadget_detectors/detect_mobile_browsers/php` directory.
 
 1. Rename this file from `detectmobilebrowser.php.txt` to `detectmobilebrowser.php`.
 
@@ -36,10 +36,10 @@ This option requires downloading (cloning) the Mobile-Detect code from github.
 ## Running the Demos
 
 Verify that you have set this up properly, access the following file in your web browser:
-[http://example.com/idMyGadget/device_detectors/detect_mobile_browsers/rawDemo.php](http://example.com/idMyGadget/device_detectors/detect_mobile_browsers/rawDemo.php)
+[http://example.com/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php](http://example.com/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php)
 
 For example, if you are setting this up on your localhost, go to
-[http://localhost/idMyGadget/device_detectors/detect_mobile_browsers/rawDemo.php](http://localhost/idMyGadget/device_detectors/detect_mobile_browsers/rawDemo.php)
+[http://localhost/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php](http://localhost/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php)
 
 There is a link to this file in the index.php file in this directory.
 
