@@ -154,29 +154,29 @@ if ( isset($displayAllCapabilities) )
 	$output .= "<h3>Flat List of Capabilities</h3>";
 	$output .= "<ul class='no-bullets'>" . $demoTeraWurfl->displayAllCapabilities() . "</ul>";
 }
-if ( isset($displayCapabilityArrays) )
+else if ( isset($displayCapabilityArrays) )
 {
 	$output .= "<h3>Capability Arrays for This Device</h3>";
 	$output .= $demoTeraWurfl->displayCapabilityArrays();
 }
-if ( isset($displayDeviceData) )
+else if ( isset($displayKeyCapabilities) )
+{
+	$idMyGadget->getKeyCapabilities();
+	$output .= "<h3>Key Capabilities</h3>";
+	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayKeyCapabilities() . "</ul>";
+}
+else if ( isset($displaySortedCapabilities) )
+{
+	$output .= "<h3>Sorted List of Capabilities</h3>";
+	$output .= "<ul class='no-bullets'>" . $demoTeraWurfl->displaySortedCapabilities() . "</ul>";
+}
+else // if ( isset($displayDeviceData) ) // display device data by default
 {
 	$output .= "<h4>detectorUsed:" . "</h4>";
 	$output .= "<p>" . $idMyGadget->detectorUsed . "</p>";
 	$idMyGadget->getDeviceData();
 	$output .= "<h4>Device Data</h4>";
 	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
-}
-if ( isset($displayKeyCapabilities) )
-{
-	$idMyGadget->getKeyCapabilities();
-	$output .= "<h3>Key Capabilities</h3>";
-	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayKeyCapabilities() . "</ul>";
-}
-if ( isset($displaySortedCapabilities) )
-{
-	$output .= "<h3>Sorted List of Capabilities</h3>";
-	$output .= "<ul class='no-bullets'>" . $demoTeraWurfl->displaySortedCapabilities() . "</ul>";
 }
 
 if ( strlen($output) > 0 )
