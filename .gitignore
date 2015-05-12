@@ -2,9 +2,14 @@
 # Documentation is here: http://git-scm.com/docs/gitignore
 #
 /unpack/
+tmp/
+*.swp
+/nbproject/
+
+#
+# Ignore third-party code
+#
 /device_detectors/detect_mobile_browsers/php/detectmobilebrowser.php.txt
 /device_detectors/mobile_detect/Mobile-Detect/
 /device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi*
-/tmp/
-*.swp
-/nbproject/
+
