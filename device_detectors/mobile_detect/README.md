@@ -12,9 +12,8 @@ This option requires downloading (cloning) the Mobile-Detect code from github.
 1. Access this URL: https://github.com/serbanghita/Mobile-Detect
 
 1. If you are accustomed to using github, you probably want to clone the code, otherwise it may be easier to download the zip file.  Either way, clone or unzip the code into the `idMyGadget/device_detectors/mobile_detect` directory.
-* This should result in the `idMyGadget/device_detectors/mobile_detect/Mobile-Detect' directory containing all of the Mobile-Detect code.
 
-1. 
+1. This should result in the `idMyGadget/device_detectors/mobile_detect/Mobile-Detect' directory containing all of the Mobile-Detect code.
 
 ## Updating the Installation 
 
