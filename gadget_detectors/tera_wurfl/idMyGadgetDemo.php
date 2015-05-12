@@ -57,16 +57,6 @@ else if ( $gadgetType == IdMyGadget::GADGET_TYPE_PHONE )
 		$styleSheetFile = STYLE_SHEET_ANDROID_PHONE;
 	}
 }
-//
-// CSS link tags to consider thinking about - specifically the media attributes:
-// Android version:
-//   <link rel="stylesheet" type="text/css" href="css/androidPhone.css" media="only screen and (max-width: 600px)" />
-//   <link rel="stylesheet" type="text/css" href="css/desktop.css" media="screen and (min-width: 601px)" />
-// iPhone version:
-//   <link rel="stylesheet" type="text/css" href="css/iPhone.css" media="only screen and (max-width: 480px)" />
-//   <link rel="stylesheet" type="text/css" href="css/desktop.css" media="screen and (min-width: 481px)" />
-// --> The thing is, these look like crap when we exceed the max-widths!
-// --> And that is why I did the WURFL thing!
 ?>
 
 <head>
@@ -77,52 +67,21 @@ else if ( $gadgetType == IdMyGadget::GADGET_TYPE_PHONE )
   <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="../../css/device/explorer.css" media="all" />
   <![endif]-->
-<?php
-//
-// Print a link tag to include the desired style sheet.
-//
-if ( $styleSheetFile == STYLE_SHEET_DESKTOP )
-{
-	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" ' .
-			'media="screen and (min-width: 481px)" ' .
-			'/>';
-}
-elseif ( $styleSheetFile == STYLE_SHEET_APPLE_PHONE )
-{
-	print '<meta name="viewport" content="user-scalable=no, width=device-width" />' . "\n";
-	print '<meta name="apple-mobile-web-app-capable" content="yes" />' . "\n";
-	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" ' .
-			'media="only screen and (max-width: 480px)" ' .  // comment out to test (set allowOverridesInUrl = true)
-			'/>';
-}
-elseif ( $styleSheetFile == STYLE_SHEET_ANDROID_PHONE )
-{
-	print '<meta name="viewport" content="user-scalable=no, width=device-width" />' . "\n";
-	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" ' .
-			'media="only screen and (max-width: 600px)" ' .  // comment out to test (set allowOverridesInUrl = true)
-			'/>';
-}
-else   // Probably a tablet
-{
-	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" />';
-	print '<link rel="stylesheet" type="text/css" href="../../css/reverseColors.css" />';
-}
-// Useful for debugging sometimes:
-// print '<link rel="stylesheet" type="text/css" href="../css/showBorders.css" />';
-?>
 </head>
 
 <body>
 <div id="container">
 <h1><?php print $pageTitle; ?></h1>
 <div id='content'>
+<h3><?php print get_class($idMyGadget); ?></h3>
 <div id="idMyGadget">
 
 <?php
 //
 // Produce and display any demo output that may be desired
+// -------------------------------------------------------
 //
-print "<h2>$gadgetString</h2>";
+print "<h3>$gadgetString</h3>";
 
 $demoTeraWurfl = new DemoTeraWurfl( $idMyGadget );
 $displayCapabilityArrays = filter_input( INPUT_GET, 'displayCapabilityArrays', FILTER_VALIDATE_BOOLEAN );
@@ -175,7 +134,7 @@ else // if ( isset($displayDeviceData) ) // display device data by default
 	$output .= "<h4>detectorUsed:" . "</h4>";
 	$output .= "<p>" . $idMyGadget->detectorUsed . "</p>";
 	$idMyGadget->getDeviceData();
-	$output .= "<h4>Device Data</h4>";
+	$output .= "<h4>deviceData</h4>";
 	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
 }
 

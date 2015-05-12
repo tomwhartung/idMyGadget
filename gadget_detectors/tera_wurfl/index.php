@@ -2,7 +2,9 @@
 <html lang='en'>
 <?php
 $detectorName = 'tera_wurfl';
-
+//
+// Determine whether this dector is installed
+//
 if ( file_exists('Tera-Wurfl/wurfl-dbapi/TeraWurflConfig.php') )
 {
 	$detectorInstalled = TRUE;
@@ -30,7 +32,6 @@ else
 <?php
 print "<h1>$detectorName</h1>";
 print "<div id='content'>";
-print "<h2></h2>";
 ?>
 
 <div id="idMyGadget">
@@ -43,15 +44,18 @@ print "<h2></h2>";
       is more readable.</dd>
     <dt><a href="Tera-Wurfl/wurfl-dbapi/README.txt">Tera-Wurfl/wurfl-dbapi/README.txt</a></dt>
     <dd>The Tera-Wurfl README file contains detailed installation instructions.</dd>
-    <dt><a href="Tera-Wurfl/wurfl-dbapi/admin/install.php">Tera-Wurfl/wurfl-dbapi/admin/install.php</a></dt>
-    <dd>The Tera-Wurfl install script that initializes the database; for more information, see the README files.</dd>
+    <dt><a href="Tera-Wurfl/wurfl-dbapi/admin/install.php">
+      Tera-Wurfl/wurfl-dbapi/admin/install.php</a></dt>
+    <dd>The Tera-Wurfl install script that initializes the database.
+      For more information, see the README files.</dd>
   </dl>
   <?php
     if ( ! $detectorInstalled )
     {
       print '<dl class="warning">';
       print '<dt>Warning:</dt>';
-      print '<dd>The ' . $detectorName . ' device detector software is not installed, so demos will not work.  ';
+      print '<dd>The ' . $detectorName . ' device detector software is not installed, ';
+      print 'so demos will not work.  ';
       print 'To install ' . $detectorName . ', follow the instructions in the ';
       print '<a href="https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/tera_wurfl/README.md" ';
       print   'target="_blank">README.md file</a> ';
@@ -60,11 +64,13 @@ print "<h2></h2>";
       print '</dl>';
     }
    ?>
-  <h3>Tera-Wurfl Demos</h3>
+  <h3>Standard Demos:</h3>
   <dl>
-    <dt><a href="verySimpleExample.php" <?php print $demoDisabledClass; ?> target="_blank">verySimpleExample.php</a></dt>
+    <dt><a href="verySimpleExample.php" <?php print $demoDisabledClass; ?> target="_blank">
+      verySimpleExample.php</a></dt>
     <dd>A Tera-Wurfl "EXAMPLE" demo program copied from the
-      <a href="Tera-Wurfl/wurfl-dbapi/README.txt" target="_blank">Tera-Wurfl/wurfl-dbapi/README.txt</a> file.
+      <a href="Tera-Wurfl/wurfl-dbapi/README.txt" target="_blank">
+        Tera-Wurfl/wurfl-dbapi/README.txt</a> file.
       <br />
       Expected results:
       <ul>
@@ -74,10 +80,20 @@ print "<h2></h2>";
       </ul>
     </dd>
     <dt><a href="rawDemo.php" <?php print $demoDisabledClass; ?> >rawDemo.php</a></dt>
-    <dd>Demonstrates <?php print  $detectorName; ?> device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
+    <dd>Demonstrates <?php print  $detectorName; ?>
+      device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
     <dt><a href="idMyGadgetDemo.php" <?php print $demoDisabledClass; ?> >
-        idMyGadgetDemo.php,</a>
-      <a href="idMyGadgetDemo.php?displayDeviceData=true" <?php print $demoDisabledClass; ?> >
+      idMyGadgetDemo.php</a></dt>
+    <dd>Demonstrates <?php print $detectorName; ?>
+       device detection, using the IdMyGadget Adapter API.</dd>
+    <dt><a href="deviceDeterminesContentDemo.php" <?php print $demoDisabledClass; ?> >
+      deviceDeterminesContentDemo.php</a></dt>
+    <dd>Demonstrates using <?php print $detectorName; ?>
+      device detection to deliver device-specific content.</dd>
+  </dl>
+  <h3>More Demos:</h3>
+  <dl>
+    <dt><a href="idMyGadgetDemo.php?displayDeviceData=true" <?php print $demoDisabledClass; ?> >
         idMyGadgetDemo.php?displayDeviceData=true</a></dt>
     <dd>Displays the gadget types that idMyGadget has deduced from the key capabilities obtained from Tera-Wurfl</dd>
     <dt><a href="idMyGadgetDemo.php?displayKeyCapabilities=true" <?php print $demoDisabledClass; ?> >
