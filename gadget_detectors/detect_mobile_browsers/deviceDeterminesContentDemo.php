@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang='en'>
 <?php
-$pageTitle = 'idMyGadgetDemo';
+$pageTitle = 'deviceDeterminesContentDemo';
 
 require_once( 'php/detectmobilebrowser.php' );
 require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
+require_once( '../deviceDependantContent.php' );
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
 $usingMoblePhone = FALSE;
@@ -26,17 +27,11 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
 <h2><?php print $pageTitle; ?></h2>
 <div id="content">
 <div id="idMyGadget">
+ <h3>IdMyGadget Demo Results:</h3>
  <?php
   $deviceData = $idMyGadget->getDeviceData();
-  print "<div class='output'>";
-  print "<h4>detectorUsed:" . "</h4>";
-  print "<p>" . $idMyGadget->detectorUsed . "</p>";
-
-  print "<h4>deviceData:</h4>";
-  print "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
-  print "</div> <!-- .output -->";
- ?>
-
+  deviceDependantContent( $deviceData );
+?>
  <hr />
  <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
  <hr />
