@@ -76,9 +76,9 @@ print "<h2></h2>";
     <dt><a href="rawDemo.php" <?php print $demoDisabledClass; ?> >rawDemo.php</a></dt>
     <dd>Demonstrates <?php print  $detectorName; ?> device detection, <strong>without</strong> using the IdMyGadget Adapter API.</dd>
     <dt><a href="idMyGadgetDemo.php" <?php print $demoDisabledClass; ?> >
-      idMyGadgetDemo.php</a></dt>
-    <dt><a href="idMyGadgetDemo.php?displayDeviceData=true" <?php print $demoDisabledClass; ?> >
-      idMyGadgetDemo.php?displayDeviceData=true</a></dt>
+        idMyGadgetDemo.php,</a>
+      <a href="idMyGadgetDemo.php?displayDeviceData=true" <?php print $demoDisabledClass; ?> >
+        idMyGadgetDemo.php?displayDeviceData=true</a></dt>
     <dd>Displays the gadget types that idMyGadget has deduced from the key capabilities obtained from Tera-Wurfl</dd>
     <dt><a href="idMyGadgetDemo.php?displayKeyCapabilities=true" <?php print $demoDisabledClass; ?> >
       idMyGadgetDemo.php?displayKeyCapabilities=true</a></dt>
