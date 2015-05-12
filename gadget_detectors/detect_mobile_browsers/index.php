@@ -3,7 +3,9 @@
 
 <?php
 $detectorName = 'detect_mobile_browsers';
-
+//
+// Determine whether this dector is installed
+//
 if ( file_exists('php/detectmobilebrowser.php') )
 {
 	$detectorInstalled = TRUE;
@@ -31,11 +33,10 @@ else
 <?php
 print "<h1>$detectorName</h1>";
 print "<div id='content'>";
-print "<h2></h2>";
 ?>
 
 <div id="idMyGadget">
- <h3>detect_mobile_browsers demos:</h3>
+ <h3>Standard Demos:</h3>
  <dl>
   <dt><a href="README.md" target="_blank">README.md</a></dt>
   <dd>Contains instructions on how to enable this option.

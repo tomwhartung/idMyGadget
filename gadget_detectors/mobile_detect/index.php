@@ -2,7 +2,9 @@
 <html lang='en'>
 <?php
 $detectorName = 'mobile_detect';
-
+//
+// Determine whether this dector is installed
+//
 if ( file_exists('Mobile-Detect/Mobile_Detect.php') )
 {
 	$detectorInstalled = TRUE;
@@ -27,15 +29,14 @@ else
 </head>
 
 <body>
-  <div id="container">
+<div id="container">
 <?php
 print "<h1>$detectorName</h1>";
 print "<div id='content'>";
-print "<h2></h2>";
 ?>
 
 <div id="idMyGadget">
- <h3>IdMyGadget Mobile-Detect Demos:</h3>
+ <h3>Standard Demos:</h3>
  <dl>
   <dt><a href="README.md" target="_blank">README.md</a></dt>
   <dd>The idMyGadget Mobile-Detect README file contains instructions on how to set up Mobile-Detect.

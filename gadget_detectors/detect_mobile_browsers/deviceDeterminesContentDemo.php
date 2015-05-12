@@ -31,7 +31,7 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
  <?php
   $deviceData = $idMyGadget->getDeviceData();
   deviceDependantContent( $deviceData );
-?>
+ ?>
  <hr />
  <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
  <hr />
