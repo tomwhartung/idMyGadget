@@ -9,7 +9,7 @@ tmp/
 #
 # Ignore third-party code
 #
-/device_detectors/detect_mobile_browsers/php/detectmobilebrowser.php.txt
-/device_detectors/mobile_detect/Mobile-Detect/
-/device_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi*
+/gadget_detectors/detect_mobile_browsers/php/detectmobilebrowser.php.txt
+/gadget_detectors/mobile_detect/Mobile-Detect/
+/gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi*
 
