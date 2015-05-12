@@ -5,7 +5,7 @@ $pageTitle = 'deviceDeterminesContentDemo';
 
 require_once( 'php/detectmobilebrowser.php' );
 require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
-require_once( '../deviceDependantContent.php' );
+require_once( '../all_detectors/deviceDependantContent.php' );
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
 $usingMoblePhone = FALSE;

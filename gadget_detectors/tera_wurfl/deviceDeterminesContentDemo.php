@@ -11,7 +11,7 @@ $pageTitle = 'idMyGadgetDemo';
 
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
-require_once( '../deviceDependantContent.php' );
+require_once '../all_detectors/deviceDependantContent.php';
 
 define( "STYLE_SHEET_DESKTOP",       "../../css/device/desktop.css" );
 define( "STYLE_SHEET_TABLET",        "../../css/device/tablet.css" );
