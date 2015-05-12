@@ -4,6 +4,11 @@
  */
 abstract class IdMyGadget
 {
+	const GADGET_DETECTOR_UNKNOWN = 'unknown';
+	const GADGET_DETECTOR_DETECT_MOBILE_BROWSERS = 'detect_mobile_browsers';
+	const GADGET_DETECTOR_MOBILE_DETECTOR = 'mobile_detector';
+	const GADGET_DETECTOR_TERA_WURFL = 'tera_wurfl';
+
 	const GADGET_TYPE_UNKNOWN = 'type_unknown';
 	const GADGET_TYPE_UNRECOGNIZED = 'unrecognized';
 	const GADGET_TYPE_DESKTOP_BROWSER = 'desktop';
@@ -36,6 +41,10 @@ abstract class IdMyGadget
 	const GADGET_MODEL_KINDLE = 'Kindle';
 	const GADGET_MODEL_NOOK = 'Nook';
 
+	/**
+	 * Subclasses set this to indicate which detector did the detecting
+	 */
+	public $detectorUsed = IdMyGadget::GADGET_DETECTOR_UNKNOWN;
 	/**
 	 * Displays debugging output
 	 * @var boolean

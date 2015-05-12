@@ -38,6 +38,7 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE )
 	{
 		parent::__construct( $debugging, $allowOverridesInUrl );
+		$this->detectorUsed = parent::GADGET_DETECTOR_TERA_WURFL;
 		$this->teraWurflObject = new TeraWurfl();    // Instantiate the TeraWURFL object
 	}
 

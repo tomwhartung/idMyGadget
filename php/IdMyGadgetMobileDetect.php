@@ -18,6 +18,7 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE )
 	{
 		parent::__construct( $debugging, $allowOverridesInUrl );
+		$this->detectorUsed = parent::GADGET_DETECTOR_MOBILE_DETECTOR;
 		$this->mobileDetectObject = new Mobile_Detect();
 	}
 
