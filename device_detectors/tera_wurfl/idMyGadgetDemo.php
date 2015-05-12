@@ -166,8 +166,10 @@ if ( isset($displayCapabilityArrays) )
 }
 if ( isset($displayDeviceData) )
 {
+	$output .= "<h4>detectorUsed:" . "</h4>";
+	$output .= "<p>" . $idMyGadget->detectorUsed . "</p>";
 	$idMyGadget->getDeviceData();
-	$output .= "<h3>Device Data</h3>";
+	$output .= "<h4>Device Data</h4>";
 	$output .= "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
 }
 if ( isset($displayKeyCapabilities) )

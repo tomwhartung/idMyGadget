@@ -33,7 +33,9 @@ $idMyGadget = new IdMyGadgetMobileDetect( $debugging, $allowOverridesInUrl );
  <?php
   $deviceData = $idMyGadget->getDeviceData();
   print "<div class='output'>";
-  print "<h3>Device Data</h3>";
+  print "<h4>detectorUsed:" . "</h4>";
+  print "<p>" . $idMyGadget->detectorUsed . "</p>";
+  print "<h4>deviceData:</h4>";
   print "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
   print "</div> <!-- .output -->";
  ?>
