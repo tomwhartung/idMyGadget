@@ -3,12 +3,12 @@
 <?php
 $pageTitle = 'idMyGadget detect_mobile_browsers demo';
 
-$usingMoblePhone = FALSE;
 require_once( 'php/detectmobilebrowser.php' );
 require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
 require_once( '../deviceDependantContent.php' );
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
+$usingMoblePhone = FALSE;
 $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl, $usingMoblePhone );
 ?>
 
