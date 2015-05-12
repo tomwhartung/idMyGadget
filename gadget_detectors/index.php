@@ -35,7 +35,7 @@ print "<h2></h2>";
    It returns hundreds of parameters for each device.</dd>
   <dt><a href=""></a></dt>
   <dd></dd>
-  <dt><a href="ua_parser">ua_parser</a></dt>
+  <dt><a href="ua_parser" class="disabled">ua_parser</a></dt>
   <dd>TBD.  The repositories at
    <a href="https://github.com/ua-parser/uap-core">github.com/ua-parser/uap-core</a> and
    <a href="https://github.com/ua-parser/uap-php">github.com/ua-parser/uap-php</a>
