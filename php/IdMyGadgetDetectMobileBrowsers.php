@@ -57,6 +57,16 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 
 		parent::setGadgetType();
 
+		if ( $this->debugging )
+		{
+			print "<p class='debugging'>usingMoblePhone (global): " .
+					$usingMoblePhone . "</p>";
+			print "<p class='debugging'>this->usingMoblePhone: " .
+					$this->usingMoblePhone . "</p>";
+			print "<p class='debugging'>this->gadgetType: " .
+					$this->gadgetType . "</p>";
+		}
+
 		if ( $this->gadgetType == parent::GADGET_TYPE_UNKNOWN )
 		{
 			if ( $this->usingMoblePhone === null )
