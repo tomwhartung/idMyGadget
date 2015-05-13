@@ -64,8 +64,6 @@ div.output, .warning {
 }
 ul.no-bullets, ul.debugging  {
 	list-style-type: none;
-	margin: 0.5em;
-	padding: 0.5em;
 }
 ul.debugging {
 	border: 3px solid red;
