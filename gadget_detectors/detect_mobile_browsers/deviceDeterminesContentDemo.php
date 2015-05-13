@@ -8,7 +8,6 @@ require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
 require_once( '../all_detectors/printSampleContent.php' );
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
-$usingMoblePhone = FALSE;
 $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl, $usingMoblePhone );
 $deviceData = $idMyGadget->getDeviceData();
 ?>
@@ -26,7 +25,7 @@ $deviceData = $idMyGadget->getDeviceData();
 <body>
 <div id="container">
 <?php
-  if ( $gadgetType !== IdMyGadget::GADGET_TYPE_PHONE )
+  if ( $deviceData["gadgetType"] !== IdMyGadget::GADGET_TYPE_PHONE )
   {
     print '<h1>' . $pageTitle . '</h1>';
   }

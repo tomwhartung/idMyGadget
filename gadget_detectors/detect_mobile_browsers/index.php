@@ -68,7 +68,9 @@ print "<div id='content'>";
   <dt><a href="deviceDeterminesContentDemo.php" <?php print $demoDisabledClass; ?> >
     deviceDeterminesContentDemo.php</a></dt>
   <dd>Demonstrates using <?php print $detectorName; ?>
-    device detection to deliver device-specific content.</dd>
+    device detection to deliver device-specific content.
+    Note that this device detector only distinguishes between phones and non-phones.
+    Therefore <strong>tablets are handled the same as desktop browsers.</strong></dd>
  </dl>
  <hr />
  <p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</p>

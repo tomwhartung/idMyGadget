@@ -2,13 +2,16 @@
 <html lang='en'>
 <?php
 $pageTitle = 'idMyGadgetDemo';
+//
+// This one require statement "does all the work" by setting $usingMoblePhone
+//
+require_once( 'php/detectmobilebrowser.php' );  // sets $usingMoblePhone global variable
 
-require_once( 'php/detectmobilebrowser.php' );
 require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
-$usingMoblePhone = FALSE;
 $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl, $usingMoblePhone );
+$deviceData = $idMyGadget->getDeviceData();
 ?>
 
 <head>
@@ -28,7 +31,6 @@ $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInU
 <h3><?php print get_class($idMyGadget); ?></h3>
 <div id="idMyGadget">
  <?php
-  $deviceData = $idMyGadget->getDeviceData();
   print "<div class='output'>";
   print "<h4>detectorUsed:" . "</h4>";
   print "<p>" . $idMyGadget->detectorUsed . "</p>";
