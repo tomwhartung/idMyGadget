@@ -7,15 +7,13 @@ div#container {
 	margin-right:  1.25in;
 }
 /*
- * Make font sizes, line heights and links a little bit bigger
- * Note that a long line with no punctuation or whitespace
- * causes the browser to ignore these styles
+ * Make font sizes, line heights and links a little bit bigger and easier to read
  */
 h1, h2, h3, p, a, ul, li, dl, dt, dd {
-	line-height: 150%;    /* makes all of these easier to read */
+	line-height: 150%;
 }
 h1 {
-	font-size: 2.25emx;
+	font-size: 2.25em;
 }
 h2 {
 	font-size: 2.0em;
