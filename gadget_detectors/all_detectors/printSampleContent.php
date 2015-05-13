@@ -9,11 +9,6 @@ function printSampleContent( $deviceData )
 <p>This page contains some device-dependent content.
   To see the device-dependent content, you will need to access this page
   on an actual device, as opposed to just shrinking the browser window.</p>
-<p>I for one feel the potential for using device detection to increase user experience is
-  much greater than we can do with just media queries.
-  For example, it is easy enough to use a media query to just hide an element;
-  with device we can prevent the content from being downloaded in the first place.</p>
-<p>Moreover, I believe it is best to use both methods.</p>
 <?php
   print '<p>';
   print '<hr />';
@@ -67,5 +62,10 @@ function printSampleContent( $deviceData )
   print '<hr />';
   print '<p>We are back to seeing content delivered to all browsers, regardless of the device.  ';
   print 'Do you now agree that the potential for using device detection is unlimited?</p>';
+  print '<p>I for one feel the potential for using device detection to increase user experience is';
+  print 'much greater than we can do with just media queries.';
+  print 'For example, it is easy enough to use a media query to just hide an element;';
+  print 'with device we can prevent the content from being downloaded in the first place.</p>';
+  print '<p>Moreover, I believe it is best to use both methods.</p>';
 }
  ?>
