@@ -22,9 +22,9 @@ $pageTitle = 'IdMyGadget';
 ?>
 
 <div id="idMyGadget">
- <p>The IdMyGadget Adapter API offers a common API to the device detectors listed on this page.
-  Each link takes you to a page containing links that demonstrate how to use the
-  selected detector, with and without the IdMyGadget Adapter API.
+  <p>The IdMyGadget Adapter API offers a common API to the device detectors listed on this page.</p>
+ <p>Each link takes you to a page containing links that demonstrate how to use the
+  selected detector, with and without the IdMyGadget Adapter API.</p>
  <h4>Gadget Detectors:</h4>
  <dl>
   <dt><a href="detect_mobile_browsers">detect_mobile_browsers</a></dt>
