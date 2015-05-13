@@ -6,10 +6,11 @@ $pageTitle = 'deviceDeterminesContentDemo';
 $usingMoblePhone = FALSE;
 require_once( 'Mobile-Detect/Mobile_Detect.php' );
 require_once( '../../php/IdMyGadgetMobileDetect.php' );
-require_once( '../all_detectors/deviceDependantContent.php' );
+require_once( '../all_detectors/printSampleContent.php' );
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
 $idMyGadget = new IdMyGadgetMobileDetect( $debugging, $allowOverridesInUrl );
+$deviceData = $idMyGadget->getDeviceData();
 ?>
 
 <head>
@@ -24,13 +25,17 @@ $idMyGadget = new IdMyGadgetMobileDetect( $debugging, $allowOverridesInUrl );
 
 <body>
 <div id="container">
-<h2><?php print $pageTitle; ?></h2>
+<?php
+  if ( $gadgetType !== IdMyGadget::GADGET_TYPE_PHONE )
+  {
+    print '<h1>' . $pageTitle . '</h1>';
+  }
+?>
 <div id="content">
 <h3><?php print get_class($idMyGadget); ?></h3>
 <div id="idMyGadget">
  <?php
-  $deviceData = $idMyGadget->getDeviceData();
-  deviceDependantContent( $deviceData );
+  printSampleContent( $deviceData );
 ?>
  <hr />
  <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>

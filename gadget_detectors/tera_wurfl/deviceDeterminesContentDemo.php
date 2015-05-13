@@ -7,11 +7,11 @@
  * These "various forms" include raw WURFL information, key capabilities, and
  * summary device data based on key WURFL device capabilities.
  */
-$pageTitle = 'idMyGadgetDemo';
+$pageTitle = 'deviceDeterminesContentDemo';
 
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
-require_once '../all_detectors/deviceDependantContent.php';
+require_once '../all_detectors/printSampleContent.php';
 
 define( "STYLE_SHEET_DESKTOP",       "../../css/device/desktop.css" );
 define( "STYLE_SHEET_TABLET",        "../../css/device/tablet.css" );
@@ -34,19 +34,19 @@ $gadgetType = $deviceData["gadgetType"];
 $gadgetModel = $deviceData["gadgetModel"];
 $gadgetBrand = $deviceData["gadgetBrand"];
 
-if ( $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER )
+if ( $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER )
 {
 	$gadgetString = "Desktop";
 	$styleSheetFile = STYLE_SHEET_DESKTOP;
 }
-else if ( $gadgetType == IdMyGadget::GADGET_TYPE_TABLET )
+else if ( $gadgetType === IdMyGadget::GADGET_TYPE_TABLET )
 {
 	$gadgetString = "Tablet";
 	$styleSheetFile = STYLE_SHEET_TABLET;
 }
-else if ( $gadgetType == IdMyGadget::GADGET_TYPE_PHONE )
+else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
 {
-	if ( $gadgetModel == IdMyGadget::GADGET_MODEL_APPLE_PHONE )
+	if ( $gadgetModel === IdMyGadget::GADGET_MODEL_APPLE_PHONE )
 	{
 		$gadgetString = "iPhone";
 		$styleSheetFile = STYLE_SHEET_APPLE_PHONE;
@@ -114,13 +114,17 @@ else   // Probably a tablet
 
 <body>
 <div id="container">
-<h1><?php print $pageTitle; ?></h1>
+<?php
+  if ( $gadgetType !== IdMyGadget::GADGET_TYPE_PHONE )
+  {
+    print '<h1>' . $pageTitle . '</h1>';
+  }
+?>
 <div id='content'>
 <h3><?php print get_class($idMyGadget); ?></h3>
 <div id="idMyGadget">
  <?php
-  $deviceData = $idMyGadget->getDeviceData();
-  deviceDependantContent( $deviceData );
+  printSampleContent( $deviceData );
  ?>
  <hr />
  <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
