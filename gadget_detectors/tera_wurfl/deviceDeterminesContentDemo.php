@@ -17,6 +17,7 @@ define( "STYLE_SHEET_DESKTOP",       "../../css/device/desktop.css" );
 define( "STYLE_SHEET_TABLET",        "../../css/device/tablet.css" );
 define( "STYLE_SHEET_ANDROID_PHONE", "../../css/device/androidPhone.css" );
 define( "STYLE_SHEET_APPLE_PHONE",   "../../css/device/iPhone.css" );
+define( "STYLE_SHEET_MEDIA_QUERIES", "../../css/basicMediaQueries.css" );
 //
 // debugging: displays verbose information; we don't need to use this very often
 // allowOverridesInUrl: Allow testing with overrides as GET variables, TRUE is OK 
@@ -55,13 +56,17 @@ else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
 		$styleSheetFile = STYLE_SHEET_ANDROID_PHONE;
 	}
 }
+else   // Unknown, fall back on media queries
+{
+	$gadgetString = "Unknown Device";
+	$styleSheetFile = STYLE_SHEET_MEDIA_QUERIES;
+}
 ?>
 
 <head>
   <title><?php print $pageTitle; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../css/allDevices.css" />
-  <link rel="stylesheet" type="text/css" href="../../css/basicMediaQueries.css" />
   <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="../../css/device/explorer.css" media="all" />
   <![endif]-->
@@ -69,13 +74,13 @@ else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
 //
 // Print a link tag to include the desired style sheet.
 //
-if ( $styleSheetFile == STYLE_SHEET_DESKTOP )
+if ( $styleSheetFile === STYLE_SHEET_DESKTOP )
 {
 	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" ' .
 			'media="screen and (min-width: 481px)" ' .
 			'/>';
 }
-elseif ( $styleSheetFile == STYLE_SHEET_APPLE_PHONE )
+elseif ( $styleSheetFile === STYLE_SHEET_APPLE_PHONE )
 {
 	print '<meta name="viewport" content="user-scalable=no, width=device-width" />' . "\n";
 	print '<meta name="apple-mobile-web-app-capable" content="yes" />' . "\n";
@@ -83,17 +88,16 @@ elseif ( $styleSheetFile == STYLE_SHEET_APPLE_PHONE )
 			'media="only screen and (max-width: 480px)" ' .  // comment out to test (set allowOverridesInUrl = true)
 			'/>';
 }
-elseif ( $styleSheetFile == STYLE_SHEET_ANDROID_PHONE )
+elseif ( $styleSheetFile === STYLE_SHEET_ANDROID_PHONE )
 {
 	print '<meta name="viewport" content="user-scalable=no, width=device-width" />' . "\n";
 	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" ' .
 			'media="only screen and (max-width: 600px)" ' .  // comment out to test (set allowOverridesInUrl = true)
 			'/>';
 }
-else   // Probably a tablet
+else   // Unknown but probably a tablet (?)
 {
 	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" />';
-	print '<link rel="stylesheet" type="text/css" href="../../css/reverseColors.css" />';
 }
 // Useful for debugging sometimes:
 // print '<link rel="stylesheet" type="text/css" href="../css/showBorders.css" />';
