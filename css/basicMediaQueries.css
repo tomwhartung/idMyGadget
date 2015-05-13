@@ -3,18 +3,22 @@
  * This file is meant to be included after allDevices.css .
  */
 h1, h2, h3 {
-	margin: 0.2em 0.1em 0em 0.1em;
-	padding: 0.2em 0.1em 0em 0.1em;
+	margin: 0.2em 0.1em 0em 0.05em;
+	padding: 0.2em 0.1em 0em 0.05em;
 }
 h4, h5, h6 {
+	margin: 0.15em 0.1em 0em 0.05em;
+	padding: 0.15em 0.1em 0em 0.05em;
+}
+p, a, li, dt, dd, td, blockquote {
 	margin: 0.1em 0.1em 0em 0.1em;
 	padding: 0.1em 0.1em 0em 0.1em;
 }
-p, a, ul, li, td, blockquote {
-	margin: 0.1em;
-	padding: 0.1em;
+dl, ul {
+	margin: 0;
+	padding: 0;
 }
-p, ul, ol, li, table, blockquote {
+p, ul, ol, li, dt, dd, table, blockquote {
 	width: 90%;
 }
 /*

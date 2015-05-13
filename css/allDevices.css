@@ -24,7 +24,7 @@ h4, h5, h6 {
 	text-align:  left;
 	text-decoration: underline;
 }
-p, a, ul, li, td, blockquote {
+p, a, ul, li, dt, dd, td, blockquote {
 	text-align: left;
 }
 a, a:hover {
