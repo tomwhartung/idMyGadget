@@ -23,8 +23,6 @@ define( "STYLE_SHEET_APPLE_PHONE",   "../../css/device/iPhone.css" );
 //    for example:
 //       <a href="http://localhost/resume/?gadgetType=phone&gadgetModel=iPhone&gadgetBrand=Apple">
 //
-// $debugging = TRUE;
-// $allowOverridesInUrl = FALSE;
 $debugging = FALSE;
 $allowOverridesInUrl = TRUE;
 $idMyGadget = new IdMyGadgetTeraWurfl( $debugging, $allowOverridesInUrl );
@@ -34,19 +32,19 @@ $gadgetType = $deviceData["gadgetType"];
 $gadgetModel = $deviceData["gadgetModel"];
 $gadgetBrand = $deviceData["gadgetBrand"];
 
-if ( $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER )
+if ( $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER )
 {
 	$gadgetString = "Desktop";
 	$styleSheetFile = STYLE_SHEET_DESKTOP;
 }
-else if ( $gadgetType == IdMyGadget::GADGET_TYPE_TABLET )
+else if ( $gadgetType === IdMyGadget::GADGET_TYPE_TABLET )
 {
 	$gadgetString = "Tablet";
 	$styleSheetFile = STYLE_SHEET_TABLET;
 }
-else if ( $gadgetType == IdMyGadget::GADGET_TYPE_PHONE )
+else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
 {
-	if ( $gadgetModel == IdMyGadget::GADGET_MODEL_APPLE_PHONE )
+	if ( $gadgetModel === IdMyGadget::GADGET_MODEL_APPLE_PHONE )
 	{
 		$gadgetString = "iPhone";
 		$styleSheetFile = STYLE_SHEET_APPLE_PHONE;

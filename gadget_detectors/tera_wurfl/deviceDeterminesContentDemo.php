@@ -23,8 +23,6 @@ define( "STYLE_SHEET_APPLE_PHONE",   "../../css/device/iPhone.css" );
 //    for example:
 //       <a href="http://localhost/resume/?gadgetType=phone&gadgetModel=iPhone&gadgetBrand=Apple">
 //
-// $debugging = TRUE;
-// $allowOverridesInUrl = FALSE;
 $debugging = FALSE;
 $allowOverridesInUrl = TRUE;
 $idMyGadget = new IdMyGadgetTeraWurfl( $debugging, $allowOverridesInUrl );
@@ -57,16 +55,6 @@ else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
 		$styleSheetFile = STYLE_SHEET_ANDROID_PHONE;
 	}
 }
-//
-// CSS link tags to consider thinking about - specifically the media attributes:
-// Android version:
-//   <link rel="stylesheet" type="text/css" href="css/androidPhone.css" media="only screen and (max-width: 600px)" />
-//   <link rel="stylesheet" type="text/css" href="css/desktop.css" media="screen and (min-width: 601px)" />
-// iPhone version:
-//   <link rel="stylesheet" type="text/css" href="css/iPhone.css" media="only screen and (max-width: 480px)" />
-//   <link rel="stylesheet" type="text/css" href="css/desktop.css" media="screen and (min-width: 481px)" />
-// --> The thing is, these look like crap when we exceed the max-widths!
-// --> And that is why I did the WURFL thing!
 ?>
 
 <head>
