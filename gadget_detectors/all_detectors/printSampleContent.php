@@ -5,12 +5,9 @@ function printSampleContent( $deviceData )
   //
   // Note that content does not necessarily have to be "print"ed.
   // ------------------------------------------------------------
-?>
-<p>This page contains some device-dependent content.
-  To see the device-dependent content, you will need to access this page
-  on an actual device, as opposed to just shrinking the browser window.</p>
-<?php
-  print '<p>';
+  print '<p>This page contains some device-dependent content.  ';
+  print 'To see the device-dependent content, you will need to access this page ';
+  print 'on an actual device, as opposed to just shrinking the browser window.</p>';
   print '<hr />';
   if ( $deviceData['gadgetType'] === IdMyGadget::GADGET_TYPE_PHONE )
   {
@@ -60,8 +57,19 @@ function printSampleContent( $deviceData )
     print ' target="_blank">conditioning tablet batteries.</a></p>';
   }
   print '<hr />';
-  print '<p>We are back to seeing content delivered to all browsers, regardless of the device.  ';
+  print '<h4>Content for all devices.</h4>';
+  print '<p>This is content delivered to all browsers, regardless of the device.  ';
   print 'Do you now agree that the potential for using device detection is unlimited?</p>';
+  print '<ul>';
+  print '<li>Increasing pixel densities make resolution burdensome and ineffective for ';
+  print 'targeting content to devices.</li>';
+  print '<li>Device detection opens up a great deal of possibilities for logging the types of ';
+  print 'visits your sites are experiencing.</li>';
+  print '<li>Using device detection allows different content for different devices without ';
+  print 'forcing the content to be kept in css.</li>';
+  print '<li>Increasing device fragmentation increases the complexity of delivering appropriate content.';
+  print 'It is easier to address this complexity programatically than statically.</li>';
+  print '</ul>';
   print '<p>I for one feel the potential for using device detection to increase user experience is';
   print 'much greater than we can do with just media queries.';
   print 'For example, it is easy enough to use a media query to just hide an element;';
