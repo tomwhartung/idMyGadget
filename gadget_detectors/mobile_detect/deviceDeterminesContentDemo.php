@@ -26,7 +26,7 @@ $deviceData = $idMyGadget->getDeviceData();
 <body>
 <div id="container">
 <?php
-  if ( $gadgetType !== IdMyGadget::GADGET_TYPE_PHONE )
+  if ( $deviceData["gadgetType"] !== IdMyGadget::GADGET_TYPE_PHONE )
   {
     print '<h1>' . $pageTitle . '</h1>';
   }

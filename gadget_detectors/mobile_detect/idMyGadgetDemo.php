@@ -9,6 +9,7 @@ require_once( '../../php/IdMyGadgetMobileDetect.php' );
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
 $idMyGadget = new IdMyGadgetMobileDetect( $debugging, $allowOverridesInUrl );
+$deviceData = $idMyGadget->getDeviceData();
 ?>
 
 <head>
@@ -28,7 +29,6 @@ $idMyGadget = new IdMyGadgetMobileDetect( $debugging, $allowOverridesInUrl );
 <h3><?php print get_class($idMyGadget); ?></h3>
 <div id="idMyGadget">
  <?php
-  $deviceData = $idMyGadget->getDeviceData();
   print "<div class='output'>";
   print "<h4>detectorUsed:" . "</h4>";
   print "<p>" . $idMyGadget->detectorUsed . "</p>";
