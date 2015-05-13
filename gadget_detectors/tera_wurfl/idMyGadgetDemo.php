@@ -71,7 +71,7 @@ else if ( $gadgetType == IdMyGadget::GADGET_TYPE_PHONE )
 
 <body>
 <div id="container">
-<h1><?php print $pageTitle; ?></h1>
+<h2><?php print $pageTitle; ?></h2>
 <div id='content'>
 <h3><?php print get_class($idMyGadget); ?></h3>
 <div id="idMyGadget">
