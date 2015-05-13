@@ -4,33 +4,27 @@
  * (DRY is extremely important in principle but maybe not necessarily always essential, as in this case.)
  */
 body {
-	background-color: #ddd;
-	border: 1px solid black;
-	color: #222;
-	font-family: Helvetica, Verdana, Arial, sans-serif;
-	margin: 0.0em;
-	padding: 0.0em;
+	margin: 0em;
+	padding: 0em;
 }
 div#container {
-	padding: 0.75em;
+	margin: 1em 1.5em 2em;
 }
 
 ul {
 	margin: 0.0em;
 }
 a {
-    font-weight: bold;   /* make links easier to see and tap */
+	font-weight: bold;   /* make links easier to see and tap */
 }
 dd {
-	margin-left: 1.0em;
+	margin-left: 0.5em;
 }
 /*
- * Make font sizes, line heights and links a little smaller.
- * Note that a long line with no punctuation or whitespace
- * causes the browser to ignore these styles.
+ * Make font sizes, line heights and links a little smaller and easier to read
  */
 h1, h2, h3, p, a, ul, li, dl, dt, dd {
-	line-height: 150%;    /* makes all of these easier to read */
+	line-height: 150%;
 }
 h1 {
 	font-size: 1.75em;
