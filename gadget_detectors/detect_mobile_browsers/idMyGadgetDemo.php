@@ -3,14 +3,14 @@
 <?php
 $pageTitle = 'idMyGadgetDemo';
 //
-// This one require statement "does all the work" by setting $usingMoblePhone
+// This one require statement "does all the work" by setting $usingMobilePhone
 //
-require_once( 'php/detectmobilebrowser.php' );  // sets $usingMoblePhone global variable
-
+require_once( 'php/detectmobilebrowser.php' );  // sets $usingMobilePhone global variable
 require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
+
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
-$idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl, $usingMoblePhone );
+$idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl, $usingMobilePhone );
 $deviceData = $idMyGadget->getDeviceData();
 ?>
 

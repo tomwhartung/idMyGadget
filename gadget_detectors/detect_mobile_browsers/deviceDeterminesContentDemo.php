@@ -8,7 +8,7 @@ require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
 require_once( '../all_detectors/printSampleContent.php' );
 $debugging = FALSE;
 $allowOverridesInUrl = FALSE;
-$idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl, $usingMoblePhone );
+$idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl, $usingMobilePhone );
 $deviceData = $idMyGadget->getDeviceData();
 ?>
 
