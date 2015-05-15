@@ -12,12 +12,9 @@ $pageTitle = 'idMyGadgetDemo';
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
 require_once '../all_detectors/getGadgetString.php';
+require_once '../all_detectors/getStyleSheetFile.php';
 require_once 'DemoTeraWurfl.php';
 
-define( "STYLE_SHEET_DESKTOP",       "../../css/device/desktop.css" );
-define( "STYLE_SHEET_TABLET",        "../../css/device/tablet.css" );
-define( "STYLE_SHEET_ANDROID_PHONE", "../../css/device/androidPhone.css" );
-define( "STYLE_SHEET_APPLE_PHONE",   "../../css/device/iPhone.css" );
 //
 // debugging: displays verbose information; we don't need to use this very often
 // allowOverridesInUrl: Allow testing with overrides as GET variables, TRUE is OK 
@@ -81,7 +78,9 @@ else   // Unknown, fall back on media queries
 // -------------------------------------------------------
 //
 $gadgetString = getGadgetString( $deviceData );
+$styleSheetFile = getStyleSheetFile( $deviceData );
 print "<h3>$gadgetString</h3>";
+print "<h4>$styleSheetFile</h4>";
 
 $demoTeraWurfl = new DemoTeraWurfl( $idMyGadget );
 $displayCapabilityArrays = filter_input( INPUT_GET, 'displayCapabilityArrays', FILTER_VALIDATE_BOOLEAN );
