@@ -35,16 +35,14 @@ $styleSheetFile = getStyleSheetFile( $deviceData );
   }
 ?>
 <div id="content">
-<h3><?php print get_class($idMyGadget); ?></h3>
-<h3><?php print $gadgetString; ?></h3>
-<div id="idMyGadget">
- <?php
-  printSampleContent( $deviceData );
- ?>
- <hr />
- <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
- <hr />
-</div> <!-- #idMyGadget-->
+  <h3><?php print get_class($idMyGadget); ?></h3>
+  <h3><?php print $gadgetString; ?></h3>
+  <?php
+    printSampleContent( $deviceData );
+  ?>
+  <hr />
+  <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
+  <hr />
 </div> <!-- #content -->
 </div> <!-- #container -->
 </body>
