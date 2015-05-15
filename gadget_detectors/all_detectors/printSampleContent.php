@@ -1,4 +1,9 @@
  <?php
+ /**
+  * Print some sample content, using device data to determine part of the content
+  *
+  * @param type $deviceData
+  */
 function printSampleContent( $deviceData )
 {
   print "<h3>Sample Content</h3>";
