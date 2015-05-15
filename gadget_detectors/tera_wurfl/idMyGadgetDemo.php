@@ -26,33 +26,9 @@ $allowOverridesInUrl = TRUE;
 $idMyGadget = new IdMyGadgetTeraWurfl( $debugging, $allowOverridesInUrl );
 
 $deviceData = $idMyGadget->getDeviceData();
-$gadgetType = $deviceData["gadgetType"];
-$gadgetModel = $deviceData["gadgetModel"];
-$gadgetBrand = $deviceData["gadgetBrand"];
+$gadgetString = getGadgetString( $deviceData );
+$styleSheetFile = getStyleSheetFile( $deviceData );
 
-if ( $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER )
-{
-	$styleSheetFile = STYLE_SHEET_DESKTOP;
-}
-else if ( $gadgetType === IdMyGadget::GADGET_TYPE_TABLET )
-{
-	$styleSheetFile = STYLE_SHEET_TABLET;
-}
-else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
-{
-	if ( $gadgetModel === IdMyGadget::GADGET_MODEL_APPLE_PHONE )
-	{
-		$styleSheetFile = STYLE_SHEET_APPLE_PHONE;
-	}
-	else
-	{
-		$styleSheetFile = STYLE_SHEET_ANDROID_PHONE;
-	}
-}
-else   // Unknown, fall back on media queries
-{
-	$styleSheetFile = STYLE_SHEET_MEDIA_QUERIES;
-}
 ?>
 
 <head>
@@ -77,10 +53,7 @@ else   // Unknown, fall back on media queries
 // Produce and display any demo output that may be desired
 // -------------------------------------------------------
 //
-$gadgetString = getGadgetString( $deviceData );
-$styleSheetFile = getStyleSheetFile( $deviceData );
 print "<h3>$gadgetString</h3>";
-print "<h4>$styleSheetFile</h4>";
 
 $demoTeraWurfl = new DemoTeraWurfl( $idMyGadget );
 $displayCapabilityArrays = filter_input( INPUT_GET, 'displayCapabilityArrays', FILTER_VALIDATE_BOOLEAN );

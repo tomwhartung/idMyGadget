@@ -11,13 +11,9 @@ $pageTitle = 'deviceDeterminesContentDemo';
 
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
+require_once '../all_detectors/getGadgetString.php';
+require_once '../all_detectors/getStyleSheetFile.php';
 require_once '../all_detectors/printSampleContent.php';
-
-define( "STYLE_SHEET_DESKTOP",       "../../css/device/desktop.css" );
-define( "STYLE_SHEET_TABLET",        "../../css/device/tablet.css" );
-define( "STYLE_SHEET_ANDROID_PHONE", "../../css/device/androidPhone.css" );
-define( "STYLE_SHEET_APPLE_PHONE",   "../../css/device/iPhone.css" );
-define( "STYLE_SHEET_MEDIA_QUERIES", "../../css/basicMediaQueries.css" );
 //
 // debugging: displays verbose information; we don't need to use this very often
 // allowOverridesInUrl: Allow testing with overrides as GET variables, TRUE is OK 
@@ -29,38 +25,10 @@ $allowOverridesInUrl = TRUE;
 $idMyGadget = new IdMyGadgetTeraWurfl( $debugging, $allowOverridesInUrl );
 
 $deviceData = $idMyGadget->getDeviceData();
+$gadgetString = getGadgetString( $deviceData );
+$styleSheetFile = getStyleSheetFile( $deviceData );
 $gadgetType = $deviceData["gadgetType"];
-$gadgetModel = $deviceData["gadgetModel"];
-$gadgetBrand = $deviceData["gadgetBrand"];
 
-if ( $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER )
-{
-	$gadgetString = "Desktop";
-	$styleSheetFile = STYLE_SHEET_DESKTOP;
-}
-else if ( $gadgetType === IdMyGadget::GADGET_TYPE_TABLET )
-{
-	$gadgetString = "Tablet";
-	$styleSheetFile = STYLE_SHEET_TABLET;
-}
-else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
-{
-	if ( $gadgetModel === IdMyGadget::GADGET_MODEL_APPLE_PHONE )
-	{
-		$gadgetString = "iPhone";
-		$styleSheetFile = STYLE_SHEET_APPLE_PHONE;
-	}
-	else
-	{
-		$gadgetString = "Android Phone";
-		$styleSheetFile = STYLE_SHEET_ANDROID_PHONE;
-	}
-}
-else   // Unknown, fall back on media queries
-{
-	$gadgetString = "Unknown Device";
-	$styleSheetFile = STYLE_SHEET_MEDIA_QUERIES;
-}
 ?>
 
 <head>
@@ -114,6 +82,8 @@ else   // Unknown but probably a tablet (?)
 ?>
 <div id='content'>
 <h3><?php print get_class($idMyGadget); ?></h3>
+<h4><?php print 'gadgetString = ' . $gadgetString; ?></h4>
+<h4><?php print 'styleSheetFile = ' . $styleSheetFile; ?></h4>
 <div id="idMyGadget">
  <?php
   printSampleContent( $deviceData );
