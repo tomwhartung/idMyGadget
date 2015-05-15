@@ -58,16 +58,14 @@ $rmStyleSheetCss = filter_input( INPUT_GET, 'rmStyleSheetCss', FILTER_SANITIZE_N
 <div id="content">
   <h3><?php print get_class($idMyGadget); ?></h3>
   <h3><?php print $gadgetString; ?></h3>
-  <div id="idMyGadget">
-    <?php
+  <?php
     print "<div class='output'>";
     print "<h4>detectorUsed:" . "</h4>";
     print "<p>" . $idMyGadget->detectorUsed . "</p>";
     print "<h4>deviceData:</h4>";
     print "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
     print "</div> <!-- .output -->";
-    ?>
-  </div> <!-- #idMyGadget-->
+  ?>
   <div class="options">
     <hr />
     <form action="#" method="GET">

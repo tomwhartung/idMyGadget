@@ -44,9 +44,8 @@ $styleSheetFile = getStyleSheetFile( $deviceData );
 <div id="container">
 <h2><?php print $pageTitle; ?></h2>
 <div id='content'>
-<h3><?php print get_class($idMyGadget); ?></h3>
-<h3><?php print $gadgetString ?></h3>
-<div id="idMyGadget">
+  <h3><?php print get_class($idMyGadget); ?></h3>
+  <h3><?php print $gadgetString ?></h3>
 
 <?php
 //
@@ -127,7 +126,6 @@ if ( strlen($output) > 0 )
     |&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
   <hr />
 
-</div> <!-- #idMyGadget-->
 </div> <!-- #content -->
 </div> <!-- #container -->
 </body>
