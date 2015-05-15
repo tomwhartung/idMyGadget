@@ -35,38 +35,11 @@ $gadgetType = $deviceData["gadgetType"];
   <title><?php print $pageTitle; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="../../css/allDevices.css" />
+  <link rel="stylesheet" type="text/css" href="<?php print $styleSheetFile; ?>" />
   <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="../../css/device/explorer.css" media="all" />
   <![endif]-->
 <?php
-//
-// Print a link tag to include the desired style sheet.
-//
-if ( $styleSheetFile === STYLE_SHEET_DESKTOP )
-{
-	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" ' .
-			'media="screen and (min-width: 481px)" ' .
-			'/>';
-}
-elseif ( $styleSheetFile === STYLE_SHEET_APPLE_PHONE )
-{
-	print '<meta name="viewport" content="user-scalable=no, width=device-width" />' . "\n";
-	print '<meta name="apple-mobile-web-app-capable" content="yes" />' . "\n";
-	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" ' .
-			'media="only screen and (max-width: 480px)" ' .  // comment out to test (set allowOverridesInUrl = true)
-			'/>';
-}
-elseif ( $styleSheetFile === STYLE_SHEET_ANDROID_PHONE )
-{
-	print '<meta name="viewport" content="user-scalable=no, width=device-width" />' . "\n";
-	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" ' .
-			'media="only screen and (max-width: 600px)" ' .  // comment out to test (set allowOverridesInUrl = true)
-			'/>';
-}
-else   // Unknown but probably a tablet (?)
-{
-	print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" />';
-}
 // Useful for debugging sometimes:
 // print '<link rel="stylesheet" type="text/css" href="../css/showBorders.css" />';
 ?>
@@ -81,9 +54,8 @@ else   // Unknown but probably a tablet (?)
   }
 ?>
 <div id='content'>
+<h3><?php print $gadgetString; ?></h3>
 <h3><?php print get_class($idMyGadget); ?></h3>
-<h4><?php print 'gadgetString = ' . $gadgetString; ?></h4>
-<h4><?php print 'styleSheetFile = ' . $styleSheetFile; ?></h4>
 <div id="idMyGadget">
  <?php
   printSampleContent( $deviceData );
