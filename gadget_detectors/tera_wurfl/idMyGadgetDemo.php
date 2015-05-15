@@ -11,6 +11,7 @@ $pageTitle = 'idMyGadgetDemo';
 
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
+require_once '../all_detectors/getGadgetString.php';
 require_once 'DemoTeraWurfl.php';
 
 define( "STYLE_SHEET_DESKTOP",       "../../css/device/desktop.css" );
@@ -34,30 +35,25 @@ $gadgetBrand = $deviceData["gadgetBrand"];
 
 if ( $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER )
 {
-	$gadgetString = "Desktop";
 	$styleSheetFile = STYLE_SHEET_DESKTOP;
 }
 else if ( $gadgetType === IdMyGadget::GADGET_TYPE_TABLET )
 {
-	$gadgetString = "Tablet";
 	$styleSheetFile = STYLE_SHEET_TABLET;
 }
 else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
 {
 	if ( $gadgetModel === IdMyGadget::GADGET_MODEL_APPLE_PHONE )
 	{
-		$gadgetString = "iPhone";
 		$styleSheetFile = STYLE_SHEET_APPLE_PHONE;
 	}
 	else
 	{
-		$gadgetString = "Android Phone";
 		$styleSheetFile = STYLE_SHEET_ANDROID_PHONE;
 	}
 }
 else   // Unknown, fall back on media queries
 {
-	$gadgetString = "Unknown Device";
 	$styleSheetFile = STYLE_SHEET_MEDIA_QUERIES;
 }
 ?>
@@ -84,6 +80,7 @@ else   // Unknown, fall back on media queries
 // Produce and display any demo output that may be desired
 // -------------------------------------------------------
 //
+$gadgetString = getGadgetString( $deviceData );
 print "<h3>$gadgetString</h3>";
 
 $demoTeraWurfl = new DemoTeraWurfl( $idMyGadget );
