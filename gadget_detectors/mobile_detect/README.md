@@ -17,29 +17,19 @@ This option requires downloading (cloning) the Mobile-Detect code from github.
 
 ## Updating the Installation 
 
-1. Visit http://detectmobilebrowsers.com and click on the PHP button to download the latest version of the detectmobilebrowsers script.
-  * This file is named `detectmobilebrowser.php.txt`.
+1. Run the git pull command to update the source.
 
-1. Copy this file into the `idMyGadget/gadget_detectors/detect_mobile_browsers/php` directory.
-
-1. Rename this file from `detectmobilebrowser.php.txt` to `detectmobilebrowser.php`.
-
-1. Edit this file, replacing the following line:
-  ```php
-  header('Location: http://detectmobilebrowser.com/mobile');
   ```
-  with this one:
-  ```php
-  $usingMoblePhone = TRUE;
+  git pull origin master
   ```
 
 ## Running the Demos
 
 Verify that you have set this up properly, access the following file in your web browser:
-[http://example.com/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php](http://example.com/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php)
+[http://example.com/idMyGadget/gadget_detectors/mobile_detect/rawDemo.php](http://example.com/idMyGadget/gadget_detectors/mobile_detect/rawDemo.php)
 
 For example, if you are setting this up on your localhost, go to
-[http://localhost/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php](http://localhost/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php)
+[http://localhost/idMyGadget/gadget_detectors/mobile_detect/rawDemo.php](http://localhost/idMyGadget/gadget_detectors/mobile_detect/rawDemo.php)
 
 There is a link to this file in the index.php file in this directory.
 

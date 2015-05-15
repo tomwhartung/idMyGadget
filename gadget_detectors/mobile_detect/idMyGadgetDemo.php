@@ -2,7 +2,6 @@
 <html lang='en'>
 <?php
 $pageTitle = basename( $_SERVER['PHP_SELF'], '.php' );
-$usingMoblePhone = FALSE;
 
 require_once( 'Mobile-Detect/Mobile_Detect.php' );
 require_once( '../../php/IdMyGadgetMobileDetect.php' );
