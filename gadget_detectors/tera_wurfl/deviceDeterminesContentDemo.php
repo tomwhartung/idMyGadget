@@ -7,7 +7,7 @@
  * These "various forms" include raw WURFL information, key capabilities, and
  * summary device data based on key WURFL device capabilities.
  */
-$pageTitle = 'deviceDeterminesContentDemo';
+$pageTitle = basename( $_SERVER['PHP_SELF'], '.php' );
 
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
@@ -54,8 +54,8 @@ $gadgetType = $deviceData["gadgetType"];
   }
 ?>
 <div id='content'>
-<h3><?php print $gadgetString; ?></h3>
 <h3><?php print get_class($idMyGadget); ?></h3>
+<h3><?php print $gadgetString; ?></h3>
 <div id="idMyGadget">
  <?php
   printSampleContent( $deviceData );

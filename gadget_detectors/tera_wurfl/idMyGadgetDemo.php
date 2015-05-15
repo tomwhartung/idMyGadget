@@ -7,7 +7,7 @@
  * These "various forms" include raw WURFL information, key capabilities, and
  * summary device data based on key WURFL device capabilities.
  */
-$pageTitle = 'idMyGadgetDemo';
+$pageTitle = basename( $_SERVER['PHP_SELF'], '.php' );
 
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
@@ -28,7 +28,6 @@ $idMyGadget = new IdMyGadgetTeraWurfl( $debugging, $allowOverridesInUrl );
 $deviceData = $idMyGadget->getDeviceData();
 $gadgetString = getGadgetString( $deviceData );
 $styleSheetFile = getStyleSheetFile( $deviceData );
-
 ?>
 
 <head>
@@ -46,6 +45,7 @@ $styleSheetFile = getStyleSheetFile( $deviceData );
 <h2><?php print $pageTitle; ?></h2>
 <div id='content'>
 <h3><?php print get_class($idMyGadget); ?></h3>
+<h3><?php print $gadgetString ?></h3>
 <div id="idMyGadget">
 
 <?php
@@ -53,8 +53,6 @@ $styleSheetFile = getStyleSheetFile( $deviceData );
 // Produce and display any demo output that may be desired
 // -------------------------------------------------------
 //
-print "<h3>$gadgetString</h3>";
-
 $demoTeraWurfl = new DemoTeraWurfl( $idMyGadget );
 $displayCapabilityArrays = filter_input( INPUT_GET, 'displayCapabilityArrays', FILTER_VALIDATE_BOOLEAN );
 $displayAllCapabilities  = filter_input( INPUT_GET, 'displayAllCapabilities', FILTER_VALIDATE_BOOLEAN );
