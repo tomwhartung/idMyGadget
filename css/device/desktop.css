@@ -12,6 +12,8 @@ a:hover {
 	font-weight: bold;   /* for fun */
 }  
 
-.options {
+#rmCssForm {
+	display: inline;
+	float: left;
 	width: 50%;
 }

@@ -27,7 +27,13 @@ p, a, ul, li, dl, dt, dd {
 a {
 	font-weight: bold;   /* make links easier to see and tap */
 }
-
-.options {
+#rmCssForm {
+	display: inline;
+	float: left;
+	width: 50%;
+}
+#gadgetTypeForm {
+	display: inline;
+	float: right;
 	width: 50%;
 }
