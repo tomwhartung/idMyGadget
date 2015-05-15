@@ -20,7 +20,7 @@ This option requires downloading (cloning) the Mobile-Detect code from github.
 1. Run the git pull command to update the source.
 
   ```
-  git pull origin master
+  git pull
   ```
 
 ## Running the Demos
