@@ -24,9 +24,9 @@ function getStyleSheetFile( $deviceData )
 		$gadgetString = getGadgetString( $deviceData );
 	}
 
-	if ( $gadgetString = "Desktop" )
+	if ( $gadgetString === "Desktop" )
 	{
-		$styleSheetFile === STYLE_SHEET_DESKTOP;
+		$styleSheetFile = STYLE_SHEET_DESKTOP;
 	}
 	else if ( $gadgetString === "Tablet" )
 	{
