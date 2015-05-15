@@ -9,7 +9,7 @@ abstract class IdMyGadget
 	const GADGET_DETECTOR_MOBILE_DETECTOR = 'mobile_detector';
 	const GADGET_DETECTOR_TERA_WURFL = 'tera_wurfl';
 
-	const GADGET_TYPE_UNKNOWN = 'type_unknown';
+	const GADGET_TYPE_UNKNOWN = 'unknown';
 	const GADGET_TYPE_UNRECOGNIZED = 'unrecognized';
 	const GADGET_TYPE_DESKTOP_BROWSER = 'desktop';
 	const GADGET_TYPE_TABLET = 'tablet';
