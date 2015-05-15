@@ -31,10 +31,8 @@ else
 <div id="container">
 <?php
 print "<h1>$detectorName</h1>";
-print "<div id='content'>";
 ?>
-
-<div id="idMyGadget">
+<div id='content'>
   <h3>Installation and Administration:</h3>
   <dl>
     <dt><a href="README.md" target="_blank">README.md</a></dt>
@@ -127,8 +125,6 @@ print "<div id='content'>";
   <hr />
   <p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</dt>
   <hr />
-</div> <!-- idMyGadget-->
-
 </div> <!-- content -->
 </div> <!-- container -->
 </body>

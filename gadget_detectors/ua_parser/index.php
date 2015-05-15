@@ -15,24 +15,20 @@ $detectorName = 'ua_parser';
 </head>
 
 <body>
-  <div id="container">
+<div id="container">
 <?php
-print "<h1>$detectorName</h1>";
-print "<div id='content'>";
+  print "<h1>$detectorName</h1>";
 ?>
-
-<div id="idMyGadget">
- <h3>IdMyGadget ua_parser Demos:</h3>
- <dl>
-  <dt><a href=""></a>TBD.</dt>
-  <dd></dd>
- </dl>
- <hr />
- <p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</p>
- <hr />
-</div> <!-- idMyGadget-->
-
- </div> <!-- content -->
+<div id='content'>
+  <h3>IdMyGadget ua_parser Demos:</h3>
+  <dl>
+   <dt><a href=""></a>TBD.</dt>
+   <dd></dd>
+  </dl>
+  <hr />
+  <p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</p>
+  <hr />
+</div> <!-- content -->
 </div> <!-- container -->
 </body>
 </html>

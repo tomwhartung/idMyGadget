@@ -30,12 +30,10 @@ else
 
 <body>
 <div id="container">
-<?php
-print "<h1>$detectorName</h1>";
-print "<div id='content'>";
-?>
-
-<div id="idMyGadget">
+ <?php
+  print "<h1>$detectorName</h1>";
+ ?>
+ <div id='content'>
  <h3>Standard Demos:</h3>
  <dl>
   <dt><a href="README.md" target="_blank">README.md</a></dt>
