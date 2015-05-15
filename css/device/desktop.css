@@ -12,3 +12,6 @@ a:hover {
 	font-weight: bold;   /* for fun */
 }  
 
+.options {
+	width: 50%;
+}

@@ -28,3 +28,6 @@ a {
 	font-weight: bold;   /* make links easier to see and tap */
 }
 
+.options {
+	width: 50%;
+}

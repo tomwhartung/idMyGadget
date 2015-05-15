@@ -63,6 +63,10 @@ dt {
 .centered {
 	text-align: center;
 }
+label {
+	display:block;
+	clear:both;
+}
 .disabled, .obsolete {
 	text-decoration: line-through;
 }
