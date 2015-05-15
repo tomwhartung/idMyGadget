@@ -6,7 +6,7 @@
   */
 function printSampleContent( $deviceData )
 {
-  print "<h3>Sample Content</h3>";
+  print "<h4>Sample Content</h4>";
   //
   // Note that content does not necessarily have to be "print"ed.
   // ------------------------------------------------------------
