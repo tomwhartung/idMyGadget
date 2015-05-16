@@ -52,17 +52,17 @@ function printFooterForms( $styleSheetFile, $deviceData )
     </div> <!-- .rmCssForm -->
     <div class="gadgetTypeForm">
       <fieldset>
-        <label for="gadgetTypeDetect" class="left">
-          <input type="radio" id="gadgetTypeDetect" name="gadgetType"
-                 value="<?php echo IdMyGadget::GADGET_TYPE_UNKNOWN; ?>"
-             <?php print $gadgetTypeDetectChecked; ?> />
-          Detect Device
-        </label>
-        <label for="gadgetTypeDesktop" class="right">
+        <label for="gadgetTypeDesktop" class="left">
           <input type="radio" id="gadgetTypeDesktop" name="gadgetType"
              value="<?php print IdMyGadget::GADGET_TYPE_DESKTOP; ?>"
              <?php print $gadgetTypeDesktopChecked ?> />
           Emulate Desktop
+        </label>
+        <label for="gadgetTypeDetect" class="right">
+          <input type="radio" id="gadgetTypeDetect" name="gadgetType"
+                 value="<?php echo IdMyGadget::GADGET_TYPE_UNKNOWN; ?>"
+             <?php print $gadgetTypeDetectChecked; ?> />
+          Detect Device
         </label>
         <label for="gadgetTypePhone" class="left">
           <input type="radio" id="gadgetTypePhone" name="gadgetType"
@@ -70,17 +70,17 @@ function printFooterForms( $styleSheetFile, $deviceData )
              <?php print $gadgetTypePhoneChecked; ?> />
           Emulate Phone
         </label>
-        <label for="gadgetTypeTablet" class="right">
-          <input type="radio" id="gadgetTypeTablet" name="gadgetType"
-             value="<?php print IdMyGadget::GADGET_TYPE_TABLET; ?>"
-             <?php print $gadgetTypeTabletChecked; ?> />
-          Emulate Tablet
-        </label>
-        <label for="gadgetTypeUnrecognized" class="left">
+        <label for="gadgetTypeUnrecognized" class="right">
           <input type="radio" id="gadgetTypeUnrecognized" name="gadgetType"
              value="<?php echo IdMyGadget::GADGET_TYPE_UNRECOGNIZED; ?>"
              <?php print $gadgetTypeUnrecognizedChecked; ?> />
           Emulate Unrecognized Device
+        </label>
+        <label for="gadgetTypeTablet" class="left">
+          <input type="radio" id="gadgetTypeTablet" name="gadgetType"
+             value="<?php print IdMyGadget::GADGET_TYPE_TABLET; ?>"
+             <?php print $gadgetTypeTabletChecked; ?> />
+          Emulate Tablet
         </label>
         <div class="centered">
           <input type="submit" value="Force Gadget Type" />
