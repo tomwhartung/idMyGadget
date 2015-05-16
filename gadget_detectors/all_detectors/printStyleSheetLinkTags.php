@@ -1,6 +1,11 @@
 <?php
 require_once 'getStyleSheetFile.php';
-
+/**
+ * Prints the style sheet link tags, if desired (based on inputs in footer forms)
+ *
+ * @param type $deviceData
+ * @return type style sheet file name (for footer forms)
+ */
 function printStyleSheetLinkTags( $deviceData )
 {
 	$styleSheetFile = getStyleSheetFile( $deviceData );
