@@ -2,26 +2,10 @@
 function printFooterForms( $styleSheetFile, $deviceData )
 {
     $rmAllDevicesCss = filter_input( INPUT_GET, 'rmAllDevicesCss', FILTER_SANITIZE_NUMBER_INT );
-    if ( $rmAllDevicesCss )
-    {
-      $rmAllDevicesCssChecked = 'checked';
-    }
-    else
-    {
-      $rmAllDevicesCssChecked = '';
-      print '<link rel="stylesheet" type="text/css" href="../../css/allDevices.css" />';
-    }
+    $rmAllDevicesCssChecked = $rmAllDevicesCss ? 'checked' : '';
 
     $rmStyleSheetCss = filter_input( INPUT_GET, 'rmStyleSheetCss', FILTER_SANITIZE_NUMBER_INT );
-    if ( $rmStyleSheetCss )
-    {
-      $rmStyleSheetCssChecked = 'checked';
-    }
-    else
-    {
-      $rmStyleSheetCssChecked = '';
-      print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" />';
-    }
+    $rmStyleSheetCssChecked = $rmStyleSheetCss ? 'checked' : '';
 
     $gadgetType = filter_input( INPUT_GET, 'gadgetType', FILTER_SANITIZE_STRING );
     if ( $gadgetType == IdMyGadget::GADGET_TYPE_UNKNOWN )
@@ -36,16 +20,17 @@ function printFooterForms( $styleSheetFile, $deviceData )
       {
         $gadgetType = $deviceData['gadgetType'];
       }
-      $gadgetTypeDesktopChecked = $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP ?
-              'checked' : '';
-      $gadgetTypeTabletChecked = $gadgetType == IdMyGadget::GADGET_TYPE_TABLET ?
-              'checked' : '';
-      $gadgetTypePhoneChecked = $gadgetType == IdMyGadget::GADGET_TYPE_PHONE ?
-              'checked' : '';
-      $gadgetTypeUnrecognizedChecked = $gadgetType == IdMyGadget::GADGET_TYPE_UNRECOGNIZED ?
-              'checked' : '';
+      $gadgetTypeDesktopChecked =
+          $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP ? 'checked' : '';
+      $gadgetTypeTabletChecked =
+          $gadgetType === IdMyGadget::GADGET_TYPE_TABLET ? 'checked' : '';
+      $gadgetTypePhoneChecked =
+          $gadgetType === IdMyGadget::GADGET_TYPE_PHONE ? 'checked' : '';
+      $gadgetTypeUnrecognizedChecked =
+          $gadgetType === IdMyGadget::GADGET_TYPE_UNRECOGNIZED ? 'checked' : '';
     }
   ?>
+  <hr />
   <div class="footerForms">
   <form action="" method="GET">
     <div class="rmCssForm">
@@ -91,7 +76,7 @@ function printFooterForms( $styleSheetFile, $deviceData )
              <?php print $gadgetTypeTabletChecked; ?> />
           Emulate Tablet
         </label>
-        <label for="gadgetTypeUnrecognized" class="right">
+        <label for="gadgetTypeUnrecognized" class="left">
           <input type="radio" id="gadgetTypeUnrecognized" name="gadgetType"
              value="<?php echo IdMyGadget::GADGET_TYPE_UNRECOGNIZED; ?>"
              <?php print $gadgetTypeUnrecognizedChecked; ?> />
@@ -104,5 +89,9 @@ function printFooterForms( $styleSheetFile, $deviceData )
     </div> <!-- .gadgetTypeForm -->
   </form>
   </div><!-- .footerForms -->
+  <div class="footerLink">
+    <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
+  </div> <!-- .footerLink -->
+  <hr />
 <?php
 }

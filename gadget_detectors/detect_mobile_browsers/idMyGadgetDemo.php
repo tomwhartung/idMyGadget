@@ -24,38 +24,17 @@ $styleSheetFile = getStyleSheetFile( $deviceData );
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <?php
     $rmAllDevicesCss = filter_input( INPUT_GET, 'rmAllDevicesCss', FILTER_SANITIZE_NUMBER_INT );
-    $rmStyleSheetCss = filter_input( INPUT_GET, 'rmStyleSheetCss', FILTER_SANITIZE_NUMBER_INT );
-    if ( $rmAllDevicesCss )
+    if ( ! $rmAllDevicesCss )
     {
-      $rmAllDevicesCssChecked = 'checked';
-    }
-    else
-    {
-      $rmAllDevicesCssChecked = '';
       print '<link rel="stylesheet" type="text/css" href="../../css/allDevices.css" />';
     }
-    if ( $rmStyleSheetCss )
-    {
-      $rmStyleSheetCssChecked = 'checked';
-    }
-    else
+
+    $rmStyleSheetCss = filter_input( INPUT_GET, 'rmStyleSheetCss', FILTER_SANITIZE_NUMBER_INT );
+    if ( ! $rmStyleSheetCss )
     {
       $rmStyleSheetCssChecked = '';
       print '<link rel="stylesheet" type="text/css" href="' . $styleSheetFile . '" />';
     }
-    $gadgetType = filter_input( INPUT_GET, 'gadgetType', FILTER_SANITIZE_STRING );
-    if ( ! isset($gadgetType ) )
-    {
-      $gadgetType = $deviceData['gadgetType'];
-    }
-    $gadgetTypeDesktopChecked = $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP ?
-            'checked' : '';
-    $gadgetTypeTabletChecked = $gadgetType == IdMyGadget::GADGET_TYPE_TABLET ?
-            'checked' : '';
-    $gadgetTypePhoneChecked = $gadgetType == IdMyGadget::GADGET_TYPE_PHONE ?
-            'checked' : '';
-    $gadgetTypeUnrecognizedChecked = $gadgetType == IdMyGadget::GADGET_TYPE_UNRECOGNIZED ?
-            'checked' : '';
   ?>
   <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="../../css/device/explorer.css" media="all" />
@@ -83,13 +62,7 @@ $styleSheetFile = getStyleSheetFile( $deviceData );
   ?>
 </div> <!-- #content -->
 <footer>
-  <hr />
   <?php printFooterForms( $styleSheetFile, $deviceData ); ?>
-  <div class="footerLink">
-    <hr />
-    <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
-    <hr />
-  </div> <!-- .footerLink -->
 </footer>
 </div> <!-- #container -->
 </body>
