@@ -11,7 +11,7 @@ abstract class IdMyGadget
 
 	const GADGET_TYPE_UNKNOWN = 'unknown';
 	const GADGET_TYPE_UNRECOGNIZED = 'unrecognized';
-	const GADGET_TYPE_DESKTOP_BROWSER = 'desktop';
+	const GADGET_TYPE_DESKTOP = 'desktop';
 	const GADGET_TYPE_TABLET = 'tablet';
 	const GADGET_TYPE_PHONE = 'phone';
 

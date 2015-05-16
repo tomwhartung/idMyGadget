@@ -125,7 +125,7 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 			{
 				if ( $pointing_method == "mouse" )
 				{
-					$this->gadgetType = parent::GADGET_TYPE_DESKTOP_BROWSER;
+					$this->gadgetType = parent::GADGET_TYPE_DESKTOP;
 				}
 				else if ( $pointing_method == "touchscreen" )
 				{
@@ -157,7 +157,7 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 			$this->gadgetBrand = parent::GADGET_BRAND_UNRECOGNIZED;
 			if ( isset($brand_name) )
 			{
-				if ( $this->gadgetType == parent::GADGET_TYPE_DESKTOP_BROWSER )
+				if ( $this->gadgetType == parent::GADGET_TYPE_DESKTOP )
 				{
 					$this->gadgetBrand = $brand_name;
 				}
@@ -213,7 +213,7 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 		{
 			if ( isset($model_name) )
 			{
-				if ( $this->gadgetType == parent::GADGET_TYPE_DESKTOP_BROWSER )
+				if ( $this->gadgetType == parent::GADGET_TYPE_DESKTOP )
 				{
 					$this->gadgetModel = $model_name;
 				}

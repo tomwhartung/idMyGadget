@@ -48,7 +48,7 @@ $styleSheetFile = getStyleSheetFile( $deviceData );
     {
       $gadgetType = $deviceData['gadgetType'];
     }
-    $gadgetTypeDesktopChecked = $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER ?
+    $gadgetTypeDesktopChecked = $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP ?
             'checked' : '';
     $gadgetTypeTabletChecked = $gadgetType == IdMyGadget::GADGET_TYPE_TABLET ?
             'checked' : '';

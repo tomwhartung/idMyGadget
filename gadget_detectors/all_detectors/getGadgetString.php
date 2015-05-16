@@ -13,7 +13,7 @@ function getGadgetString( $deviceData )
 	$gadgetModel = $deviceData["gadgetModel"];
 	$gadgetBrand = $deviceData["gadgetBrand"];
 
-	if ( $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER )
+	if ( $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP )
 	{
 		$gadgetString = "Desktop";
 	}

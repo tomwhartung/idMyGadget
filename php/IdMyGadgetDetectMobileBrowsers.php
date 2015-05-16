@@ -79,7 +79,7 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 			}
 			else
 			{
-				$this->gadgetType = parent::GADGET_TYPE_DESKTOP_BROWSER;
+				$this->gadgetType = parent::GADGET_TYPE_DESKTOP;
 			}
 		}
 	

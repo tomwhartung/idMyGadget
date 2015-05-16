@@ -28,7 +28,7 @@ function printFooterForms( $styleSheetFile, $deviceData )
     {
       $gadgetType = $deviceData['gadgetType'];
     }
-    $gadgetTypeDesktopChecked = $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER ?
+    $gadgetTypeDesktopChecked = $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP ?
             'checked' : '';
     $gadgetTypeTabletChecked = $gadgetType == IdMyGadget::GADGET_TYPE_TABLET ?
             'checked' : '';
@@ -60,7 +60,7 @@ function printFooterForms( $styleSheetFile, $deviceData )
       <fieldset>
         <label for="gadgetTypeDesktop">
           <input type="radio" id="gadgetTypeDesktop" name="gadgetType"
-             value="<?php print IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER; ?>"
+             value="<?php print IdMyGadget::GADGET_TYPE_DESKTOP; ?>"
              <?php print $gadgetTypeDesktopChecked ?> />
           Emulate Desktop
         </label>
