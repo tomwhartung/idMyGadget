@@ -9,6 +9,8 @@ require_once( 'php/detectmobilebrowser.php' );  // sets $usingMobilePhone global
 require_once( '../../php/IdMyGadgetDetectMobileBrowsers.php' );
 require_once '../all_detectors/getGadgetString.php';
 require_once '../all_detectors/getStyleSheetFile.php';
+require_once '../all_detectors/printFooterForms.php';
+
 $debugging = FALSE;
 $allowOverridesInUrl = TRUE;
 $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl );
@@ -82,59 +84,12 @@ $styleSheetFile = getStyleSheetFile( $deviceData );
 </div> <!-- #content -->
 <footer>
   <hr />
-  <form action="" method="GET">
-    <div id="rmCssForm">
-      <fieldset>
-        <label for="rmAllDevicesCss">
-          <input type="checkbox" id="rmAllDevicesCss" name="rmAllDevicesCss" value="1"
-             <?php print $rmAllDevicesCssChecked ?> />
-          Remove allDevices.css
-        </label>
-        <label for="rmStyleSheetCss">
-          <input type="checkbox" id="rmStyleSheetCss" name="rmStyleSheetCss" value="1"
-             <?php print $rmStyleSheetCssChecked ?> />
-          Remove <?php print basename($styleSheetFile) ?>
-        </label>
-        <div class="centered">
-          <input type="submit" value="Remove Css" />
-        </div> <!-- .centered -->
-      </fieldset>
-    </div> <!-- #rmCssForm -->
-    <div id="gadgetTypeForm">
-      <fieldset>
-        <label for="gadgetTypeDesktop">
-          <input type="radio" id="gadgetTypeDesktop" name="gadgetType"
-             value="<?php print IdMyGadget::GADGET_TYPE_DESKTOP_BROWSER; ?>"
-             <?php print $gadgetTypeDesktopChecked ?> />
-          Emulate Desktop
-        </label>
-        <label for="gadgetTypeTablet">
-          <input type="radio" id="gadgetTypeTablet" name="gadgetType"
-             value="<?php print IdMyGadget::GADGET_TYPE_TABLET; ?>"
-             <?php print $gadgetTypeTabletChecked; ?> />
-          Emulate Tablet
-        </label>
-        <label for="gadgetTypePhone">
-          <input type="radio" id="gadgetTypePhone" name="gadgetType"
-             value="<?php echo IdMyGadget::GADGET_TYPE_PHONE; ?>"
-             <?php print $gadgetTypePhoneChecked; ?> />
-          Emulate Phone
-        </label>
-        <label for="gadgetTypeUnrecognized">
-          <input type="radio" id="gadgetTypeUnrecognized" name="gadgetType"
-             value="<?php echo IdMyGadget::GADGET_TYPE_UNRECOGNIZED; ?>"
-             <?php print $gadgetTypeUnrecognizedChecked; ?> />
-          Emulate Unrecognized Device
-        </label>
-        <div class="centered">
-          <input type="submit" value="Force Gadget Type" />
-        </div> <!-- .centered -->
-      </fieldset>
-    </div> <!-- #gadgetTypeForm -->
-  </form>
-  <hr />
-  <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
-  <hr />
+  <?php printFooterForms( $styleSheetFile, $deviceData ); ?>
+  <div class="footerLink">
+    <hr />
+    <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
+    <hr />
+  </div> <!-- .footerLink -->
 </footer>
 </div> <!-- #container -->
 </body>

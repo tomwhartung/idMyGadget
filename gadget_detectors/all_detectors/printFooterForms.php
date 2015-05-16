@@ -1,9 +1,7 @@
 <?php
-function printFooterForms( $deviceData )
+function printFooterForms( $styleSheetFile, $deviceData )
 {
     $rmAllDevicesCss = filter_input( INPUT_GET, 'rmAllDevicesCss', FILTER_SANITIZE_NUMBER_INT );
-    $rmStyleSheetCss = filter_input( INPUT_GET, 'rmStyleSheetCss', FILTER_SANITIZE_NUMBER_INT );
-
     if ( $rmAllDevicesCss )
     {
       $rmAllDevicesCssChecked = 'checked';
@@ -14,6 +12,7 @@ function printFooterForms( $deviceData )
       print '<link rel="stylesheet" type="text/css" href="../../css/allDevices.css" />';
     }
 
+    $rmStyleSheetCss = filter_input( INPUT_GET, 'rmStyleSheetCss', FILTER_SANITIZE_NUMBER_INT );
     if ( $rmStyleSheetCss )
     {
       $rmStyleSheetCssChecked = 'checked';
@@ -38,8 +37,9 @@ function printFooterForms( $deviceData )
     $gadgetTypeUnrecognizedChecked = $gadgetType == IdMyGadget::GADGET_TYPE_UNRECOGNIZED ?
             'checked' : '';
   ?>
+  <div class="footerForms">
   <form action="" method="GET">
-    <div id="rmCssForm">
+    <div class="rmCssForm">
       <fieldset>
         <label for="rmAllDevicesCss">
           <input type="checkbox" id="rmAllDevicesCss" name="rmAllDevicesCss" value="1"
@@ -55,8 +55,8 @@ function printFooterForms( $deviceData )
           <input type="submit" value="Remove Css" />
         </div> <!-- .centered -->
       </fieldset>
-    </div> <!-- #rmCssForm -->
-    <div id="gadgetTypeForm">
+    </div> <!-- .rmCssForm -->
+    <div class="gadgetTypeForm">
       <fieldset>
         <label for="gadgetTypeDesktop">
           <input type="radio" id="gadgetTypeDesktop" name="gadgetType"
@@ -86,7 +86,8 @@ function printFooterForms( $deviceData )
           <input type="submit" value="Force Gadget Type" />
         </div> <!-- .centered -->
       </fieldset>
-    </div> <!-- #gadgetTypeForm -->
+    </div> <!-- .gadgetTypeForm -->
   </form>
+  </div><!-- .footerForms -->
 <?php
 }
