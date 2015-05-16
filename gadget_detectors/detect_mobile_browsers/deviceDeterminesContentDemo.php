@@ -11,7 +11,7 @@ require_once '../all_detectors/printSampleContent.php';
 require_once '../all_detectors/printFooterForms.php';
 
 $debugging = FALSE;
-$allowOverridesInUrl = TRUE;
+$allowOverridesInUrl = TRUE;   // Needed for footer forms to work
 $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl );
 $deviceData = $idMyGadget->getDeviceData();
 $gadgetString = getGadgetString( $deviceData );

@@ -12,7 +12,8 @@ $pageTitle = basename( $_SERVER['PHP_SELF'], '.php' );
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
 require_once '../all_detectors/getGadgetString.php';
-require_once '../all_detectors/getStyleSheetFile.php';
+require_once '../all_detectors/printStyleSheetLinkTags.php';
+require_once '../all_detectors/printFooterForms.php';
 require_once 'DemoTeraWurfl.php';
 
 //
@@ -22,19 +23,19 @@ require_once 'DemoTeraWurfl.php';
 //       <a href="http://localhost/resume/?gadgetType=phone&gadgetModel=iPhone&gadgetBrand=Apple">
 //
 $debugging = FALSE;
-$allowOverridesInUrl = TRUE;
+$allowOverridesInUrl = TRUE;   // Needed for footer forms to work
 $idMyGadget = new IdMyGadgetTeraWurfl( $debugging, $allowOverridesInUrl );
 
 $deviceData = $idMyGadget->getDeviceData();
 $gadgetString = getGadgetString( $deviceData );
-$styleSheetFile = getStyleSheetFile( $deviceData );
 ?>
 
 <head>
   <title><?php print $pageTitle; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="../../css/allDevices.css" />
-  <link rel="stylesheet" type="text/css" href="<?php print $styleSheetFile; ?>" />
+  <?php
+    $styleSheetFile = printStyleSheetLinkTags( $deviceData );
+  ?>
   <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="../../css/device/explorer.css" media="all" />
   <![endif]-->
@@ -127,6 +128,9 @@ if ( strlen($output) > 0 )
   <hr />
 
 </div> <!-- #content -->
+<footer>
+  <?php printFooterForms( $styleSheetFile, $deviceData ); ?>
+</footer>
 </div> <!-- #container -->
 </body>
 </html>
