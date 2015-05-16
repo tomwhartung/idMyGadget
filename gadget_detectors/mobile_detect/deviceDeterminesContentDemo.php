@@ -23,9 +23,6 @@ $gadgetString = getGadgetString( $deviceData );
   <?php
     $styleSheetFile = printStyleSheetLinkTags( $deviceData );
   ?>
-  <!--[if IE]>
-    <link rel="stylesheet" type="text/css" href="../../css/device/explorer.css" media="all" />
-  <![endif]-->
 </head>
 
 <body>

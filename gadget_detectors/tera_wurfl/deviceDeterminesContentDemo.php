@@ -36,13 +36,6 @@ $gadgetType = $deviceData["gadgetType"];
   <?php
     $styleSheetFile = printStyleSheetLinkTags( $deviceData );
   ?>
-  <!--[if IE]>
-    <link rel="stylesheet" type="text/css" href="../../css/device/explorer.css" media="all" />
-  <![endif]-->
-<?php
-// Useful for debugging sometimes:
-// print '<link rel="stylesheet" type="text/css" href="../css/showBorders.css" />';
-?>
 </head>
 
 <body>
