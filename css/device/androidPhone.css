@@ -41,3 +41,12 @@ p, a, ul, li, dl, dt, dd {
 ul.debugging {
 	font-size: 0.75em;
 }
+
+.rmCssForm {
+	display: block;
+	width: 100%;
+}
+.gadgetTypeForm {
+	display: block;
+	width: 100%;
+}

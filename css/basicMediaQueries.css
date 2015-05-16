@@ -25,6 +25,15 @@
 	a:hover {
 		border: lightskyblue inset 4px;
 	}
+
+	.rmCssForm {
+		display: block;
+		width: 100%;
+	}
+	.gadgetTypeForm {
+		display: block;
+		width: 100%;
+	}
 }
 @media only screen and (max-width: 1000px) and (orientation:landscape) {
 	h1, h2, h3, h4, h5, h6, th, p, dl, a, ul, td {

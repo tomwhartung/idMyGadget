@@ -11,9 +11,3 @@ div#container {
 a:hover {
 	font-weight: bold;   /* for fun */
 }  
-
-#rmCssForm {
-	display: inline;
-	float: left;
-	width: 50%;
-}

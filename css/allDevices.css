@@ -64,8 +64,8 @@ dt {
 	text-align: center;
 }
 label {
-	display:block;
-	clear:both;
+	display: block;
+	clear: both;
 }
 .disabled, .obsolete {
 	text-decoration: line-through;
@@ -88,4 +88,19 @@ ul.no-bullets, ul.debugging  {
 }
 ul.debugging {
 	border: 3px solid red;
+}
+.footerLink {
+	clear: both;
+	display: block;
+	width: 100%;
+}
+.rmCssForm {
+	display: inline;
+	float: left;
+	width: 33%;
+}
+.gadgetTypeForm {
+	display: inline;
+	float: right;
+	width: 66%;
 }
