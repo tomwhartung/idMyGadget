@@ -64,8 +64,21 @@ dt {
 	text-align: center;
 }
 label {
-	display: block;
 	clear: both;
+	display: block;
+}
+label.left {
+	clear: both;
+	display: inline;
+	float: left;
+	width: 50%;
+}
+label.right {
+	clear: none;
+	display: inline;
+	float: right;
+	text-justify: left;
+	width: 50%;
 }
 .disabled, .obsolete {
 	text-decoration: line-through;
@@ -89,11 +102,6 @@ ul.no-bullets, ul.debugging  {
 ul.debugging {
 	border: 3px solid red;
 }
-.footerLink {
-	clear: both;
-	display: block;
-	width: 100%;
-}
 .rmCssForm {
 	display: inline;
 	float: left;
@@ -103,4 +111,9 @@ ul.debugging {
 	display: inline;
 	float: right;
 	width: 66%;
+}
+.footerLink {
+	clear: both;
+	display: block;
+	width: 100%;
 }
