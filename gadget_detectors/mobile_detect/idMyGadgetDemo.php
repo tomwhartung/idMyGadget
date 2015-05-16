@@ -6,20 +6,22 @@ $pageTitle = basename( $_SERVER['PHP_SELF'], '.php' );
 require_once( 'Mobile-Detect/Mobile_Detect.php' );
 require_once( '../../php/IdMyGadgetMobileDetect.php' );
 require_once '../all_detectors/getGadgetString.php';
-require_once '../all_detectors/getStyleSheetFile.php';
+require_once '../all_detectors/printStyleSheetLinkTags.php';
+require_once '../all_detectors/printFooterForms.php';
+
 $debugging = FALSE;
-$allowOverridesInUrl = FALSE;
+$allowOverridesInUrl = TRUE;   // Needed for footer forms to work
 $idMyGadget = new IdMyGadgetMobileDetect( $debugging, $allowOverridesInUrl );
 $deviceData = $idMyGadget->getDeviceData();
 $gadgetString = getGadgetString( $deviceData );
-$styleSheetFile = getStyleSheetFile( $deviceData );
 ?>
 
 <head>
   <title><?php print $pageTitle; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="../../css/allDevices.css" />
-  <link rel="stylesheet" type="text/css" href="<?php print $styleSheetFile; ?>" />
+  <?php
+    $styleSheetFile = printStyleSheetLinkTags( $deviceData );
+  ?>
   <!--[if IE]>
     <link rel="stylesheet" type="text/css" href="../../css/device/explorer.css" media="all" />
   <![endif]-->
@@ -43,6 +45,9 @@ $styleSheetFile = getStyleSheetFile( $deviceData );
  <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
  <hr />
 </div> <!-- #content -->
+<footer>
+  <?php printFooterForms( $styleSheetFile, $deviceData ); ?>
+</footer>
 </div> <!-- #container -->
 </body>
 </html>
