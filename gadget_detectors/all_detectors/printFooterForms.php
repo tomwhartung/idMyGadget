@@ -1,4 +1,9 @@
 <?php
+/**
+ * Prints forms in footer of demo pages
+ * @param type $styleSheetFile
+ * @param type $deviceData
+ */
 function printFooterForms( $styleSheetFile, $deviceData )
 {
     $rmAllDevicesCss = filter_input( INPUT_GET, 'rmAllDevicesCss', FILTER_SANITIZE_NUMBER_INT );
