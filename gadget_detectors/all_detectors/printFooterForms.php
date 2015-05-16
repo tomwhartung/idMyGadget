@@ -17,6 +17,10 @@ function printFooterForms( $styleSheetFile, $deviceData )
     {
       $gadgetTypeDetectChecked = 'checked';
       $gadgetType = $deviceData['gadgetType'];
+      $gadgetTypeDesktopChecked = '';
+      $gadgetTypeTabletChecked = '';
+      $gadgetTypePhoneChecked = '';
+      $gadgetTypeUnrecognizedChecked = '';
     }
     else
     {
