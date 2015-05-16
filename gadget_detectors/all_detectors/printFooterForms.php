@@ -24,18 +24,27 @@ function printFooterForms( $styleSheetFile, $deviceData )
     }
 
     $gadgetType = filter_input( INPUT_GET, 'gadgetType', FILTER_SANITIZE_STRING );
-    if ( ! isset($gadgetType ) )
+    if ( $gadgetType == IdMyGadget::GADGET_TYPE_UNKNOWN )
     {
+      $gadgetTypeDetectChecked = 'checked';
       $gadgetType = $deviceData['gadgetType'];
     }
-    $gadgetTypeDesktopChecked = $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP ?
-            'checked' : '';
-    $gadgetTypeTabletChecked = $gadgetType == IdMyGadget::GADGET_TYPE_TABLET ?
-            'checked' : '';
-    $gadgetTypePhoneChecked = $gadgetType == IdMyGadget::GADGET_TYPE_PHONE ?
-            'checked' : '';
-    $gadgetTypeUnrecognizedChecked = $gadgetType == IdMyGadget::GADGET_TYPE_UNRECOGNIZED ?
-            'checked' : '';
+    else
+    {
+      $gadgetTypeDetectChecked = '';
+      if ( ! isset($gadgetType) )
+      {
+        $gadgetType = $deviceData['gadgetType'];
+      }
+      $gadgetTypeDesktopChecked = $gadgetType == IdMyGadget::GADGET_TYPE_DESKTOP ?
+              'checked' : '';
+      $gadgetTypeTabletChecked = $gadgetType == IdMyGadget::GADGET_TYPE_TABLET ?
+              'checked' : '';
+      $gadgetTypePhoneChecked = $gadgetType == IdMyGadget::GADGET_TYPE_PHONE ?
+              'checked' : '';
+      $gadgetTypeUnrecognizedChecked = $gadgetType == IdMyGadget::GADGET_TYPE_UNRECOGNIZED ?
+              'checked' : '';
+    }
   ?>
   <div class="footerForms">
   <form action="" method="GET">
@@ -58,25 +67,31 @@ function printFooterForms( $styleSheetFile, $deviceData )
     </div> <!-- .rmCssForm -->
     <div class="gadgetTypeForm">
       <fieldset>
-        <label for="gadgetTypeDesktop">
+        <label for="gadgetTypeDetect" class="left">
+          <input type="radio" id="gadgetTypeDetect" name="gadgetType"
+                 value="<?php echo IdMyGadget::GADGET_TYPE_UNKNOWN; ?>"
+             <?php print $gadgetTypeDetectChecked; ?> />
+          Detect Device
+        </label>
+        <label for="gadgetTypeDesktop" class="right">
           <input type="radio" id="gadgetTypeDesktop" name="gadgetType"
              value="<?php print IdMyGadget::GADGET_TYPE_DESKTOP; ?>"
              <?php print $gadgetTypeDesktopChecked ?> />
           Emulate Desktop
         </label>
-        <label for="gadgetTypeTablet">
-          <input type="radio" id="gadgetTypeTablet" name="gadgetType"
-             value="<?php print IdMyGadget::GADGET_TYPE_TABLET; ?>"
-             <?php print $gadgetTypeTabletChecked; ?> />
-          Emulate Tablet
-        </label>
-        <label for="gadgetTypePhone">
+        <label for="gadgetTypePhone" class="left">
           <input type="radio" id="gadgetTypePhone" name="gadgetType"
              value="<?php echo IdMyGadget::GADGET_TYPE_PHONE; ?>"
              <?php print $gadgetTypePhoneChecked; ?> />
           Emulate Phone
         </label>
-        <label for="gadgetTypeUnrecognized">
+        <label for="gadgetTypeTablet" class="right">
+          <input type="radio" id="gadgetTypeTablet" name="gadgetType"
+             value="<?php print IdMyGadget::GADGET_TYPE_TABLET; ?>"
+             <?php print $gadgetTypeTabletChecked; ?> />
+          Emulate Tablet
+        </label>
+        <label for="gadgetTypeUnrecognized" class="right">
           <input type="radio" id="gadgetTypeUnrecognized" name="gadgetType"
              value="<?php echo IdMyGadget::GADGET_TYPE_UNRECOGNIZED; ?>"
              <?php print $gadgetTypeUnrecognizedChecked; ?> />
