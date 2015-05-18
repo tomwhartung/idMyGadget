@@ -13,22 +13,10 @@ function printFooterForms( $styleSheetFile, $deviceData )
     $rmStyleSheetCssChecked = $rmStyleSheetCss ? 'checked' : '';
 
     $gadgetType = filter_input( INPUT_GET, 'gadgetType', FILTER_SANITIZE_STRING );
-    if ( $gadgetType == IdMyGadget::GADGET_TYPE_UNKNOWN )
-    {
-      $gadgetTypeDetectChecked = 'checked';
-      $gadgetType = $deviceData['gadgetType'];
-      $gadgetTypeDesktopChecked = '';
-      $gadgetTypeTabletChecked = '';
-      $gadgetTypePhoneChecked = '';
-      $gadgetTypeUnrecognizedChecked = '';
-    }
-    else
+    if ( isset($gadgetType) &&
+         $gadgetType !== IdMyGadget::GADGET_TYPE_UNKNOWN )
     {
       $gadgetTypeDetectChecked = '';
-      if ( ! isset($gadgetType) )
-      {
-        $gadgetType = $deviceData['gadgetType'];
-      }
       $gadgetTypeDesktopChecked =
           $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP ? 'checked' : '';
       $gadgetTypeTabletChecked =
@@ -38,7 +26,17 @@ function printFooterForms( $styleSheetFile, $deviceData )
       $gadgetTypeUnrecognizedChecked =
           $gadgetType === IdMyGadget::GADGET_TYPE_UNRECOGNIZED ? 'checked' : '';
     }
-  ?>
+    else // gadgetType NOT set in request
+    {
+        $gadgetType = $deviceData['gadgetType'];
+        $gadgetTypeDetectChecked = 'checked';
+        $gadgetTypeDesktopChecked = '';
+        $gadgetTypeTabletChecked = '';
+        $gadgetTypePhoneChecked = '';
+        $gadgetTypeUnrecognizedChecked = '';
+    }
+
+    ?>
   <hr />
   <div class="footerForms">
   <form action="" method="GET">
