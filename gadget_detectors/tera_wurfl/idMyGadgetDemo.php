@@ -31,19 +31,19 @@ $gadgetString = getGadgetString( $deviceData );
 ?>
 
 <head>
-  <title><?php print $pageTitle; ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <?php
-    $styleSheetFile = printStyleSheetLinkTags( $deviceData );
-  ?>
+	<title><?php print $pageTitle; ?></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<?php
+		$styleSheetFile = printStyleSheetLinkTags( $deviceData );
+	?>
 </head>
 
 <body>
 <div id="container">
 <h2><?php print $pageTitle; ?></h2>
 <div id='content'>
-  <h3><?php print get_class($idMyGadget); ?></h3>
-  <h3><?php print $gadgetString ?></h3>
+	<h3><?php print get_class($idMyGadget); ?></h3>
+	<h3><?php print $gadgetString ?></h3>
 
 <?php
 //
@@ -63,16 +63,16 @@ $output = "";
 //
 $longOutput = FALSE;
 if ( isset($displayAllCapabilities) ||
-     isset($displayCapabilityArrays) ||
-     isset($displaySortedCapabilities) )
+	   isset($displayCapabilityArrays) ||
+	   isset($displaySortedCapabilities) )
 {
 	$longOutput = TRUE;
 }
 if ( $longOutput === TRUE )
 {
-    $output .= '<hr />';
-    $output .= '<p class="centered"><a href="index.php">Back</a></p>';
-    $output .= '<hr />';
+		$output .= '<hr />';
+		$output .= '<p class="centered"><a href="index.php">Back</a></p>';
+		$output .= '<hr />';
 }
 
 if ( isset($displayAllCapabilities) )
@@ -113,20 +113,20 @@ if ( strlen($output) > 0 )
 }
 ?>
 
-  <hr />
-  <p class="centered">
-    <?php
-      if ( $longOutput === TRUE )
-      {
-          print '|&nbsp;<a href="#container">Top</a>&nbsp;';
-      }
-    ?>
-    |&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
-  <hr />
+	<hr />
+	<p class="centered">
+		<?php
+			if ( $longOutput === TRUE )
+			{
+				print '|&nbsp;<a href="#container">Top</a>&nbsp;';
+			}
+		?>
+		|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
+	<hr />
 
 </div> <!-- #content -->
 <footer>
-  <?php printFooterForms( $styleSheetFile, $deviceData ); ?>
+	<?php printFooterForms( $styleSheetFile, $deviceData ); ?>
 </footer>
 </div> <!-- #container -->
 </body>

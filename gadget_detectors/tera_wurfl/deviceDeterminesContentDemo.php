@@ -31,33 +31,33 @@ $gadgetType = $deviceData["gadgetType"];
 ?>
 
 <head>
-  <title><?php print $pageTitle; ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <?php
-    $styleSheetFile = printStyleSheetLinkTags( $deviceData );
-  ?>
+	<title><?php print $pageTitle; ?></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<?php
+		$styleSheetFile = printStyleSheetLinkTags( $deviceData );
+	?>
 </head>
 
 <body>
 <div id="container">
 <?php
-  if ( $gadgetType !== IdMyGadget::GADGET_TYPE_PHONE )
-  {
-    print '<h1>' . $pageTitle . '</h1>';
-  }
+	if ( $gadgetType !== IdMyGadget::GADGET_TYPE_PHONE )
+	{
+		print '<h1>' . $pageTitle . '</h1>';
+	}
 ?>
 <div id='content'>
-  <h3><?php print get_class($idMyGadget); ?></h3>
-  <h3><?php print $gadgetString; ?></h3>
-  <?php
-    printSampleContent( $deviceData );
-  ?>
-  <hr />
-  <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
-  <hr />
+	<h3><?php print get_class($idMyGadget); ?></h3>
+	<h3><?php print $gadgetString; ?></h3>
+	<?php
+		printSampleContent( $deviceData );
+	?>
+	<hr />
+	<p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
+	<hr />
 </div> <!-- #content -->
 <footer>
-  <?php printFooterForms( $styleSheetFile, $deviceData ); ?>
+	<?php printFooterForms( $styleSheetFile, $deviceData ); ?>
 </footer>
 </div> <!-- #container -->
 </body>
