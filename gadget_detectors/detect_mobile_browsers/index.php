@@ -68,7 +68,8 @@ else
   <dd>Demonstrates using <?php print $detectorName; ?>
     device detection to deliver device-specific content.
     Note that this device detector only distinguishes between phones and non-phones.
-    Therefore <strong>tablets are handled the same as desktop browsers.</strong></dd>
+    Therefore <strong>tablets are handled the same as desktop browsers.</strong> and
+    <strong>no distinction is made between Apple and Android phones.</strong></dd>
  </dl>
  <hr />
  <p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</p>

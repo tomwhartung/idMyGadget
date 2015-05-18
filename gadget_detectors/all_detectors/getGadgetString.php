@@ -27,9 +27,13 @@ function getGadgetString( $deviceData )
 		{
 			$gadgetString = "iPhone";
 		}
-		else
+		else if ( $gadgetModel === IdMyGadget::GADGET_MODEL_ANDROID_PHONE )
 		{
 			$gadgetString = "Android Phone";
+		}
+		else
+		{
+			$gadgetString = "Mobile Phone";
 		}
 	}
 	return $gadgetString;

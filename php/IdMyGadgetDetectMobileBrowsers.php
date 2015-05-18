@@ -59,12 +59,11 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 
 		if ( $this->debugging )
 		{
-			print "<p class='debugging'>usingMobilePhone (global): " .
-					$usingMobilePhone . "</p>";
-			print "<p class='debugging'>this->usingMobilePhone: " .
-					$this->usingMobilePhone . "</p>";
-			print "<p class='debugging'>this->gadgetType: " .
-					$this->gadgetType . "</p>";
+			print '<ul class="debugging">';
+			print '<li>usingMobilePhone (global): ' . $usingMobilePhone . '</li>';
+			print '<li>this->usingMobilePhone: ' . $this->usingMobilePhone . '</li>';
+			print '<li>this->gadgetType: ' . $this->gadgetType . '</li>';
+			print '</ul>';
 		}
 
 		if ( $this->gadgetType == parent::GADGET_TYPE_UNKNOWN )

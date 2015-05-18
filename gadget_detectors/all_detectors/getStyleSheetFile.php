@@ -36,7 +36,8 @@ function getStyleSheetFile( $deviceData )
 	{
 		$styleSheetFile = STYLE_SHEET_APPLE_PHONE;
 	}
-	else if ( $gadgetString === "Android Phone" )
+	else if ( $gadgetString === "Android Phone" ||
+             $gadgetString === "Mobile Phone" )
 	{
 		$styleSheetFile = STYLE_SHEET_ANDROID_PHONE;
 	}
