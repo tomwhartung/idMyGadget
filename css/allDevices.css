@@ -1,7 +1,7 @@
 /*
  * allDevices.css: styles for use on all devices
  * Use this in conjunction with a sheet that sets the font sizes etc.,
- * i.e. either basicMediaQueries.css or one of the files in device
+ * i.e. either mediaQueries.css or one of the files in device
  */
 body {
 	background-color: white;
