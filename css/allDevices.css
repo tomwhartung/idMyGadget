@@ -99,7 +99,7 @@ div.output, .warning {
 ul.no-bullets, ul.debugging  {
 	list-style-type: none;
 }
-ul.debugging {
+.debugging {
 	border: 3px solid red;
 }
 .rmCssForm {

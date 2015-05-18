@@ -67,10 +67,13 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 
 		if ( $this->debugging )
 		{
-			print "<ul class='debugging'>debugging with keyCapabilities:" .
-					$this->displayKeyCapabilities() . "</ul>";
-			print "<ul class='debugging'>debugging with deviceData:" .
-					$this->displayDeviceData() . "</ul>";
+			print '<div class="debugging">';
+			print '<p>detectorUsed: ' . $this->detectorUsed . '</p>';
+			print '<ul class="debugging">debugging with keyCapabilities:' .
+					$this->displayKeyCapabilities() . '</ul>';
+			print '<ul class="debugging">debugging with deviceData:' .
+					$this->displayDeviceData() . '</ul>';
+			print '</div>';
 		}
 
 		return $this->deviceData;
