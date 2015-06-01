@@ -30,7 +30,7 @@ cd idMyGadget
 
 Visit http://sourceforge.net/projects/wurfl/files/WURFL%20Database/ and 
 download the latest version of the Wurfl Database source tar file,
-wurfl-dbapi-a.b.c.d.tar.gz (e.g., wurfl-dbapi-1.5.1.1.tar.gz)
+wurfl-dbapi-a.b.c.d.tar.gz (e.g., wurfl-dbapi-1.6.0.0.tar.gz)
 
 Create subdirectory for Tera-Wurfl code and install it, by
 unzipping and unpacking wurfl-dbapi-a.b.c.d.tar.gz file in
@@ -79,7 +79,7 @@ grant all on tera_wurfl_demo.* to 'terawurfluser'@'localhost';
 more of the values in the preceding commands, and
 update the TeraWurflConfig.php file accordingly.***
 
-Create a data directory and 
+Create a data directory and run the following commands:
 ```
 cd /var/www/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi
 mkdir data    # may already be present
@@ -123,7 +123,7 @@ See this post: http://stackoverflow.com/questions/5164930/fatal-error-maximum-ex
 
 ## Conclusion:
 
-IdMyGadget currently identifies only the following devices:
+I have verified that idMyGadget currently identifies the following devices:
 
 * iPhone
 * Android Phone
@@ -131,14 +131,25 @@ IdMyGadget currently identifies only the following devices:
 * Kindle (Fire/HD?)
 * Desktop Browser
 
-I picked these because they are the gadgets I own.  :-)  It should be
+I can list these because they are the gadgets I own.  :-)  It should be
 possible to test it for many other devices (e.g., using emulators)
-but for now anyway, I am trying to keep it as simple as possible.
+but for now anyway, I am trying to keep it as simple as possible and
+want to move on to other projects.
+
+## Updates:
+
+IdMyGadget is meant to be just a starting point for more sophisiticated device
+and feature identification.  I would anticipate that these changes would be
+driven by requrements specific to your application.
 
 If you find it necessary or desireable, it is my hope that it will
 be easy to extend idMyGadget to use some of the additional capabilities
 identified by Wurfl to set additional device data parameters, for
 finer-grained control of what content to serve.
+
+If you do make changes of this nature, you can submit a pull request, but please
+do not expect me to merge it, unless it has some general benefit (e.g., a bugfix)
+useful to a great majority of users.
 
 ## References:
 
