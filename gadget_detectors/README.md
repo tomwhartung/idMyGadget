@@ -23,7 +23,7 @@ such as Cygwin, to run these commands.
 Install (git clone) idMyGadget source:
 ```
 cd /var/www
-git clone git://github.com:tomwhartung/idMyGadget.git
+git clone git@github.com:tomwhartung/idMyGadget.git
 cd idMyGadget
 ```
 
