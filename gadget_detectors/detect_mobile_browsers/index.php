@@ -72,7 +72,7 @@ else
 		<strong>no distinction is made between Apple and Android phones.</strong></dd>
  </dl>
  <hr />
- <p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</p>
+ <p class="centered">|&nbsp;<a href="../index.php">Back</a>&nbsp;|</p>
  <hr />
 </div> <!-- content -->
 </div> <!-- container -->

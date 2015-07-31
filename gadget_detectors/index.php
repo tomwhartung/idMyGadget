@@ -43,7 +43,7 @@ $pageTitle = 'IdMyGadget';
 			look promising, but I was unable to quickly get them to work, and so far the others are good enough.</dd>
 	</dl>
 	<hr />
-	<p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</p>
+	<p class="centered">|&nbsp;<a href="../index.html">Back</a>&nbsp;|</p>
 	<hr />
 </div> <!-- content -->
 </div> <!-- container -->
