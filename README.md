@@ -1,23 +1,23 @@
 
 ## Introduction:
 
-The following instructions show how I installed idMyGadget and
-the wurfl-dbapi (Tera-Wurfl) code in the /var/www directory on
-a PC running Ubuntu 14.04 .  My server is running Apache and
-DocumentRoot is set to /var/www .
+IdMyGadget is a Device Detection PHP Adapter API.
 
-If you are using a different operating system or installing
-into a different directory, you may need to adjust these
-instructions accordingly.
+When the third party device detection tools are properly installed, IdMyGadget provides a common interface to all of them.  This means that the webmaster can switch between these device detectors without having to change any code.
 
-## Requirements:
+## Supported Device Detectors:
 
-Installing and using this code requires a computer running a
-LAMP (Linux, Apache, MySql, and PHP) server.  It will probably work
-on a MAMP, WAMP, or XAMP server, but I have not tried it.
+At this time IdMyGadget supports using the following third party device detectors:
 
-If you are using Windows, you will need a terminal application,
-such as Cygwin, to run these commands.
+* detect_mobile_browsers: comes already installed; does not recognize tablets
+* mobile_detect: easily installed from github; a great "middle option"
+* tera_wurfl: requires initializing a database and returns specific information about hundreds of capabilities present in modern devices
+
+The gadget_detectors directory contains a directory for each of these detectors, and each of these directories contains a README.md file with instructions on how to install (if necessary), upgrade, and test the detector.
+
+Additionally, the php directory contains a php class for each of these detectors, and each of these classes inherits common functionality from their shared base class.
+
+Note that each of these detectors has different functionality and is released under a different license.
 
 ## Installation and Setup:
 
@@ -26,86 +26,26 @@ Install (git clone) idMyGadget source:
 cd /var/www
 git clone git://github.com:tomwhartung/idMyGadget.git
 cd idMyGadget
+ls -al gadget_detectors php
 ```
 
-Visit http://sourceforge.net/projects/wurfl/files/WURFL%20Database/ and 
-download the latest version of the Wurfl Database source tar file,
-wurfl-dbapi-a.b.c.d.tar.gz (e.g., wurfl-dbapi-1.5.1.1.tar.gz)
+The detect_mobile_browser device detector is the only one that comes pre-installed.
 
-Create subdirectory for Tera-Wurfl code and install it, by
-unzipping and unpacking wurfl-dbapi-a.b.c.d.tar.gz file in
-/var/www/idMyGadget/Tera-Wurfl :
-```
-cd /var/www/idMyGadget
-mkdir Tera-Wurfl
-cd Tera-Wurfl
-cp ~/Downloads/wurfl-php-a.b.c.d.tar.gz .
-gunzip wurfl-php-a.b.c.d.tar.gz
-tar -xvf wurfl-php-a.b.c.d.tar
-rm wurfl-php-a.b.c.d.tar
-```
+Refer to the individual README.md files for instructions on how to install one or all of the other device detectors.
 
-Link wurfl-dbapi-a.b.c.d directory to the generic directory name
-wurfl-dbapi.  This allows for easily upgrading to a new version,
-then possibly backing out of the upgrade, by simply changing the
-link:
-```
-cd /var/www/idMyGadget/Tera-Wurfl
-ln -s wurfl-dbapi-a.b.c.d wurfl-dbapi
-```
+## Run Demos to Test the Installation:
 
-Copy the example configuration file:
-```
-cp TeraWurflConfig.php.example TeraWurflConfig.php
-```
+IdMyGadget comes with a few to several demo programs for each device detector.  Start by loading the following file into your browser:
 
-The following db setup instructions use MySql and the other default
-values in TeraWurflConfig.php, so you do not need to edit that file.
-For complete information about all options for installing and
-initializing the Tera-Wurfl database, refer to the
-Tera-Wurfl/wurfl-dbapi/README.txt file.
+* http://localhost/idMyGadget/index.html
 
-**NOTE: Using these values is NOT recommended for production!**
+Of course, you may need to modify this URL slightly, depending on the configuration of your web server.
 
-Using MySql5 console interface, enter the following commands:
-```
-create database tera_wurfl_demo;
-create user 'terawurfluser'@'localhost' identified by 'wurfl';
-grant all on tera_wurfl_demo.* to 'terawurfluser'@'localhost';
-```
+After taking a quick look at the brief introductory text on this page, click on one of the links at the top or the bottom of that page (e.g., "Next" in the footer) to advance to the next page:
 
-**Again, for best results you should modify one or
-more of the values in the preceding commands, and
-update the TeraWurflConfig.php file accordingly.***
+* http://localhost/idMyGadget/gadget_detectors/index.php
 
-Create a data directory and 
-```
-cd /var/www/idMyGadget/Tera-Wurfl/wurfl-dbapi
-mkdir data    # may already be present
-sudo chgrp -R www-data data/
-sudo chmod -R g+rw data/
-```
-
-To verify that you have the database and data directory set up properly,
-access the following file in your web browser:
-[http://example.com/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php](http://example.com/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php)
-For example, if you are setting this up on your localhost, go to
-[http://localhost/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php](http://localhost/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin/install.php)
-Note that there is a link to this file in the idMyGadget/index.html and
-idMyGadget/index.php files.
-
-If everything looks OK on the install page, populate the database by
-clicking on one of the links (I use the "Your local WURFL file" link)
-at the bottom of that page.
-
-You should see a new page saying the database was updated OK.  You
-should remove the Tera-Wurfl/wurfl-dbapi/admin/install.php file, but I
-recommend renaming it in case you want to reinstall again later (e.g.,
-using a different database name):
-```
-cd /var/www/idMyGadget/Tera-Wurfl/wurfl-dbapi/admin
-mv install.php install.php-save_for_possible_reinstall
-```
+The gadget_detectors/index.php page contains a link to each of the index.php files in the detectors' subdirectories, and each of those files contains links to the demos for each detector.
 
 Run the demos to see:
 
@@ -115,39 +55,17 @@ Run the demos to see:
 
 ## Troubleshooting:
 
-If you get an error similar to this:
-```
-Fatal error: Maximum execution time of 30 seconds exceeded in /var/www/idMyGadget/Tera-Wurfl/wurfl-dbapi-1.6.0.0/DatabaseConnectors/TeraWurflDatabase.php on line 297
-```
-See this post: http://stackoverflow.com/questions/5164930/fatal-error-maximum-execution-time-of-30-seconds-exceeded
+For more information about the device detectors, see each of the individual, detector-specific README.md files.
 
 ## Conclusion:
 
-IdMyGadget currently identifies only the following devices:
+I am using this repo as-is for my resume, viewable here:
 
-* iPhone
-* Android Phone
-* Android tablet
-* Kindle (Fire/HD?)
-* Desktop Browser
+* http://tomwhartung.com/resume
 
-I picked these because they are the gadgets I own.  :-)  It should be
-possible to test it for many other devices (e.g., using emulators)
-but for now anyway, I am trying to keep it as simple as possible.
-
-If you find it necessary or desireable, it is my hope that it will
-be easy to extend idMyGadget to use some of the additional capabilities
-identified by Wurfl to set additional device data parameters, for
-finer-grained control of what content to serve.
+I have made a separate copy of this repo for integration with joomla and wordpress.  For more information about those projects see http://joomoowebsites.com .
 
 ## References:
 
-If you have any questions about idMyGadget, please contact me
-at https://github.com/tomwhartung or tomwhartung.com .
-
-If you have any questions about Wurfl, refer to the following:
-http://sourceforge.net/projects/wurfl/files/WURFL%20Database/
-http://wurfl.sourceforge.net/wurfl.php
-http://dbapi.scientiamobile.com/wiki/index.php/Installation
-Tera-Wurfl/wurfl-dbapi/README.txt
+If you have any questions about idMyGadget, please contact me at https://github.com/tomwhartung or http://tomwhartung.com .
 
