@@ -11,11 +11,11 @@ At this time IdMyGadget supports using the following third party device detector
 
 * [detect_mobile_browsers](https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/detect_mobile_browsers/README.md): comes already installed, but does not recognize tablets
 * [mobile_detect](https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/mobile_detect/README.md): easily installed from github and is a great "middle option"
-* [tera_wurfl](https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/tera_wurfl/README.md): requires initializing a database and returns specific information about hundreds of capabilities present in modern devices
+* [tera_wurfl](https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/tera_wurfl/README.md): requires initializing a database and returns specific information about hundreds of the capabilities present in modern devices
 
 The `gadget_detectors` directory contains a subdirectory for each of these detectors, and each of these directories contains a `README.md` file with instructions on how to install (if necessary), upgrade, and test the detector.
 
-Additionally, the `php` directory contains a php class for each of these detectors, and each of these classes inherits common functionality from their shared base class.
+Additionally, the `php` directory contains a php class for each of these detectors, and each of these classes inherits common functionality from their shared, abstract base class in `IdMyGadget.php` .
 
 Note that each of these detectors has different functionality and is released under a different license.
 
@@ -33,11 +33,11 @@ Alternatively, github makes a zip file available at [the project's main page](ht
 
 The detect_mobile_browser device detector is the only one that comes pre-installed.
 
-Refer to the individual README.md files for instructions on how to install one or all of the other device detectors.  A list of links to these README.md files appears above under "Supported Device Detectors."
+Refer to the individual `README.md` files for instructions on how to install one or all of the other device detectors.  A list of links to these `README.md` files appears above under "Supported Device Detectors."
 
 ## Run Demos to Test the Installation:
 
-IdMyGadget comes with a few to several demo programs for each device detector.  Start by loading the following file into your browser:
+IdMyGadget comes with demo programs for each device detector, that can be helpful when testing and seeing the functionality that each one provides.  Start by loading the following file into your browser:
 
 * http://localhost/idMyGadget/index.html
 
@@ -47,11 +47,11 @@ After taking a quick look at the brief introductory text on this page, click on 
 
 * http://localhost/idMyGadget/gadget_detectors/index.php
 
-The gadget_detectors/index.php page contains a link to each of the index.php files in the detectors' subdirectories, and each of those files contains links to the demos for each detector.
+The `gadget_detectors/index.php` page contains a link to each of the index.php files in the detectors' subdirectories, and each of those files contains links to the demos for each detector.
 
 ## Troubleshooting:
 
-For more information about the device detectors, see each of the individual, detector-specific README.md files.  If they do not have the information you seek, try [google](http://google.com).
+For more information about the device detectors, see each of the individual, detector-specific `README.md` files.  If they do not have the information you seek, try [google](http://google.com).
 
 ## Conclusion:
 
@@ -62,7 +62,11 @@ I am using this repo as-is for my resume, which is also available on github
 
 ## What's Next?
 
-I have made a separate copy of this repo for integration with joomla and wordpress, and am starting to think about yet another version for drupal.
+I have made separate copies of this repo for integration with joomla and wordpress, and am starting to think about yet another version for drupal.  Use the following links to find those repos:
+
+* [jmws_idMyGadget_for_joomla](https://github.com/tomwhartung/jmws_idMyGadget_for_joomla)
+* [jmws_idMyGadget_for_wordpress](https://github.com/tomwhartung/jmws_idMyGadget_for_wordpress)
+* jmws_idMyGadget_for_drupal (not yet started
 
 For more information about the status of those projects see http://joomoowebsites.com .
 
