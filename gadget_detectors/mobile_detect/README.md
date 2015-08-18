@@ -11,17 +11,36 @@ This option requires downloading (cloning) the Mobile-Detect code from github.
 
 1. Access this URL: https://github.com/serbanghita/Mobile-Detect
 
-1. If you are accustomed to using github, you probably want to clone the code, otherwise it may be easier to download the zip file.  Either way, clone or unzip the code into the `idMyGadget/gadget_detectors/mobile_detect` directory.
+1. If you are accustomed to using github, you may want to clone the code:
 
-1. This should result in the `idMyGadget/gadget_detectors/mobile_detect/Mobile-Detect' directory containing all of the Mobile-Detect code.
+
+```
+cd idMyGadget/gadget_detectors/mobile_detect
+git clone git@github.com:serbanghita/Mobile-Detect.git
+```
+
+1. If you are more comfortable downloading the zip file, unpack it in the mobile_detect directory and rename the new directory to Mobile-Detect
+
+```
+cd idMyGadget/gadget_detectors/mobile_detect
+mv ~/Downloads/Mobile-Detect-master.zip .
+unzip Mobile-Detect-master.zip 
+mv Mobile-Detect-master Mobile-Detect
+rm Mobile-Detect-master.zip 
+
+```
+
+1. Whether you clone or unzip the code into the `idMyGadget/gadget_detectors/mobile_detect` directory, this should result in the `idMyGadget/gadget_detectors/mobile_detect/Mobile-Detect' directory containing all of the Mobile-Detect code.
 
 ## Updating the Installation 
 
-1. Run the git pull command to update the source.
+* If you installed the code by cloning it, run the git pull command to update the source.
 
   ```
   git pull
   ```
+
+* If you installed the code by downloading the zip file, download a new file and unzip it to update the source.
 
 ## Running the Demos
 
@@ -46,6 +65,11 @@ If you are redirected to the detectmobilebrowsers.com site, it is because you di
 
 ## Conclusion:
 
+The best way to see the capabilities of this detector is to run the Mobile-Detect examples/demo.php program:
+
+* Mobile-Detect/examples/demo.php
+
+The index.php file in the mobile_detect directory contains a link to this and the other demo programs.
 
 ## References:
 

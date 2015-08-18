@@ -42,9 +42,7 @@ Note that this URL may vary depending on where you have installed the code.  For
 
 There is a link to this file in the index.php file in this directory.
 
-Run the demos to see:
-
-* Whether the device is a phone
+Run the demos to see whether the device is a phone (this detector has very limited functionality).
 
 ## Troubleshooting:
 
