@@ -3,7 +3,7 @@
 
 Once you have installed idMyGadget, as described in the
 [gadget_detectors README.md file](https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/README.md),
-file, follow these steps to install the PHP device detection script from [detectmobilebrowsers.com].
+file, follow these steps to install the PHP device detection script from [detectmobilebrowsers.com](http://detectmobilebrowsers.com/).
 
 ## Installation and Setup:
 
@@ -19,6 +19,9 @@ IdMyGadget includes this file, so no installation or setup is required.
 1. Copy this file into the `idMyGadget/gadget_detectors/detect_mobile_browsers/php` directory.
 
 1. Rename this file from `detectmobilebrowser.php.txt` to `detectmobilebrowser.php`.
+  ```php
+  mv detectmobilebrowser.php.txt detectmobilebrowser.php
+  ```
 
 1. Edit this file, replacing the following line:
   ```php
@@ -31,11 +34,11 @@ IdMyGadget includes this file, so no installation or setup is required.
 
 ## Running the Demos
 
-Verify that you have set this up properly, access the following file in your web browser:
-[http://example.com/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php](http://example.com/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php)
+To verify that you have set this up properly, access the following file in your web browser:
+* [http://example.com/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php](http://example.com/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php)
 
-For example, if you are setting this up on your localhost, go to
-[http://localhost/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php](http://localhost/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php)
+Note that this URL may vary depending on where you have installed the code.  For example, if you are setting this up on your localhost, go to
+* [http://localhost/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php](http://localhost/idMyGadget/gadget_detectors/detect_mobile_browsers/rawDemo.php)
 
 There is a link to this file in the index.php file in this directory.
 
@@ -52,6 +55,7 @@ If you are redirected to the detectmobilebrowsers.com site, it is because you di
 
 ## Conclusion:
 
+The detect_mobile_browsers detector is the easiest to install, but note that it only identifies phones and thus does not identify tablets.
 
 ## References:
 
