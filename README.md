@@ -66,7 +66,7 @@ I have made separate copies of this repo for integration with joomla and wordpre
 
 * [jmws_idMyGadget_for_joomla](https://github.com/tomwhartung/jmws_idMyGadget_for_joomla)
 * [jmws_idMyGadget_for_wordpress](https://github.com/tomwhartung/jmws_idMyGadget_for_wordpress)
-* jmws_idMyGadget_for_drupal (not yet started
+* [jmws_idMyGadget_for_drupal](https://github.com/tomwhartung/jmws_idMyGadget_for_drupal)
 
 For more information about the status of those projects see http://joomoowebsites.com .
 
