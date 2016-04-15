@@ -20,9 +20,9 @@ git clone git://github.com:tomwhartung/idMyGadget.git
 cd idMyGadget
 ```
 
-Visit http://sourceforge.net/projects/wurfl/files/WURFL%20Database/ and download the latest version of the Wurfl Database source tar file, `wurfl-dbapi-a.b.c.d.tar.gz` (e.g., `wurfl-dbapi-1.6.0.0.tar.gz`).
+Visit http://www.scientiamobile.com/downloads and download the latest version of the Wurfl Database source tar file, `wurfl-dbapi-a.b.c.d.tar.gz` (e.g., `wurfl-dbapi-1.6.0.0.tar.gz`).
 
-Create subdirectory for Tera-Wurfl code and install it, by unzipping and unpacking the `wurfl-dbapi-a.b.c.d.tar.gz` file in `/var/www/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl`:
+Create a subdirectory for Tera-Wurfl code and install it, by unzipping and unpacking the `wurfl-dbapi-a.b.c.d.tar.gz` file in `/var/www/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl`:
 
 ```
 cd /var/www/idMyGadget/gadget_detectors/tera_wurfl
