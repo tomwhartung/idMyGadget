@@ -75,7 +75,7 @@ function printSampleContent( $deviceData )
 	print '<li>Increasing device fragmentation increases the complexity of delivering appropriate content.';
 	print 'It is easier to address this complexity programatically than statically.</li>';
 	print '</ul>';
-	print '<p>I for one feel the potential for using device detection to increase user experience is';
+	print '<p>I for one feel the potential for using device detection to increase user experience is ';
 	print 'much greater than we can do with just media queries.';
 	print 'For example, it is easy enough to use a media query to just hide an element;';
 	print 'with device we can prevent the content from being downloaded in the first place.</p>';
