@@ -22,6 +22,8 @@ cd idMyGadget
 
 Visit http://www.scientiamobile.com/downloads and download the latest version of the Wurfl Database source tar file, `wurfl-dbapi-a.b.c.d.tar.gz` (e.g., `wurfl-dbapi-1.6.0.0.tar.gz`).
 
+Note that you will have to create a free account before the site will allow you to download the code.
+
 Create a subdirectory for Tera-Wurfl code and install it, by unzipping and unpacking the `wurfl-dbapi-a.b.c.d.tar.gz` file in `/var/www/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl`:
 
 ```
@@ -68,7 +70,7 @@ Create a data directory and run the following commands:
 
 ```
 cd /var/www/idMyGadget/gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi
-mkdir data    # may already be present
+mkdir data    # should already be present...
 sudo chgrp -R www-data data/
 sudo chmod -R g+rw data/
 ```
