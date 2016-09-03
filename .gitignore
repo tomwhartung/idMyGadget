@@ -3,7 +3,15 @@
 #
 /unpack/
 tmp/
+
+#
+# I like to switch between vim, eclipse, and netbeans
+#
 *.swp
+.project
+.settings/
+gadget_detectors/.buildpath
+gadget_detectors/.project
 /nbproject/
 
 #
